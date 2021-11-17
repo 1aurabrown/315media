@@ -4,16 +4,13 @@
 * Top level styles every element should inherit.
 */
 
-@include font-face('Montserrat', 'montserrat-v14-latin-regular', '400', 'normal');
-@include font-face('Montserrat', 'montserrat-v14-latin-italic', '400', 'italic');
-@include font-face('Montserrat', 'montserrat-v14-latin-700', '700', 'normal');
-@include font-face('Montserrat', 'montserrat-v14-latin-700italic', '700', 'italic');
+@include font-face('GTAmericaRegular', 'GT-America-Standard-Regular', '400', 'regular');
 
 html {
   background-color: $color-background;
   box-sizing: border-box;
   color: $color-text;
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-family: 'GTAmericaRegular', Helvetica, Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   height: 100%;
@@ -554,17 +551,28 @@ select {
 
 .mainContent {
   flex: 1 0 auto;
+  margin-top: 80px;
 }
 
 .flyntComponent {
   position: relative;
 }
 
+.container {
+  &_full {
+    width: 100%;
+
+    &Padding {
+      padding: 0 $container-padding-desktop;
+    }
+  }
+}
+
 .componentSpacing {
   margin: $component-spacing-mobile 0;
 
   @media (min-width: $breakpoint-tablet) {
-    margin: $component-spacing-tablet 0;
+    margin: $component-spacing-desktop 0;
   }
 
   @media (min-width: $breakpoint-desktop) {
@@ -576,7 +584,7 @@ select {
     padding: $component-spacing-mobile 0;
 
     @media (min-width: $breakpoint-tablet) {
-      padding: $component-spacing-tablet 0;
+      padding: $component-spacing-desktop 0;
     }
 
     @media (min-width: $breakpoint-desktop) {
@@ -589,7 +597,7 @@ select {
   @include center;
 
   @media (min-width: $breakpoint-tablet) {
-    @include center($padding: $container-padding-tablet);
+    @include center($padding: $container-padding-desktop);
   }
 
   @media (min-width: $breakpoint-desktop) {
@@ -604,12 +612,10 @@ select {
 
 .preContent {
   @include reset-content-margins;
-  margin: 0 auto 32px;
   max-width: $content-max-width;
-  text-align: center;
 
   @media (min-width: $breakpoint-tablet) {
-    margin-bottom: $container-padding-tablet;
+    margin-bottom: $container-padding-desktop;
   }
 
   @media (min-width: $breakpoint-desktop) {
@@ -624,7 +630,7 @@ select {
   text-align: center;
 
   @media (min-width: $breakpoint-tablet) {
-    margin-top: $container-padding-tablet;
+    margin-top: $container-padding-desktop;
   }
 
   @media (min-width: $breakpoint-desktop) {
@@ -671,7 +677,7 @@ select {
       margin: $component-spacing-mobile/2 0;
 
       @media (min-width: $breakpoint-tablet) {
-        margin: $component-spacing-tablet/2 0;
+        margin: $component-spacing-desktop/2 0;
       }
 
       @media (min-width: $breakpoint-desktop) {
@@ -683,7 +689,7 @@ select {
         padding: $component-spacing-mobile/2 0;
 
         @media (min-width: $breakpoint-tablet) {
-          padding: $component-spacing-tablet/2 0;
+          padding: $component-spacing-desktop/2 0;
         }
 
         @media (min-width: $breakpoint-desktop) {

@@ -4,8 +4,8 @@
   padding-top: $component-spacing-mobile;
 
   @media (min-width: $breakpoint-tablet) {
-    padding-bottom: $component-spacing-tablet;
-    padding-top: $component-spacing-tablet;
+    padding-bottom: $component-spacing-desktop;
+    padding-top: $component-spacing-desktop;
   }
 
   + [is='flynt-navigation-footer'] .container {

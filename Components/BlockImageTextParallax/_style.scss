@@ -20,7 +20,7 @@
 
         @media (min-width: $breakpoint-tablet-horizontal) {
           max-width: 100%;
-          padding: ($container-padding-tablet * 2) $container-padding-tablet;
+          padding: ($container-padding-desktop * 2) $container-padding-desktop;
           width: 50%;
           z-index: 0;
         }
@@ -103,12 +103,12 @@
       margin-left: auto;
       margin-right: auto;
       max-width: $content-max-width;
-      padding: $container-padding-tablet 0 $container-padding-tablet * 0.5 0;
+      padding: $container-padding-desktop 0 $container-padding-desktop * 0.5 0;
       position: relative;
       z-index: 10;
 
       @media (min-width: $breakpoint-tablet) {
-        padding: $container-padding-tablet;
+        padding: $container-padding-desktop;
       }
 
       @media (min-width: $breakpoint-tablet-horizontal) {

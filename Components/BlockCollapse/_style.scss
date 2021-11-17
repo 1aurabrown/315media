@@ -2,7 +2,7 @@
   margin-top: -$component-spacing-mobile;
 
   @media (min-width: $breakpoint-tablet) {
-    margin-top: -$component-spacing-tablet;
+    margin-top: -$component-spacing-desktop;
   }
 
   @media (min-width: $breakpoint-desktop) {

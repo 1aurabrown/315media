@@ -1,0 +1,20 @@
+<div class="flyntComponent componentSpacing {{ options.theme }}" is="flynt-list-horizontal">
+  <div class="container container_fullPadding">
+    {% if preContentHtml %}
+      <div class="preContent">
+        {{ preContentHtml|e('wp_kses_post')}}
+      </div>
+    {% endif %}
+    <div class="content">
+      <ul class="list">
+        {% for listItem in listHorizontal %}
+          <li class="item">
+            <a href="{{ listItem.title.url }}" class="h1" target="_blank">
+              {{ listItem.title.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

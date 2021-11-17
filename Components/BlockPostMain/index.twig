@@ -1,0 +1,16 @@
+<div class="flyntComponent" is="flynt-block-post-main">
+  <div class="container container_full"> 
+    {% for component in post.meta('postComponents') %}
+      {{ renderComponent(component) }}
+    {% endfor %}
+  </div>
+  <div class="container container_fullPadding">
+    <div class="header">
+      <div class="post-title h1">{{ post.title }}</div>
+      <div class="post-subtitle h2">{{ post.client }}</div>
+    </div>
+    {# {% for component in post.meta('postComponents') %}
+      {{ renderComponent(component) }}
+    {% endfor %} #}
+  </div>
+</div>

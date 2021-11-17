@@ -6,9 +6,7 @@
       {{ renderComponent('BlockPostHeader', { post: post }) }}
     </header>
     <section class="post-main">
-      {% for component in post.meta('postComponents') %}
-        {{ renderComponent(component) }}
-      {% endfor %}
+      {{ renderComponent('BlockPostMain', { post: post }) }}
     </section>
     <footer class="post-meta">
       {{ renderComponent('BlockPostFooter', { post: post }) }}

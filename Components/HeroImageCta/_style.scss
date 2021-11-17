@@ -20,8 +20,8 @@
       right: $container-padding-mobile;
 
       @media (min-width: $breakpoint-tablet) {
-        left: $container-padding-tablet;
-        right: $container-padding-tablet;
+        left: $container-padding-desktop;
+        right: $container-padding-desktop;
       }
 
       @media (min-width: $breakpoint-desktop) {

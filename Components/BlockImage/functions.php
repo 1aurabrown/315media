@@ -39,7 +39,6 @@ function getACFLayout()
                 'type' => 'group',
                 'layout' => 'row',
                 'sub_fields' => [
-                    FieldVariables\getTheme(),
                     [
                         'label' => __('Size', 'flynt'),
                         'name' => 'size',

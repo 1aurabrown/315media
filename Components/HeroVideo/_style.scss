@@ -1,0 +1,91 @@
+[is='flynt-hero-video'] {
+  background-color: var(--themeBase_colorText);
+
+  .video {
+    margin: 0 auto;
+    position: relative;
+
+    .figure {
+      display: block;
+      margin-bottom: 0;
+    
+      &-image {
+        &--isHidden {
+          visibility: hidden;
+        }
+      }
+    
+    }
+  
+    &-player {
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+
+      &--isLoading {
+        background: rgba(0, 0, 0, 0.5);
+        transition: all 1s linear;
+      
+        .figure {
+          opacity: 1;
+        }
+      }
+
+      &--isLoaded {
+        background: rgba(0, 0, 0, 0.5);
+        transition: all 1s linear;
+    
+        .figure {
+          opacity: 0;
+          transition: all 1s linear;
+        }
+      
+        iframe {
+          opacity: 1;
+          transition: all 1s linear;
+        }
+      }
+  
+      iframe {
+        box-sizing: border-box;
+        height: 56.25vw;
+        left: 50%;
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+
+        .vp-center {
+          align-items: flex-start;
+        }
+      }
+    }
+
+    &-overlay {
+      color: inherit;
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+      left: 0;
+      padding: var(--padding_large);
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+
+      &--alignTop {
+        justify-content: flex-start;
+      }
+
+      &--alignCenter {
+        justify-content: center;
+      }
+  
+      &--alignBottom {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

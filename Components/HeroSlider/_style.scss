@@ -123,12 +123,12 @@
     flex-direction: column;
     justify-content: flex-end;
     max-width: $content-max-width;
-    padding: $container-padding-tablet $container-padding-mobile;
+    padding: $container-padding-desktop $container-padding-mobile;
     position: relative;
     z-index: 1;
 
     @media (min-width: $breakpoint-tablet) {
-      padding: $container-padding-tablet $container-padding-tablet * 2;
+      padding: $container-padding-desktop $container-padding-desktop * 2;
     }
 
     @media (min-width: $breakpoint-tablet-horizontal) {
