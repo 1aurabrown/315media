@@ -1,5 +1,5 @@
 [is='flynt-grid-posts-selector'] {
-  margin: auto;
+  margin: $container-padding-desktop auto;
 
   .container {
     @media (max-width: $breakpoint-tablet-horizontal) {
