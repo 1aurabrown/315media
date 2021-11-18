@@ -16,12 +16,12 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
                     Components\AccordionDefault\getACFLayout(),
-                    Components\BlockCollapse\getACFLayout(),
                     Components\BlockCountUp\getACFLayout(),
                     Components\BlockImage\getACFLayout(),
                     Components\BlockImageText\getACFLayout(),
                     Components\BlockTextImageCrop\getACFLayout(),
                     Components\BlockImageTextParallax\getACFLayout(),
+                    Components\BlockSpacer\getACFLayout(),
                     Components\BlockVideoOembed\getACFLayout(),
                     Components\BlockWysiwyg\getACFLayout(),
                     Components\BlockWysiwygSidebar\getACFLayout(),

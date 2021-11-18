@@ -1,0 +1,15 @@
+[is='flynt-block-project-info'] {
+  .content {
+    @include reset-content-margins;
+    margin: 0 auto;
+
+    &-subtitle {
+      font-style: italic;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}

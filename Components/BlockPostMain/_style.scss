@@ -1,3 +1,15 @@
 [is='flynt-block-post-main'] {
   width: 100%;
+
+  .header {
+    padding: ($container-padding-desktop * 2) ($container-padding-desktop * 3);
+
+    .post-subtitle {
+      font-style: italic;
+    }
+  }
+
+  .content {
+    padding: ($container-padding-desktop * 2) ($container-padding-desktop * 3);
+  }
 }

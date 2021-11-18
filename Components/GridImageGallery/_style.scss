@@ -1,0 +1,17 @@
+[is='flynt-grid-image-gallery'] {
+  .figure {
+    margin: 0;
+  }
+
+  .gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: $container-padding-desktop;
+
+    &-image {
+      padding: $gap;
+      width: 50%;
+    }
+  }
+}

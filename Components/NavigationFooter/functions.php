@@ -33,7 +33,6 @@ Options::addTranslatable('NavigationFooter', [
         'type' => 'wysiwyg',
         'media_upload' => 0,
         'delay' => 1,
-        'toolbar' => 'basic',
         'default_value' => '©&nbsp;[year] [sitetitle]'
     ],
     [

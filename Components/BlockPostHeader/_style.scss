@@ -10,18 +10,22 @@
       width: 100%;
     }
   }
-  
-  .content {
-    padding: $container-padding-desktop;
 
-    .meta {
-      font-size: 14px;
-    }
+  .container {
+    padding: ($container-padding-desktop * 2) ($container-padding-desktop * 3);
+    
+    .content {
+      padding: ($container-padding-desktop * 3) 0;
   
-    .excerpt {
-      color: $color-text;
-      font-weight: normal;
+      .meta {
+        font-size: 14px;
+      }
+    
+      .excerpt {
+        color: $color-text;
+        font-weight: normal;
+      }
     }
+
   }
-  
 }
