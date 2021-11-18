@@ -64,7 +64,7 @@ function getACFLayout()
                 'return_format' => 'post_object',
                 'ui' => 1,
                 'min' => 1,
-			    'max' => 2,
+                'max' => 2,
                 'required' => 0,
             ],
             [
