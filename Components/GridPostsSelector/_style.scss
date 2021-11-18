@@ -1,5 +1,5 @@
 [is='flynt-grid-posts-selector'] {
-  margin: $padding auto;
+  margin: $container-padding-desktop auto;
 
   .container {
     @media (max-width: $breakpoint-tablet-horizontal) {
@@ -77,8 +77,8 @@
           display: flex;
           flex-flow: column wrap;
           justify-content: flex-start;
-          position: absolute;
           left: 10px;
+          position: absolute;
           top: 10px;
         }
 
