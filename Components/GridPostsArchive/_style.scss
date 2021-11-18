@@ -18,7 +18,7 @@
   }
 
   .post {
-    margin-bottom: $gutter-width;
+    margin-bottom: $gap;
 
     @media (min-width: $breakpoint-tablet) {
       margin-bottom: 0;
@@ -36,7 +36,7 @@
 
     &-inner {
       @include reset-content-margins;
-      padding: $gutter-width 0;
+      padding: $gap 0;
     }
 
     &-excerpt {

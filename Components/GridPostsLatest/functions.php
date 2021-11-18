@@ -76,20 +76,22 @@ function getACFLayout()
                 'label' => '',
                 'name' => 'options',
                 'type' => 'group',
-                'layout' => 'row',
+                'layout' => 'block',
                 'sub_fields' => [
-                    FieldVariables\getTheme(),
                     [
-                        'label' => __('Columns', 'flynt'),
-                        'name' => 'columns',
-                        'type' => 'number',
-                        'default_value' => 3,
-                        'min' => 1,
-                        'max' => 4,
-                        'step' => 1
+                        'label' => __('Layout', 'flynt'),
+                        'name' => 'layout',
+                        'type' => 'select',
+                        'choices' => [
+                            '1' => '1',
+                            '1-1' => '1-1',
+                            '1-2' => '1-2',
+                            '2-1' => '2-1',
+                        ],
+                        'default_value' => '1-1'
                     ]
                 ]
-            ],
+            ]
         ]
     ];
 }

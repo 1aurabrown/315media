@@ -24,7 +24,7 @@
       }
 
       &--content {
-        padding: $gutter-width $container-padding-mobile;
+        padding: $gap $container-padding-mobile;
 
         @media (min-width: $breakpoint-tablet) {
           padding: $container-padding-desktop;

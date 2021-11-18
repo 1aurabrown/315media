@@ -1,14 +1,14 @@
 [is='flynt-list-icons'] {
   .items {
     @include reset-list;
-    @include grid(1, $gutter-vertical: ($gutter-width * 2));
+    @include grid(1, $gutter-vertical: ($gap * 2));
 
     @media (min-width: $breakpoint-mobile-horizontal) {
-      @include grid(2, center, $gutter-vertical: ($gutter-width * 2));
+      @include grid(2, center, $gutter-vertical: ($gap * 2));
     }
 
     @media (min-width: $breakpoint-tablet-horizontal) {
-      @include grid(4, $gutter-vertical: ($gutter-width * 2));
+      @include grid(4, $gutter-vertical: ($gap * 2));
     }
   }
 

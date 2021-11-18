@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: ($gutter-width * -1) 0 0 ($gutter-width * -1);
+    margin: ($gap * -1) 0 0 ($gap * -1);
 
     &--columns2,
     &--columns3,
@@ -27,7 +27,7 @@
     &--columns4 {
       .grid-item {
         /* ensure 2 columns stacking up until $breakpoint-desktop */
-        max-width: ($breakpoint-desktop - $container-padding-desktop * 2 + $gutter-width) / 3 + 1;
+        max-width: ($breakpoint-desktop - $container-padding-desktop * 2 + $gap) / 3 + 1;
 
         @media (min-width: $breakpoint-desktop) {
           width: 25%;
@@ -38,7 +38,7 @@
 
   .grid-item {
     max-width: 675px;
-    padding: $gutter-width 0 0 $gutter-width;
+    padding: $gap 0 0 $gap;
     width: 100%;
   }
 
@@ -53,7 +53,7 @@
       @include reset-content-margins;
 
       &:not(.boxPadding) {
-        padding: $gutter-width 0;
+        padding: $gap 0;
       }
     }
   }

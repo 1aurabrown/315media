@@ -10,7 +10,7 @@
     &--textLeft {
       .column--content {
         @media (min-width: $breakpoint-tablet-horizontal) {
-          padding-right: $gutter-width;
+          padding-right: $gap;
         }
       }
     }
@@ -20,7 +20,7 @@
 
       .column--content {
         @media (min-width: $breakpoint-tablet-horizontal) {
-          padding-left: $gutter-width;
+          padding-left: $gap;
         }
       }
     }

@@ -1,15 +1,15 @@
 {% if items|length > 0 %}
   <div class="flyntComponent" id="filter{{ title|e }}" is="flynt-grid-posts-selector">
-    <div class="container container_full">
+    <div class="container container_fullPadding">
       {% if preContentHtml %}
       <div class="preContent">
-        <p>{{ preContentHtml|e('wp_kses_post') }}</p>
+        {{ preContentHtml|e('wp_kses_post') }}
       </div>
       {% endif %}
       {# <div class="allPostsLink">
         <a href="{{ postTypeArchiveLink }}" class="button button--link">{{ labels.allPosts }}</a>
       </div> #}
-      <ul class="grid grid--columns{{ options.columns }}">
+      <ul class="grid grid--layout{{ options.layout }}">
         {% for item in items %}
           <li class="grid-item {{ item.post_type }}">
             <div class="content">
@@ -29,7 +29,8 @@
                   data-sizes="auto"
                   alt="{{ item.thumbnail.alt|e }}">
                 <div class="content-inner">
-                  <h3 class="content-title">{{ item.title }}</h3>
+                  <h3 class="content-title">{{ item.client }}</h3>
+                  <h3 class="content-subtitle">{{ item.title }}</h3>
                   {# <p class="content-excerpt">{{ item.preview.read_more(false).length(18) }}</p> #}
                 </div>
               </a>

@@ -63,6 +63,8 @@ function getACFLayout()
                 'multiple' => 0,
                 'return_format' => 'post_object',
                 'ui' => 1,
+                'min' => 1,
+			    'max' => 2,
                 'required' => 0,
             ],
             [
@@ -79,13 +81,16 @@ function getACFLayout()
                 'layout' => 'block',
                 'sub_fields' => [
                     [
-                        'label' => __('Columns', 'flynt'),
-                        'name' => 'columns',
-                        'type' => 'number',
-                        'default_value' => 3,
-                        'min' => 1,
-                        'max' => 4,
-                        'step' => 1
+                        'label' => __('Layout', 'flynt'),
+                        'name' => 'layout',
+                        'type' => 'select',
+                        'choices' => [
+                            '1' => '1',
+                            '1-1' => '1-1',
+                            '1-2' => '1-2',
+                            '2-1' => '2-1',
+                        ],
+                        'default_value' => '1-1'
                     ]
                 ]
             ]

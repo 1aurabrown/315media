@@ -1,15 +1,15 @@
 {% if items|length > 0 %}
   <div class="flyntComponent componentSpacing {{ options.theme }}" is="flynt-grid-posts-latest">
-    <div class="container centerMaxWidthContainer">
+    <div class="container container_fullPadding">
       {% if preContentHtml %}
-        <div class="preContent">
-          {{ preContentHtml|e('wp_kses_post') }}
-        </div>
+      <div class="preContent">
+        {{ preContentHtml|e('wp_kses_post') }}
+      </div>
       {% endif %}
-      <ul class="grid grid--columns{{ options.columns }}">
+      <ul class="grid grid--layout{{ options.layout }}">
         {% for item in items %}
           <li class="grid-item">
-            <div class="content boxShadow themeReset">
+            <div class="content">
               <a href="{{ item.link }}" class="content-link" title="{{ item.title }}">
                 <img class="content-image lazyload"
                   src="{{ item.thumbnail.src|resizeDynamic(424, 283) }}"
@@ -25,24 +25,24 @@
                     {{ item.thumbnail.src|resizeDynamic(312, 208) }} 312w"
                   data-sizes="auto"
                   alt="{{ item.thumbnail.alt|e }}">
-                <div class="content-inner boxPadding">
-                  <h3 class="content-title">{{ item.title }}</h3>
-                  <p class="content-excerpt">{{ item.preview.read_more(false).length(18) }}</p>
+                <div class="content-inner">
+                  <h3 class="content-title">{{ item.client }}</h3>
+                  <h3 class="content-subtitle">{{ item.title }}</h3>
                 </div>
               </a>
-              <footer class="content-footer">
+              {# <footer class="content-footer">
                 <span class="content-readingTime">
                   <i data-feather="clock"></i> {{ item.content | readingtime }} {{ labels.readingTime }}
                 </span>
                 <a href="{{ item.link }}" class="button button--link content-readMore" aria-hidden="true" tabindex="-1">{{ labels.readMore }}</a>
-              </footer>
+              </footer> #}
             </div>
           </li>
         {% endfor %}
       </ul>
-      <div class="allPostsLink">
+      {# <div class="allPostsLink">
         <a href="{{ postTypeArchiveLink }}" class="button button--link">{{ labels.allPosts }}</a>
-      </div>
+      </div> #}
     </div>
   </div>
 {% endif %}

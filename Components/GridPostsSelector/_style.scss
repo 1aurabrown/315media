@@ -1,6 +1,5 @@
 [is='flynt-grid-posts-selector'] {
   margin: auto;
-  padding: $container-padding-desktop;
 
   .container {
     @media (max-width: $breakpoint-tablet-horizontal) {
@@ -26,47 +25,36 @@
 
     .grid {
       @include reset-list;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
+      column-gap: $gap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
       margin: 0 auto;
+      row-gap: $gap;
 
-      &--columns2,
-      &--columns3,
-      &--columns4 {
-        .grid-item {
-          @media (min-width: $breakpoint-tablet) {
-            width: 50%;
-          }
-        }
+      &--layout1-1 {
+        grid-template-columns: 1fr 1fr;
       }
 
-      &--columns3 {
-        .grid-item {
-          @media (min-width: $breakpoint-tablet-horizontal) {
-            width: 33.33%;
-          }
-        }
+      &--layout1-2 {
+        grid-template-columns: 1fr 2fr;
       }
 
-      &--columns4 {
-        .grid-item {
-          /* ensure 2 columns stacking up until $breakpoint-desktop */
-          max-width: 50%;
+      &--layout2-1 {
+        grid-template-columns: 2fr 1fr;
+      }
 
-          @media (min-width: $breakpoint-desktop) {
-            width: 25%;
-          }
-        }
+      &--layout1 {
+        grid-template-columns: 1fr;
       }
     }
 
     .grid-item {
-      max-width: 675px;
-      padding: $gutter-width 0 0 $gutter-width;
       width: 100%;
 
-      a {
+      .content-link {
+        position: relative;
+        text-align: center;
         text-decoration: none;
       }
 
@@ -78,15 +66,31 @@
 
         &-image {
           height: fit-content;
+          max-height: 400px;
+          min-height: 400px;
           object-fit: cover;
           width: 100%;
         }
 
         &-inner {
-          align-items: center;
+          align-items: flex-start;
           display: flex;
-          flex-flow: row wrap;
-          justify-content: space-between;
+          flex-flow: column wrap;
+          justify-content: flex-start;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+
+          .content-title {
+            margin-bottom: 0;
+            padding-top: 0;
+          }
+
+          .content-subtitle {
+            margin-bottom: 0;
+            padding-top: 0;
+            font-style: italic;
+          }
         }
       }
     }
