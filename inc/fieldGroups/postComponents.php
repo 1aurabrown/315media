@@ -24,6 +24,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockWysiwyg\getACFLayout(),
                     Components\GridImageGallery\getACFLayout(),
                     Components\HeroVideo\getACFLayout(),
+                    Components\ListColumn\getACFLayout(),
                     Components\SliderImages\getACFLayout(),
                 ],
             ],

@@ -2,9 +2,17 @@
   .content {
     @include reset-content-margins;
     margin: 0 auto;
+    padding: 0;
 
-    &-subtitle {
+    &-title {
       font-style: italic;
+      font-weight: 300;
+    }
+
+    &-text {
+      @media (min-width: $breakpoint-mobile-horizontal) {
+        max-width: $content-max-width;
+      }
     }
 
     > :last-child {

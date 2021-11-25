@@ -37,6 +37,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\HeroSlider\getACFLayout(),
                     Components\HeroTextImage\getACFLayout(),
                     Components\HeroVideo\getACFLayout(),
+                    Components\ListColumn\getACFLayout(),
                     Components\ListComponents\getACFLayout(),
                     Components\ListHorizontal\getACFLayout(),
                     Components\ListIcons\getACFLayout(),

@@ -52,7 +52,6 @@ function getACFLayout()
                 'type' => 'relationship',
                 'post_type' => [
                     'post',
-                    'artist',
                 ],
                 'filters' => array(
                     0 => 'search',

@@ -7,11 +7,14 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    padding: $container-padding-desktop;
 
     &-image {
-      padding: $gap;
-      width: 50%;
+      padding: $gap 0 0;
+
+      @media (min-width: $breakpoint-mobile-horizontal) {
+        padding: $gap;
+        width: 50%;
+      }
     }
   }
 }

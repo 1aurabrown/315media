@@ -57,7 +57,7 @@ body {
 
 h1,
 .h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1;
   margin-bottom: 1.15rem;
@@ -127,7 +127,7 @@ p,
 .paragraph,
 table,
 figure {
-  font-size: 1.85rem;
+  font-size: 1.25rem;
   margin: 0;
 
   @media (min-width: $breakpoint-mobile-horizontal) {
@@ -500,7 +500,7 @@ select {
     outline: 0;
   }
 
-  + label {
+  +label {
     display: inline-block;
     padding-left: 1.875rem;
     position: relative;
@@ -524,7 +524,7 @@ select {
   }
 
   &:checked {
-    + label::before {
+    +label::before {
       background-color: $color-accent;
       border-color: $color-accent;
       box-shadow: inset 0 0 0 2px #fff;
@@ -533,7 +533,7 @@ select {
 }
 
 [type='radio'] {
-  + label::before {
+  +label::before {
     border-radius: 50%;
   }
 }
@@ -560,7 +560,7 @@ select {
 
 .mainContent {
   flex: 1 0 auto;
-  margin-top: 100px;
+  margin-top: 0;
 }
 
 .home {
@@ -572,6 +572,10 @@ select {
 
 .flyntComponent {
   position: relative;
+
+  // &:not(:first-child) {
+  //   border-top: 1px solid $black;
+  // }
 }
 
 .container {
@@ -579,9 +583,13 @@ select {
     width: 100%;
 
     &Padding {
-      padding: 0 $container-padding-desktop;
+      padding: 0;
     }
   }
+}
+
+.componentPadding {
+  padding: $container-padding-desktop;
 }
 
 .componentSpacing {
@@ -689,9 +697,47 @@ select {
 
 .single {
   .mainContent {
-    flex: 1 0 auto;
-    margin-top: 80px;
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      flex: 1 0 auto;
+      margin-bottom: 20px;
+      margin-top: 80px;
+    }
   }
+
+  .post-related {
+    border-top: 1px solid $black;
+    padding: $container-padding-desktop;
+
+    @media (max-width: $breakpoint-mobile-horizontal) {
+      padding: $container-padding-desktop 0;
+
+      .grid {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: $container-padding-desktop 0;
+
+        &-item {
+          width: 100%;
+
+          .content-image {
+            max-height: 200px;
+            min-height: 200px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-tablet-horizontal) {
+      .content-image {
+        max-height: 250px;
+        min-height: 250px;
+      }
+    }
+  }
+
+
 }
 
 .post {
@@ -721,7 +767,7 @@ select {
       }
     }
 
-    > .componentSpacing {
+    >.componentSpacing {
       &:first-child {
         margin-top: 0;
       }
