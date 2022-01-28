@@ -4,17 +4,26 @@
   }
 
   .gallery {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    column-gap: $container-padding-mobile;
+    columns: 2 500px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @media (max-width: $breakpoint-tablet-horizontal) {
+      columns: 2 200px;
+    }
+
+    @media (max-width: $breakpoint-mobile-horizontal) {
+      display: block;
+    }
 
     &-image {
-      padding: $gap 0 0;
-
-      @media (min-width: $breakpoint-mobile-horizontal) {
-        padding: $gap;
-        width: 50%;
-      }
+      display: inline-block;
+      flex-flow: row wrap;
+      margin: 0 $container-padding-mobile $container-padding-mobile 0;
+      width: 100%;
     }
   }
 }

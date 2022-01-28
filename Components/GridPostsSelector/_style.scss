@@ -1,5 +1,12 @@
 [is='flynt-grid-posts-selector'] {
-  // margin: $container-padding-desktop auto;
+  padding-bottom: 0;
+  padding-left: $container-padding-desktop;
+  padding-right: $container-padding-desktop;
+  padding-top: $container-padding-mobile;
+
+  &:first-child {
+    padding: $container-padding-desktop;
+  }
 
   .container {
     @media (max-width: $breakpoint-tablet-horizontal) {

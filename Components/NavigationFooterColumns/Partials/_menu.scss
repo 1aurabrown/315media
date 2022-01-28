@@ -1,24 +1,8 @@
 .list {
   @include reset-list;
-  @include grid(2);
-
-  &--col1 {
-    @include reset-grid;
-  }
-
-  @media (min-width: $breakpoint-tablet) {
-    padding-right: 5%;
-  }
-
-  @media (min-width: $breakpoint-tablet-horizontal) {
-    &--col3 {
-      @include grid(3);
-    }
-
-    &--col4 {
-      @include grid(4);
-    }
-  }
+  align-items: flex-end;
+  display: flex;
+  flex-flow: column wrap;
 
   &-item {
     @include reset-content-margins;

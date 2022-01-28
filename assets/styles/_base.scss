@@ -114,12 +114,13 @@ h6,
 }
 
 a {
-  color: $color-accent;
+  color: $black;
+  text-decoration: underline;
   transition: color 0.2s ease-out;
 
   &:hover,
   &:focus {
-    color: darken($color-accent, 10%);
+    text-decoration: none;
   }
 }
 
@@ -273,10 +274,10 @@ button {
 
 .button {
   appearance: none;
-  background-color: $color-accent;
-  border: 1px solid $color-accent;
+  background-color: $black;
+  border: 1px solid $black;
   border-radius: 4px;
-  color: $color-background;
+  color: $white;
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
@@ -299,9 +300,9 @@ button {
 
   &:hover,
   &:focus {
-    background-color: $color-background-dark;
-    border-color: $color-background-dark;
-    color: $color-background;
+    background-color: $white;
+    border-color: $black;
+    color: $black;
   }
 
   &--ghost {
@@ -560,7 +561,7 @@ select {
 
 .mainContent {
   flex: 1 0 auto;
-  margin-top: 0;
+  margin-top: 80px;
 }
 
 .home {
@@ -590,6 +591,10 @@ select {
 
 .componentPadding {
   padding: $container-padding-desktop;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: $container-padding-mobile;
+  }
 }
 
 .componentSpacing {
@@ -706,10 +711,8 @@ select {
 
   .post-related {
     border-top: 1px solid $black;
-    padding: $container-padding-desktop;
 
     @media (max-width: $breakpoint-mobile-horizontal) {
-      padding: $container-padding-desktop 0;
 
       .grid {
         align-items: center;
@@ -812,17 +815,17 @@ select {
   .button {
     &:hover,
     &:focus {
-      background-color: $color-background-hero;
-      border-color: $color-background-hero;
-      color: $color-background;
+      background-color: $black;
+      border-color: $black;
+      color: $white;
     }
 
     &--ghost {
       &:hover,
       &:focus {
         background-color: transparent;
-        border-color: $color-background-hero;
-        color: $color-background-hero;
+        border-color: $black;
+        color: $black;
       }
     }
 

@@ -1,11 +1,10 @@
 [is='flynt-navigation-footer-columns'] {
   @import 'Partials/menu';
-  padding-bottom: $component-spacing-mobile;
-  padding-top: $component-spacing-mobile;
+  border-top: 1px solid $black;
+  padding: $component-spacing-mobile;
 
   @media (min-width: $breakpoint-tablet) {
-    padding-bottom: $component-spacing-desktop;
-    padding-top: $component-spacing-desktop;
+    padding: $component-spacing-desktop;
   }
 
   + [is='flynt-navigation-footer'] .container {
@@ -18,36 +17,18 @@
     flex-direction: column;
 
     @media (min-width: $breakpoint-tablet) {
-      align-items: stretch;
+      align-items: flex-start;
       flex-direction: row;
-    }
-
-    &-menu {
-      align-self: flex-start;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-
-      @media (min-width: $breakpoint-tablet) {
-        justify-content: flex-start;
-        width: 66.66%;
-      }
-
-      @media (min-width: $breakpoint-tablet-horizontal) {
-        width: 75%;
-      }
+      justify-content: space-between;
     }
 
     &-info {
       display: flex;
       flex-direction: column;
       margin-top: 2.5rem;
-      text-align: center;
 
       @media (min-width: $breakpoint-tablet) {
         margin-top: 0;
-        text-align: right;
         width: 33.33%;
       }
 
@@ -55,17 +36,25 @@
         width: 25%;
       }
     }
+
+    &-menu {
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      width: 100%;
+    }
   }
 
   .logo {
     &-image {
       display: block;
-      margin: 0 auto;
+      margin: 0;
       max-width: 132px;
       width: auto;
 
       @media (min-width: $breakpoint-tablet) {
-        margin: 0 0 0 auto;
+        margin: 0;
       }
     }
   }

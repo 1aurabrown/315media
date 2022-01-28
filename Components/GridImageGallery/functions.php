@@ -27,9 +27,16 @@ function getACFLayout()
             ],
             [
                 'label' => __('Title', 'flynt'),
-                'name' => 'preContentHtml',
+                'name' => 'text',
                 'type' => 'wysiwyg',
                 'media_upload' => 0,
+            ],
+            [
+                'label' => __('Gallery', 'flynt'),
+                'name' => 'galleryTab',
+                'type' => 'tab',
+                'placement' => 'top',
+                'endpoint' => 0
             ],
             [
                 'label' => __('Images', 'flynt'),

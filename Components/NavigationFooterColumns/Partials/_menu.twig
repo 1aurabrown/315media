@@ -1,8 +1,8 @@
 <nav class="menu">
-  <ul class="list list--{{ items|length > 3 ? 'col4' : 'col' ~ items|length }}">
+  <ul class="list">
     {% for item in items %}
       <li class="list-item">
-        <h3 class="list-title">
+        <p class="list-title">
           {% if item.url|trim != '#' %}
             <a class="list-titleLink" href="{{ item.url }}" {{ item.target == '_blank' ? 'target="_blank" rel="nofollow noreferrer noopener"' }}>
               {{ item.title|e }}
@@ -10,7 +10,7 @@
           {% else %}
             {{ item.title|e }}
           {% endif %}
-        </h3>
+        </p>
         {% if item.children %}
           <ul class="childList">
             {% for child in item.children %}

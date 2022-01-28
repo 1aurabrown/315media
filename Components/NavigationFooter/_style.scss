@@ -2,10 +2,9 @@
   background-color: $white;
   border-top: 1px solid $black;
   font-size: 0.8rem;
+  padding: $container-padding-desktop;
 
   .container {
-    padding-bottom: $container-padding-desktop;
-    padding-top: $container-padding-desktop;
     text-align: center;
 
     @media (min-width: $breakpoint-tablet) {

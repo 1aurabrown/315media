@@ -1,9 +1,6 @@
-<div class="flyntComponent themeLight" is="flynt-navigation-footer-columns">
-  <div class="container centerMaxWidthContainer">
+<div class="flyntComponent" is="flynt-navigation-footer-columns">
+  <div class="container">
     <div class="columns">
-      <div class="columns-menu">
-        {% include "Partials/_menu.twig" with { items: menu.items } %}
-      </div>
       <div class="columns-info">
         <div class="logo">
           <img class="logo-image" src="{{ logo.src }}" alt="{{ logo.alt }}">
@@ -22,6 +19,9 @@
             </ul>
           {% endif %}
         </div>
+      </div>
+      <div class="columns-menu">
+        {% include "Partials/_menu.twig" with { items: menu.items } %}
       </div>
     </div>
   </div>

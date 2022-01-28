@@ -1,19 +1,16 @@
 [is='flynt-block-cookie-notice'] {
+  background-color: $white;
+  border-top: 1px solid $black;
   bottom: 0;
   display: none;
   left: 0;
+  padding: $container-padding-mobile;
   position: fixed;
   right: 0;
   z-index: 999;
 
-  .container {
-    padding-bottom: $container-padding-mobile;
-    padding-top: $container-padding-mobile;
-  }
-
   .content {
     @include reset-content-margins;
-    font-size: 0.8rem;
     padding-bottom: $container-padding-mobile;
   }
 
@@ -22,18 +19,25 @@
   }
 
   &.layoutBottom {
+    .button {
+      width: 100%;
+    }
+
     @media (min-width: $breakpoint-tablet) {
       .container {
-        align-items: center;
+        align-items: flex-end;
         display: flex;
         justify-content: space-between;
-        padding-bottom: 30px;
-        padding-top: 30px;
       }
 
       .content {
         padding-bottom: 0;
         padding-right: 30px;
+        width: 90%;
+      }
+
+      .button {
+        width: 5%;
       }
     }
   }
