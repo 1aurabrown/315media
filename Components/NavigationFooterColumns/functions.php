@@ -5,6 +5,7 @@ namespace Flynt\Components\NavigationFooterColumns;
 use Flynt\Utils\Asset;
 use Flynt\Utils\Options;
 use Flynt\ComponentManager;
+use Flynt\Shortcodes;
 use Timber;
 
 add_action('init', function () {
@@ -53,11 +54,29 @@ function getACFLayout()
 
 Options::addTranslatable('NavigationFooterColumns', [
     [
-        'label' => __('Social Content', 'flynt'),
+        'label' => __('Address', 'flynt'),
+        'name' => 'address',
+        'type' => 'text',
+        'wrapper' => [
+            'width' => 50
+        ]
+    ],
+    [
+        'label' => __('Phone', 'flynt'),
+        'name' => 'phone',
+        'type' => 'text',
+        'wrapper' => [
+            'width' => 50
+        ]
+    ],
+    [
+        'label' => __('Copyrights', 'flynt'),
         'name' => 'socialContentHtml',
         'type' => 'wysiwyg',
         'toolbar' => 'basic',
+        'tabs' => 'visual',
         'media_upload' => 0,
+        'default_value' => '©&nbsp;[year] [sitetitle]'
     ],
     [
         'label' => __('Social Platform', 'flynt'),
@@ -76,6 +95,8 @@ Options::addTranslatable('NavigationFooterColumns', [
                 'ajax' => 0,
                 'return_format' => 'array',
                 'choices' => [
+                    'mail' => 'Email',
+                    'vimeo' => 'Vimeo',
                     'facebook' => 'Facebook',
                     'instagram' => 'Instagram',
                     'twitter' => 'Twitter',
@@ -92,4 +113,42 @@ Options::addTranslatable('NavigationFooterColumns', [
             ],
         ]
     ],
+    [
+        'label' => __('Content Examples', 'flynt'),
+        'name' => 'templateTab',
+        'type' => 'tab',
+        'placement' => 'top',
+        'endpoint' => 0,
+    ],
+    [
+        'label' => __('Content Examples', 'flynt'),
+        'name' => 'groupContentExamples',
+        'instructions' => __('Want some content inspiration? Here they are!', 'flynt'),
+        'type' => 'group',
+        'sub_fields' => [
+            [
+                'label' => sprintf(__('© %s Website Name', 'flynt'), date_i18n('Y')),
+                'name' => 'messageShortcodeCopyrightYearWebsiteName',
+                'type' => 'message',
+                'message' => '<code>©' . htmlspecialchars('&nbsp;') . '[year] [sitetitle]</code>',
+                'new_lines' => 'wpautop',
+                'esc_html' => 0,
+                'wrapper' => [
+                    'width' => 50
+                ],
+            ],
+            [
+                'label' => sprintf(__('© %s Website Name — Subtitle', 'flynt'), date_i18n('Y')),
+                'name' => 'messageShortcodeCopyrightYearWebsiteNameTagLine',
+                'type' => 'message',
+                'message' => '<code>©' . htmlspecialchars('&nbsp;') . '[year] [sitetitle] ' . htmlspecialchars('&mdash;') . ' [tagline]</code>',
+                'new_lines' => 'wpautop',
+                'esc_html' => 0,
+                'wrapper' => [
+                    'width' => 50
+                ]
+            ]
+        ]
+    ],
+    Shortcodes\getShortcodeReference(),
 ]);

@@ -181,16 +181,13 @@ function getConfig()
             ],
             'basic' => [
                 [
-                    'bold',
                     'italic',
-                    'strikethrough',
                     '|',
                     'link',
                     'unlink',
                     '|',
                     'undo',
                     'redo',
-                    'fullscreen'
                 ]
             ]
         ]

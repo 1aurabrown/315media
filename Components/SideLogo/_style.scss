@@ -1,0 +1,124 @@
+[is='flynt-side-logo'] {
+  .logo {
+    &--big {
+      position: fixed;
+      right: 0;
+      top: 75vh;
+
+      .logo-image {
+        width: 150px;
+      }
+    }
+
+    &--small {
+      position: fixed;
+      right: 0;
+      top: 208px;
+
+      .logo-image {
+        width: 150px;
+      }
+    }
+
+    &--addRose {
+      animation-delay: 0;
+      animation-direction: normal;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-name: addrose;
+    }
+
+    &--noAnimation {
+      @media (max-width: $breakpoint-tablet-horizontal - 1) {
+        animation: unset !important;
+        transform: rotate(-15deg) translateX(111px) !important;
+      }
+    }
+
+    @keyframes addrose {
+      from {
+        transform: rotate(0) translateX(0);
+      }
+
+      to {
+        transform: rotate(-15deg) translateX(111px);
+      }
+    }
+
+    &--removeRose {
+      animation-delay: 0;
+      animation-direction: normal;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-name: removerose;
+    }
+
+    @keyframes removerose {
+      from {
+        transform: rotate(-15deg) translateX(111px);
+      }
+
+      to {
+        transform: rotate(0) translateX(0);
+      }
+    }
+
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      &--big {
+        position: fixed;
+        right: 0;
+        top: 306px;
+
+        .logo-image {
+          width: 361.25px;
+        }
+      }
+
+      &--small {
+        position: fixed;
+        right: 0;
+        top: 73px;
+
+        .logo-image {
+          width: 150px;
+        }
+      }
+
+      &--addRose {
+        animation-delay: 0;
+        animation-direction: normal;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-name: addrose;
+      }
+
+      @keyframes addrose {
+        from {
+          transform: rotate(0) translateX(0);
+        }
+
+        to {
+          transform: rotate(-15deg) translateX(111px);
+        }
+      }
+
+      &--removeRose {
+        animation-delay: 0;
+        animation-direction: normal;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-name: removerose;
+      }
+
+      @keyframes removerose {
+        from {
+          transform: rotate(-15deg) translateX(111px);
+        }
+
+        to {
+          transform: rotate(0) translateX(0);
+        }
+      }
+    }
+  }
+}

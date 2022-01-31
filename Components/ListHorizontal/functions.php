@@ -20,10 +20,7 @@ function getACFLayout()
             [
                 'label' => __('Title', 'flynt'),
                 'name' => 'preContentHtml',
-                'type' => 'wysiwyg',
-                'tabs' => 'visual,text',
-                'media_upload' => 0,
-                'delay' => 1
+                'type' => 'text',
             ],
             [
                 'label' => __('List Horizontal', 'flynt'),

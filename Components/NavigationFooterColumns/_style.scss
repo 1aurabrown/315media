@@ -1,10 +1,10 @@
 [is='flynt-navigation-footer-columns'] {
   @import 'Partials/menu';
-  border-top: 1px solid $black;
-  padding: $component-spacing-mobile;
+  background-color: $blue;
+  padding: $container-padding-desktop;
 
   @media (min-width: $breakpoint-tablet) {
-    padding: $component-spacing-desktop;
+    padding: $container-padding-desktop;
   }
 
   + [is='flynt-navigation-footer'] .container {
@@ -23,26 +23,33 @@
     }
 
     &-info {
+      color: $white;
       display: flex;
       flex-direction: column;
       margin-top: 2.5rem;
 
       @media (min-width: $breakpoint-tablet) {
         margin-top: 0;
-        width: 33.33%;
+        width: 85%;
       }
 
       @media (min-width: $breakpoint-tablet-horizontal) {
-        width: 25%;
+        width: 85%;
       }
     }
 
     &-menu {
       align-items: flex-start;
+      color: $white;
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-end;
+      justify-content: flex-start;
       width: 100%;
+
+      p {
+        font-size: 14px;
+        line-height: 1.3;
+      }
     }
   }
 
@@ -61,47 +68,99 @@
 
   .social {
     @include reset-content-margins;
-    margin-top: auto;
-    padding-top: 1.1rem;
+    margin-top: 0;
+
+    .address {
+      align-items: center;
+      box-sizing: content-box;
+      color: $white;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      padding-bottom: 20px;
+
+      svg {
+        margin-right: 12px;
+        width: fit-content;
+      }
+
+      address {
+        font-size: 16px;
+        line-height: 1.5;
+        width: 70%;
+      }
+    }
+
+    .phone {
+      align-items: center;
+      box-sizing: content-box;
+      color: $white;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      padding-bottom: 20px;
+
+      svg {
+        margin-right: 15px;
+        width: fit-content;
+      }
+
+      a {
+        color: $white;
+        font-size: 16px;
+        line-height: 1.5;
+        text-decoration: none;
+        width: 70%;
+      }
+    }
   }
 
   .socialList {
     @include reset-list;
+    align-items: flex-start;
     display: flex;
-    justify-content: center;
-
-    @media (min-width: $breakpoint-tablet) {
-      justify-content: flex-end;
-    }
+    flex-flow: column wrap;
+    justify-content: flex-start;
 
     svg {
+      margin-right: 15px;
       transition: color 0.2s ease;
+
+      path {
+        transition: color 0.2s ease;
+      }
     }
 
     &-link {
+      align-items: center;
       box-sizing: content-box;
-      display: block;
-      height: 16px;
-      padding: 6px;
+      color: $white;
+      display: flex;
+      flex-flow: row wrap;
+      font-size: 16px;
+      justify-content: flex-start;
+      line-height: 1.5;
+      text-decoration: none;
 
       &:hover,
       &:focus {
         svg {
-          color: $color-accent;
+          color: $white;
         }
       }
     }
 
     &-item {
       display: inline-block;
+      padding-bottom: 20px;
 
-      &:not(:last-child) {
-        margin-right: 5px;
+      &:last-child {
+        padding-bottom: 0;
       }
     }
 
     svg {
-      color: $color-text;
+      color: $white;
       display: block;
       height: 100%;
       max-width: 20px;

@@ -3,16 +3,25 @@
 {% block content %}
   <article class="post">
     <header class="post-header">
-      {{ renderComponent('BlockPostHeader', { post: post }) }}
+      {% for component in post.meta('postBannerComponents') %}
+        {{ renderComponent(component) }}
+      {% endfor %}
     </header>
     <section class="post-main">
-      {{ renderComponent('BlockPostMain', { post: post }) }}
-    </section>
-    <footer class="post-meta">
-      {{ renderComponent('BlockPostFooter', { post: post }) }}
-    </footer>
-    <section class="post-related">
-      {{ renderComponent('GridPostsLatest', {'preContentHtml': '<h2>' ~ __('Related Posts') ~ '</h2>','taxonomies': post.categories(), 'options': {'theme': 'themeLight', 'columns': 3}}) }}
+      <div class="container container_full meta componentPadding">
+        <div class="header">
+          <div class="post-subtitle h1">{{ post.client }}</div>
+          <div class="post-title h1">{{ post.title }}</div>
+        </div>
+        <div class="content">
+          {% if post.description|e('wp_kses_post') %}
+            {{ post.description|e('wp_kses_post') }}
+          {% endif %}
+        </div>
+      </div>
+      {% for component in post.meta('postComponents') %}
+        {{ renderComponent(component) }}
+      {% endfor %}
     </section>
   </article>
 {% endblock %}

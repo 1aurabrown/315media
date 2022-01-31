@@ -1,0 +1,11 @@
+<div class="flyntComponent" is="flynt-side-logo">
+  {% if fn('is_front_page') %}
+  <a class="logo logo--big logo--removeRose" href="{{ site.link }}" aria-label="home">
+    <img class="logo-image" src="{{ logo|e }}" alt="{{ logo.alt }}">
+  </a>
+  {% else %}
+   <a class="logo logo--small logo--removeRose logo--noAnimation" href="{{ site.link }}" aria-label="home">
+    <img class="logo-image" src="{{ logo|e }}" alt="{{ logo.alt }}">
+  </a>
+  {% endif %}
+</div>

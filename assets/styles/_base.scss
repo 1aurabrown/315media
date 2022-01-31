@@ -5,12 +5,18 @@
 */
 
 @include font-face('GTAmericaRegular', 'GT-America-Standard-Regular', '400', 'regular');
+@include font-face('GTCinetypeRegular', 'GT-Cinetype-Regular', '400', 'regular');
+@include font-face('GTCinetypeLightItalic', 'GT-Cinetype-Light-Italic', '300', 'italic');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;1,300&display=swap');
+
+
 
 html {
   background-color: $color-background;
   box-sizing: border-box;
   color: $color-text;
-  font-family: 'GTAmericaRegular', Helvetica, Arial, sans-serif;
+  font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
+  // font-family: 'IBM Plex Sans', sans-serif;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -561,13 +567,13 @@ select {
 
 .mainContent {
   flex: 1 0 auto;
-  margin-top: 80px;
+  // margin-top: 80px;
 }
 
 .home {
   .mainContent {
     flex: 1 0 auto;
-    margin-top: 80px;
+    // margin-top: 80px;
   }
 }
 
@@ -701,11 +707,34 @@ select {
 /* Custom styling for single post layouts */
 
 .single {
+  // .flyntComponent--navigation {
+  //   display: none;
+  // }
+
   .mainContent {
     @media (min-width: $breakpoint-tablet-horizontal) {
       flex: 1 0 auto;
       margin-bottom: 20px;
-      margin-top: 80px;
+      // margin-top: 80px;
+      
+      .post-main {
+        .meta {
+          .post-title {
+            font-family: 'GTCinetypeLightItalic', Helvetica, Arial, sans-serif;
+          }
+
+          .post-subtitle {
+            font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
+          }
+
+          .content {
+            font-size: 24px;
+            letter-spacing: 1.7%;
+            line-height: 36px;
+            max-width: 75%;
+          }
+        }
+      }
     }
   }
 
@@ -713,7 +742,6 @@ select {
     border-top: 1px solid $black;
 
     @media (max-width: $breakpoint-mobile-horizontal) {
-
       .grid {
         align-items: center;
         display: flex;

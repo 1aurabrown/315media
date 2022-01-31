@@ -1,0 +1,15 @@
+[is='flynt-block-footer-contact'] {
+  border-top: 1px solid $black;
+
+  .content {
+    @include reset-content-margins;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0 auto;
+    max-width: $content-max-width;
+    text-align: center;
+
+    a {
+      color: $blue;
+    }
+  }
+}

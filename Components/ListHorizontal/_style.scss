@@ -1,4 +1,13 @@
 [is='flynt-list-horizontal'] {
+  .preContent {
+    color: $blue;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
   .list {
     @include reset-list-flex;
     flex-flow: row wrap;
@@ -6,16 +15,12 @@
     .item {
       margin-right: 10px;
 
-      // &:after {
-      //   content: ',';
-      //   font-size: 2.75rem;
-      // }
+      &:nth-child(odd) {
+        font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
+      }
 
-      &:last-child {
-        // &:after {
-        //   content: ',';
-        //   display: none;
-        // }
+      &:nth-child(even) {
+        font-family: 'GTCinetypeLightItalic', Helvetica, Arial, sans-serif;
       }
 
       a {

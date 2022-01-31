@@ -1,11 +1,11 @@
 <?php
 
-namespace Flynt\Components\HeroVideo;
+namespace Flynt\Components\HeroVideoHome;
 
 use Flynt\FieldVariables;
 use Flynt\Utils\Oembed;
 
-add_filter('Flynt/addComponentData?name=HeroVideo', function ($data) {
+add_filter('Flynt/addComponentData?name=HeroVideoHome', function ($data) {
     $data['video'] = Oembed::setSrcAsDataAttribute(
         $data['oembed'],
         [
@@ -29,8 +29,8 @@ add_filter('Flynt/addComponentData?name=HeroVideo', function ($data) {
 function getACFLayout()
 {
     return [
-        'name' => 'HeroVideo',
-        'label' => 'Hero: Video',
+        'name' => 'HeroVideoHome',
+        'label' => 'Hero: Video Home',
         'sub_fields' => [
             [
                 'label' => __('Video', 'flynt'),

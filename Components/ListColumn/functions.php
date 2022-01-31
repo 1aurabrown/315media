@@ -26,10 +26,17 @@ function getACFLayout()
                 'button_label' => __('Add List', 'flynt'),
                 'sub_fields' => [
                     [
+                        'label' => __('Column Title', 'flynt'),
+                        'name' => 'columnTitle',
+                        'type' => 'text',
+                    ],
+                    [
                         'label' => __('List', 'flynt'),
                         'name' => 'list',
                         'type' => 'wysiwyg',
-                        'delay' => 1,
+                        'toolbar' => 'basic',
+                        'tabs' => 'visual',
+                        'delay' => 0,
                         'media_upload' => 0,
                         'required' => 0,
                     ],

@@ -1,4 +1,4 @@
-[is='flynt-hero-video'] {
+[is='flynt-hero-video-home'] {
   .video {
     margin: 0 auto;
     position: relative;
@@ -17,14 +17,7 @@
   
     &-player {
       height: 0;
-      padding-bottom: 42.25%; // 2:1
-      // padding-bottom: 56.25%; // 16:9
-      // padding-bottom: 62.5%; // 8:5
-      // padding-bottom: 66.66%; // 3:2
-      // padding-bottom: 75%; // 4:3
-      
-      	
-      	
+      padding-bottom: 56.25%;
       position: absolute;
       top: 0;
       width: 100%;
