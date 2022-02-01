@@ -56,6 +56,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockSpacer\getACFLayout(),
                     Components\BlockWysiwyg\getACFLayout(),
                     Components\GridImageGallery\getACFLayout(),
+                    Components\GridMediaGallery\getACFLayout(),
                     Components\HeroVideo\getACFLayout(),
                     Components\ListColumn\getACFLayout(),
                     Components\SliderImages\getACFLayout(),

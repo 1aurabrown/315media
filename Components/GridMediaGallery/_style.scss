@@ -1,0 +1,44 @@
+[is='flynt-grid-media-gallery'] {
+  .figure {
+    margin: 0;
+  }
+
+  .gallery {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @media (max-width: $breakpoint-mobile-horizontal) {
+      display: block;
+    }
+
+    &-item {
+      height: calc((100vw - 180px) / 3);
+
+      &--one-third {
+        width: calc((100vw - 180px) / 3);
+      }
+
+      &--two-third {
+        width: calc((100vw - 180px) / 1.5);
+      }
+
+      &--three-third {
+        height: 100%;
+        width: calc(100vw - 140px);
+      }
+
+      img {
+        display: block;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+}

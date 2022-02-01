@@ -1,0 +1,16 @@
+<div class="flyntComponent componentPadding" is="flynt-grid-media-gallery">
+  <div class="gallery">
+    {% for panel in repeaterGallery %}
+      {% if panel.panelImage %}
+        <figure class="figure gallery-item gallery-item--{{ panel.panelImageWidth }}">
+          <img class="figure-image lazyload" src="{{ panel.panelImage.src|resizeDynamic(0, 540) }}" alt="{{ panel.panelImage.alt|e }}">
+        </figure>
+        {% endif %}
+        {% if panel.panelVideo %}
+          <video class="gallery-item gallery-item--{{ panel.panelVideoWidth }}" controls>
+            <source type="video/mp4" src="{{ panel.panelVideo }}">
+          </video>
+        {% endif %}
+    {% endfor %}
+  </div>
+</div>
