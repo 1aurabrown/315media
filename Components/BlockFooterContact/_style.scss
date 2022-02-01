@@ -3,13 +3,28 @@
 
   .content {
     @include reset-content-margins;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'IBMRegular', Helvetica, Arial, sans-serif;
+    font-size: 2.813rem;
+    letter-spacing: 1px;
+    line-height: 3.656rem;
     margin: 0 auto;
-    max-width: $content-max-width;
     text-align: center;
+
+    @media (max-width: $breakpoint-mobile-horizontal) {
+      font-size: 1.875rem;
+      letter-spacing: 0;
+      line-height: 2.813rem;
+    }
 
     a {
       color: $blue;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        cursor: url('/wp-content/uploads/2022/02/cursor-blue.png'), auto;
+        text-decoration: underline;
+      }
     }
   }
 }

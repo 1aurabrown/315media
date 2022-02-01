@@ -24,6 +24,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockSpacer\getACFLayout(),
                     Components\BlockVideoOembed\getACFLayout(),
                     Components\BlockWysiwyg\getACFLayout(),
+                    Components\BlockWysiwygQuote\getACFLayout(),
                     Components\BlockWysiwygSidebar\getACFLayout(),
                     Components\BlockWysiwygTwoCol\getACFLayout(),
                     Components\FormContactForm7\getACFLayout(),

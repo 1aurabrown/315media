@@ -1,11 +1,18 @@
 [is='flynt-list-horizontal'] {
   .preContent {
     color: $blue;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'IBMRegular', Helvetica, Arial, sans-serif;
     font-size: 1rem;
-    line-height: 1.35;
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 21.6px;
     margin-bottom: 20px;
     text-transform: uppercase;
+
+    @media (max-width: $breakpoint-mobile-horizontal) {
+      font-size: 0.875rem;
+      line-height: 1.181rem;
+    }
   }
 
   .list {
@@ -13,7 +20,14 @@
     flex-flow: row wrap;
 
     .item {
+      font-size: 2.625rem;
+      line-height: 3.544rem;
       margin-right: 10px;
+
+      @media (max-width: $breakpoint-mobile-horizontal) {
+        font-size: 1.5rem;
+        line-height: 2.025rem;
+      }
 
       &:nth-child(odd) {
         font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
@@ -25,6 +39,12 @@
 
       a {
         text-decoration: none;
+
+        &:hover,
+        &:focus {
+          cursor: url('/wp-content/uploads/2022/02/cursor-black.png'), auto;
+          text-decoration: none;
+        }
       }
     }
   }

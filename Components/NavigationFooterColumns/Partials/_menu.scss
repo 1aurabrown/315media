@@ -28,7 +28,9 @@
 
     &:hover,
     &:focus {
-      color: $color-accent;
+      color: $white;
+      cursor: url('/wp-content/uploads/2022/02/cursor-white.png'), auto;
+      text-decoration: none;
     }
   }
 

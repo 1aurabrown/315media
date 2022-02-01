@@ -7,7 +7,9 @@
 @include font-face('GTAmericaRegular', 'GT-America-Standard-Regular', '400', 'regular');
 @include font-face('GTCinetypeRegular', 'GT-Cinetype-Regular', '400', 'regular');
 @include font-face('GTCinetypeLightItalic', 'GT-Cinetype-Light-Italic', '300', 'italic');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;1,300&display=swap');
+@include font-face('IBMRegular', 'IBMPlexSans-Regular', '400', 'regular');
+@include font-face('IBMLight', 'IBMPlexSans-Light', '300', 'regular');
+@include font-face('IBMLightItalic', 'IBMPlexSans-LightItalic', '300', 'italic');
 
 
 
@@ -16,7 +18,6 @@ html {
   box-sizing: border-box;
   color: $color-text;
   font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
-  // font-family: 'IBM Plex Sans', sans-serif;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -134,12 +135,7 @@ p,
 .paragraph,
 table,
 figure {
-  font-size: 1.25rem;
   margin: 0;
-
-  @media (min-width: $breakpoint-mobile-horizontal) {
-    font-size: 2.25rem;
-  }
 }
 
 hr {
@@ -712,26 +708,45 @@ select {
   // }
 
   .mainContent {
-    @media (min-width: $breakpoint-tablet-horizontal) {
-      flex: 1 0 auto;
-      margin-bottom: 20px;
-      // margin-top: 80px;
-      
-      .post-main {
-        .meta {
-          .post-title {
-            font-family: 'GTCinetypeLightItalic', Helvetica, Arial, sans-serif;
-          }
+    flex: 1 0 auto;
+    margin-bottom: 20px;
+    
+    .post-main {
+      .meta {
+        .post-title {
+          font-family: 'GTCinetypeLightItalic', Helvetica, Arial, sans-serif;
+          font-size: 2.625rem;
+          line-height: 3.563rem;
 
-          .post-subtitle {
-            font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
+          @media (max-width: $breakpoint-mobile-horizontal) {
+            font-size: 1.75rem;
+            line-height: 2.363rem;
           }
+        }
 
-          .content {
-            font-size: 24px;
-            letter-spacing: 1.7%;
-            line-height: 36px;
-            max-width: 75%;
+        .post-subtitle {
+          font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
+          font-size: 2.625rem;
+          line-height: 3.563rem;
+
+          @media (max-width: $breakpoint-mobile-horizontal) {
+            font-size: 1.75rem;
+            line-height: 2.363rem;
+          }
+        }
+
+        .content {
+          font-family: 'IBMLight', Helvetica, Arial, sans-serif;
+          font-size: 1.5rem;
+          letter-spacing: 0.5px;
+          line-height: 2.25rem;
+          margin-top: 50px;
+          max-width: 75%;
+
+          @media (max-width: $breakpoint-mobile-horizontal) {
+            font-size: 1.25rem;
+            line-height: 1.875rem;
+            max-width: 100%;
           }
         }
       }
@@ -806,6 +821,35 @@ select {
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+}
+
+/* Custom styling for specific pages layouts */
+
+.page-privacy-policy {
+  .mainHeader {
+    .wrapper {
+      background-color: $white;
+      display: block;
+
+      .container {
+        border-bottom: 1px solid $blue;
+      }
+    }
+
+    .logo {
+      .logoHeader {
+        fill: $blue;
+      }
+    }
+  }
+
+  .mainContent {
+    margin-top: 100px;
+
+    @media (max-width: $breakpoint-mobile-horizontal) {
+      margin-top: 50px;
     }
   }
 }
