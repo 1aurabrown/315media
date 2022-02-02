@@ -1,0 +1,43 @@
+/**
+* Grid Mixin
+*
+* Applies a flexbox grid to a container element. All direct children will be modified to create a column based grid.
+*/
+/* Backend Component Screenshots */
+.flyntComponentScreenshot {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  bottom: 5px;
+  display: inline-block;
+  height: 36px;
+  margin-left: 5px;
+  padding: 2px;
+  position: absolute; }
+  .flyntComponentScreenshot-imageWrapper {
+    bottom: 0;
+    position: absolute;
+    right: 100%; }
+  .flyntComponentScreenshot-image {
+    background: #fff;
+    border: 3px solid #333739;
+    border-radius: 3px;
+    bottom: 0;
+    display: block;
+    height: 250px;
+    max-width: 500px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    position: absolute;
+    right: 20px; }
+  .flyntComponentScreenshot-imageElement {
+    display: block;
+    width: auto; }
+  .flyntComponentScreenshot-label {
+    bottom: 4px;
+    left: 100%;
+    padding-left: 8px;
+    position: absolute;
+    white-space: nowrap; }
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vYXNzZXRzL2FkbWluLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Q0FJQztBQUNELGtDQUFrQztBQUNsQztFQUNFLHNCQUFzQjtFQUN0Qix5QkFBeUI7RUFDekIsV0FBVztFQUNYLHFCQUFxQjtFQUNyQixZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLFlBQVk7RUFDWixrQkFBa0IsRUFBRTtFQUNwQjtJQUNFLFNBQVM7SUFDVCxrQkFBa0I7SUFDbEIsV0FBVyxFQUFFO0VBQ2Y7SUFDRSxnQkFBZ0I7SUFDaEIseUJBQXlCO0lBQ3pCLGtCQUFrQjtJQUNsQixTQUFTO0lBQ1QsY0FBYztJQUNkLGFBQWE7SUFDYixnQkFBZ0I7SUFDaEIsc0JBQW1CO09BQW5CLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsV0FBVyxFQUFFO0VBQ2Y7SUFDRSxjQUFjO0lBQ2QsV0FBVyxFQUFFO0VBQ2Y7SUFDRSxXQUFXO0lBQ1gsVUFBVTtJQUNWLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsbUJBQW1CLEVBQUUiLCJmaWxlIjoiYXNzZXRzL2FkbWluLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuKiBHcmlkIE1peGluXG4qXG4qIEFwcGxpZXMgYSBmbGV4Ym94IGdyaWQgdG8gYSBjb250YWluZXIgZWxlbWVudC4gQWxsIGRpcmVjdCBjaGlsZHJlbiB3aWxsIGJlIG1vZGlmaWVkIHRvIGNyZWF0ZSBhIGNvbHVtbiBiYXNlZCBncmlkLlxuKi9cbi8qIEJhY2tlbmQgQ29tcG9uZW50IFNjcmVlbnNob3RzICovXG4uZmx5bnRDb21wb25lbnRTY3JlZW5zaG90IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgYm9yZGVyOiAxcHggc29saWQgI2UxZTFlMTtcbiAgYm90dG9tOiA1cHg7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAzNnB4O1xuICBtYXJnaW4tbGVmdDogNXB4O1xuICBwYWRkaW5nOiAycHg7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTsgfVxuICAuZmx5bnRDb21wb25lbnRTY3JlZW5zaG90LWltYWdlV3JhcHBlciB7XG4gICAgYm90dG9tOiAwO1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICByaWdodDogMTAwJTsgfVxuICAuZmx5bnRDb21wb25lbnRTY3JlZW5zaG90LWltYWdlIHtcbiAgICBiYWNrZ3JvdW5kOiAjZmZmO1xuICAgIGJvcmRlcjogM3B4IHNvbGlkICMzMzM3Mzk7XG4gICAgYm9yZGVyLXJhZGl1czogM3B4O1xuICAgIGJvdHRvbTogMDtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBoZWlnaHQ6IDI1MHB4O1xuICAgIG1heC13aWR0aDogNTAwcHg7XG4gICAgb2JqZWN0LWZpdDogY29udGFpbjtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgcmlnaHQ6IDIwcHg7IH1cbiAgLmZseW50Q29tcG9uZW50U2NyZWVuc2hvdC1pbWFnZUVsZW1lbnQge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIHdpZHRoOiBhdXRvOyB9XG4gIC5mbHludENvbXBvbmVudFNjcmVlbnNob3QtbGFiZWwge1xuICAgIGJvdHRvbTogNHB4O1xuICAgIGxlZnQ6IDEwMCU7XG4gICAgcGFkZGluZy1sZWZ0OiA4cHg7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7IH1cbiJdLCJzb3VyY2VSb290IjoiIn0=*/
