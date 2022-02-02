@@ -62,4 +62,4 @@ class NavigationMainMobile extends window.HTMLElement {
   }
 }
 
-window.customElements.define('flynt-navigation-main', NavigationMainMobile, { extends: 'nav' })
+window.customElements.define('flynt-navigation-main-mobile', NavigationMainMobile, { extends: 'nav' })
