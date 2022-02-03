@@ -26,14 +26,32 @@ function getACFLayout()
                         'return_format' => 'array',
                         'preview_size' => 'medium',
                         'library' => 'all',
-                        'conditional_logic' => [
-                            [
-                                [
-                                    'fieldPath' => 'panelVideo',
-                                    'operator' => '==empty',
-                                ]
-                            ]
+                        // 'conditional_logic' => [
+                        //     [
+                        //         [
+                        //             'fieldPath' => 'panelVideo',
+                        //             'operator' => '==empty',
+                        //         ]
+                        //     ]
+                        // ],
+                        'wrapper' => [
+                            'width' => '50',
                         ],
+                    ],
+                    [
+                        'label' => __('Video', 'flynt'),
+                        'name' => 'panelVideo',
+                        'type' => 'file',
+                        'return_format' => 'url',
+                        'mime_types' => 'mp4',
+                        // 'conditional_logic' => [
+                        //     [
+                        //         [
+                        //             'fieldPath' => 'panelImage',
+                        //             'operator' => '==empty',
+                        //         ]
+                        //     ]
+                        // ],
                         'wrapper' => [
                             'width' => '50',
                         ],
@@ -48,32 +66,14 @@ function getACFLayout()
                             'three-third' => '3/3',
                         ],
                         'default_value' => '1/3',
-                        'conditional_logic' => [
-                            [
-                                [
-                                    'fieldPath' => 'panelImage',
-                                    'operator' => '!=empty',
-                                ]
-                            ]
-                        ],
-                        'wrapper' => [
-                            'width' => '50',
-                        ],
-                    ],
-                    [
-                        'label' => __('Video', 'flynt'),
-                        'name' => 'panelVideo',
-                        'type' => 'file',
-                        'return_format' => 'url',
-                        'mime_types' => 'mp4',
-                        'conditional_logic' => [
-                            [
-                                [
-                                    'fieldPath' => 'panelImage',
-                                    'operator' => '==empty',
-                                ]
-                            ]
-                        ],
+                        // 'conditional_logic' => [
+                        //     [
+                        //         [
+                        //             'fieldPath' => 'panelImage',
+                        //             'operator' => '!=empty',
+                        //         ]
+                        //     ]
+                        // ],
                         'wrapper' => [
                             'width' => '50',
                         ],
@@ -88,14 +88,14 @@ function getACFLayout()
                             'three-third' => '3/3',
                         ],
                         'default_value' => '1/3',
-                        'conditional_logic' => [
-                            [
-                                [
-                                    'fieldPath' => 'panelVideo',
-                                    'operator' => '!=empty',
-                                ]
-                            ]
-                        ],
+                        // 'conditional_logic' => [
+                        //     [
+                        //         [
+                        //             'fieldPath' => 'panelVideo',
+                        //             'operator' => '!=empty',
+                        //         ]
+                        //     ]
+                        // ],
                         'wrapper' => [
                             'width' => '50',
                         ],
