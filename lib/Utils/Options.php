@@ -8,7 +8,7 @@ class Options
 {
     const OPTION_TYPES = [
         'translatable' => [
-            'title' => 'Translatable Options',
+            'title' => 'Global Text',
             'icon' => 'dashicons-translation',
             'translatable' => true
         ],

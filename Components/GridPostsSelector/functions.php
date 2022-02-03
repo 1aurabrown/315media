@@ -21,24 +21,8 @@ function getACFLayout()
 {
     return [
         'name' => 'GridPostsSelector',
-        'label' => 'Grid: Posts Selector',
+        'label' => 'Project',
         'sub_fields' => [
-            [
-                'label' => __('Title', 'flynt'),
-                'name' => 'titleTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0
-            ],
-            [
-                'label' => __('Title', 'flynt'),
-                'name' => 'preContentHtml',
-                'type' => 'wysiwyg',
-                'tabs' => 'visual',
-                'media_upload' => 0,
-                'delay' => 1,
-                'instructions' => __('Want to add a headline? And a paragraph? Go ahead! Or just leave it empty and nothing will be shown.', 'flynt'),
-            ],
             [
                 'label' => __('Content Selection', 'flynt'),
                 'name' => 'contentSelectionTab',
@@ -47,52 +31,55 @@ function getACFLayout()
                 'endpoint' => 0
             ],
             [
-                'label' => __('Post', 'flynt'),
+                'label' => __('Project', 'flynt'),
                 'name' => 'post',
-                'type' => 'relationship',
-                'post_type' => [
-                    'post',
+                'type' => 'post_object',
+                'wrapper' => [
+                    'width' => '50',
                 ],
-                'filters' => array(
-                    0 => 'search',
-                    1 => 'post_type',
-                    2 => 'taxonomy',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-                'return_format' => 'post_object',
-                'ui' => 1,
-                'min' => 1,
-                'max' => 2,
-                'required' => 0,
             ],
             [
-                'label' => __('Options', 'flynt'),
-                'name' => 'optionsTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0
+                'label' => __('Project Width', 'flynt'),
+                'name' => 'projectWidth',
+                'type' => 'select',
+                'choices' => [
+                    'one-third' => '1/3',
+                    'two-third' => '2/3',
+                    'three-third' => '3/3',
+                ],
+                'default_value' => '1/3',
+                'wrapper' => [
+                    'width' => '50',
+                ],
             ],
-            [
-                'label' => '',
-                'name' => 'options',
-                'type' => 'group',
-                'layout' => 'block',
-                'sub_fields' => [
-                    [
-                        'label' => __('Layout', 'flynt'),
-                        'name' => 'layout',
-                        'type' => 'select',
-                        'choices' => [
-                            '1' => '1',
-                            '1-1' => '1-1',
-                            '1-2' => '1-2',
-                            '2-1' => '2-1',
-                        ],
-                        'default_value' => '1-1'
-                    ]
-                ]
-            ]
+            // [
+            //     'label' => __('Clients', 'flynt'),
+            //     'name' => 'clientsTab',
+            //     'type' => 'tab',
+            //     'placement' => 'top',
+            //     'endpoint' => 0
+            // ],
+            // [
+            //     'label' => __('Title', 'flynt'),
+            //     'name' => 'preContentHtml',
+            //     'type' => 'text',
+            // ],
+            // [
+            //     'label' => __('Featured Clients', 'flynt'),
+            //     'name' => 'listHorizontal',
+            //     'type' => 'repeater',
+            //     'layout' => 'row',
+            //     'min' => 1,
+            //     'button_label' => __('Add Client', 'flynt'),
+            //     'sub_fields' => [
+            //         [
+            //             'label' => __('Title', 'flynt'),
+            //             'name' => 'title',
+            //             'type' => 'link',
+            //             'return_format' => 'array'
+            //         ],
+            //     ],
+            // ]
         ]
     ];
 }

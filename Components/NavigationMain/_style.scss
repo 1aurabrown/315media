@@ -26,6 +26,10 @@
 
     &--backgroundWhite {
       background-color: $white;
+
+      .menu-link {
+        color: $blue;
+      }
     }
   }
 
@@ -76,14 +80,14 @@
     margin-right: -18px;
     padding-left: 36px;
 
-    &-item--current {
-      .menu-link {
-        color: $blue;
-      }
-    }
+    // &-item--current {
+    //   .menu-link {
+    //     color: $white;
+    //   }
+    // }
 
     &-link {
-      color: $blue;
+      color: $white;
       display: inline-block;
       font-size: 1.8rem;
       padding: 0 18px;
@@ -93,7 +97,7 @@
       &:hover,
       &:focus {
         color: $blue;
-        cursor: url('/wp-content/uploads/2022/02/cursor-blue.png'), auto;
+        cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='%230060FF'/></svg>"), auto;      
       }
     }
   }

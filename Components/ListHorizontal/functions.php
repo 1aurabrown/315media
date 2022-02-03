@@ -8,7 +8,7 @@ function getACFLayout()
 {
     return [
         'name' => 'ListHorizontal',
-        'label' => 'List: Horizontal',
+        'label' => 'Clients List',
         'sub_fields' => [
             [
                 'label' => __('General', 'flynt'),

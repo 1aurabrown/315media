@@ -8,7 +8,7 @@ function getACFLayout()
 {
     return [
         'name' => 'ListColumn',
-        'label' => 'List: Column',
+        'label' => 'Project Links',
         'sub_fields' => [
             [
                 'label' => __('General', 'flynt'),

@@ -1,0 +1,12 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  {% for component in post.meta('pageComponents') %}
+    {{ renderComponent(component) }}
+  {% endfor %}
+  <ul class="featured-projects">
+  {% for component in post.meta('pagehomeComponents') %}
+    {{ renderComponent(component) }}
+  {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,13 +1,4 @@
 [is='flynt-grid-posts-selector'] {
-  padding-bottom: 0;
-  padding-left: $container-padding-desktop;
-  padding-right: $container-padding-desktop;
-  padding-top: $container-padding-mobile;
-
-  &:first-child {
-    padding: $container-padding-desktop;
-  }
-
   .container {
     @media (max-width: $breakpoint-tablet-horizontal) {
       display: flex;
@@ -15,54 +6,38 @@
       padding: 0;
     }
 
-    .allPostsLink {
-      align-items: center;
-      display: flex;
-      margin-bottom: $container-padding-desktop;
-      margin-left: 10px;
-      margin-right: $container-padding-desktop;
-      margin-top: $container-padding-desktop;
-
-      &::after {
-        color: currentColor;
-        content: '>';
-        margin-left: 10px;
-      }
-    }
-
     .grid {
-      @include reset-list;
-      column-gap: $gap;
-      display: grid;
-      grid-auto-rows: auto;
-      grid-template-columns: 1fr 1fr;
-      margin: 0 auto;
-      row-gap: $gap;
+      display: flex;
+      flex-flow: row wrap;
+      gap: 40px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
 
-      &--layout1-1 {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      &--layout1-2 {
-        grid-template-columns: 1fr 2fr;
-      }
-
-      &--layout2-1 {
-        grid-template-columns: 2fr 1fr;
-      }
-
-      &--layout1 {
-        grid-template-columns: 1fr;
+      @media (max-width: $breakpoint-mobile-horizontal) {
+        display: block;
       }
     }
 
     .grid-item {
-      width: 100%;
+      img {
+        display: block;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
 
       .content-link {
+        height: 100%;
         position: relative;
         text-align: center;
         text-decoration: none;
+
+        &:hover {
+          cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='white'/></svg>"), auto;
+        }
       }
 
       .content {
@@ -72,10 +47,6 @@
         height: 100%;
 
         &-image {
-          height: fit-content;
-          max-height: 400px;
-          min-height: 400px;
-          object-fit: cover;
           width: 100%;
         }
 
@@ -90,12 +61,21 @@
         }
 
         .content-title {
+          color: $white;
+          font-family: 'IBMLightItalic', Helvetica, Arial, sans-serif;
+          font-size: 24px;
+          letter-spacing: 0.017em;
+          line-height: 150%;
           margin-bottom: 0;
           padding-top: 0;
         }
 
         .content-subtitle {
-          font-style: italic;
+          color: $white;
+          font-family: 'IBMRegular', Helvetica, Arial, sans-serif;
+          font-size: 24px;
+          letter-spacing: 0.017em;
+          line-height: 150%;
           margin-bottom: 0;
           padding-top: 0;
         }
