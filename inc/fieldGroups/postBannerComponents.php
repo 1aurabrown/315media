@@ -41,16 +41,17 @@ add_action('Flynt/afterRegisterComponents', function () {
     // ]);
     ACFComposer::registerFieldGroup([
         'name' => 'postBannerComponents',
-        'title' => 'Banner Components',
+        'title' => 'Banner',
         'style' => 'seamless',
         'fields' => [
             [
                 'name' => 'postBannerComponents',
-                'label' => __('Banner Components', 'flynt'),
+                'label' => __('Banner', 'flynt'),
                 'type' => 'flexible_content',
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
                     Components\HeroVideo\getACFLayout(),
+                    Components\BlockImage\getACFLayout(),
                 ],
             ],
         ],

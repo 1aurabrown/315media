@@ -1,5 +1,10 @@
 [is='flynt-list-horizontal'] {
+  padding: 120px 0;
   width: 100%;
+
+  @media (max-width: $breakpoint-mobile-horizontal) {
+    padding: 50px 0;
+  }
   
   .preContent {
     color: $blue;
@@ -37,6 +42,7 @@
 
       &:nth-child(even) {
         font-family: 'GTCinetypeLightItalic', Helvetica, Arial, sans-serif;
+        font-style: italic;
       }
 
       a {

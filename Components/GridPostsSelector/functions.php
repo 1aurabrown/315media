@@ -52,34 +52,6 @@ function getACFLayout()
                     'width' => '50',
                 ],
             ],
-            // [
-            //     'label' => __('Clients', 'flynt'),
-            //     'name' => 'clientsTab',
-            //     'type' => 'tab',
-            //     'placement' => 'top',
-            //     'endpoint' => 0
-            // ],
-            // [
-            //     'label' => __('Title', 'flynt'),
-            //     'name' => 'preContentHtml',
-            //     'type' => 'text',
-            // ],
-            // [
-            //     'label' => __('Featured Clients', 'flynt'),
-            //     'name' => 'listHorizontal',
-            //     'type' => 'repeater',
-            //     'layout' => 'row',
-            //     'min' => 1,
-            //     'button_label' => __('Add Client', 'flynt'),
-            //     'sub_fields' => [
-            //         [
-            //             'label' => __('Title', 'flynt'),
-            //             'name' => 'title',
-            //             'type' => 'link',
-            //             'return_format' => 'array'
-            //         ],
-            //     ],
-            // ]
         ]
     ];
 }

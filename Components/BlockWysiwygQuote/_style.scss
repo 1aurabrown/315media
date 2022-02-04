@@ -1,4 +1,10 @@
 [is='flynt-block-wysiwyg-quote'] {
+  padding: 120px $container-padding-desktop;
+
+  @media (max-width: $breakpoint-mobile-horizontal) {
+    padding: 50px $container-padding-mobile;
+  }
+
   .content {
     @include reset-content-margins;
     font-family: 'IBMRegular', Helvetica, Arial, sans-serif;

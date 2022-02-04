@@ -19,9 +19,11 @@
           {% endif %}
         </div>
       </div>
+      <ul class="media-gallery">
       {% for component in post.meta('postComponents') %}
         {{ renderComponent(component) }}
       {% endfor %}
+      </ul>
     </section>
   </article>
 {% endblock %}

@@ -81,7 +81,7 @@
       margin: 50px 0;
     }
 
-    .address {
+    &-contact {
       align-items: center;
       box-sizing: content-box;
       color: $white;
@@ -103,20 +103,15 @@
         line-height: 1.5rem;
         width: 70%;
       }
-    }
 
-    .phone {
-      align-items: center;
-      box-sizing: content-box;
-      color: $white;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-      padding-bottom: 20px;
-
-      svg {
-        margin-right: 15px;
-        width: 18px;
+      .phone {
+        align-items: center;
+        box-sizing: content-box;
+        color: $white;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        padding-bottom: 20px;
       }
 
       a {
@@ -132,7 +127,7 @@
         &:focus {
           cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='white'/></svg>"), auto;
           text-decoration: none;
-  
+
           svg {
             color: $white;
           }
@@ -149,7 +144,7 @@
     justify-content: flex-start;
 
     svg {
-      margin-right: 15px;
+      margin-right: 12px;
       transition: color 0.2s ease;
 
       path {

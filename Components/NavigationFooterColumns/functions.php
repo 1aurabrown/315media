@@ -54,22 +54,6 @@ function getACFLayout()
 
 Options::addTranslatable('NavigationFooterColumns', [
     [
-        'label' => __('Address', 'flynt'),
-        'name' => 'address',
-        'type' => 'text',
-        'wrapper' => [
-            'width' => 50
-        ]
-    ],
-    [
-        'label' => __('Phone', 'flynt'),
-        'name' => 'phone',
-        'type' => 'text',
-        'wrapper' => [
-            'width' => 50
-        ]
-    ],
-    [
         'label' => __('Copyrights', 'flynt'),
         'name' => 'socialContentHtml',
         'type' => 'wysiwyg',
@@ -77,6 +61,30 @@ Options::addTranslatable('NavigationFooterColumns', [
         'tabs' => 'visual',
         'media_upload' => 0,
         'default_value' => '©&nbsp;[year] [sitetitle]'
+    ],
+    [
+        'label' => __('Address', 'flynt'),
+        'name' => 'address',
+        'type' => 'text',
+        'wrapper' => [
+            'width' => 33
+        ]
+    ],
+    [
+        'label' => __('Phone', 'flynt'),
+        'name' => 'phone',
+        'type' => 'text',
+        'wrapper' => [
+            'width' => 33
+        ]
+    ],
+    [
+        'label' => __('Email', 'flynt'),
+        'name' => 'email',
+        'type' => 'text',
+        'wrapper' => [
+            'width' => 33
+        ]
     ],
     [
         'label' => __('Social Platform', 'flynt'),

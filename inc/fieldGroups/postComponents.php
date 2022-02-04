@@ -14,6 +14,13 @@ add_action('Flynt/afterRegisterComponents', function () {
         'position' => 'acf_after_title',
         'fields' => [
             [
+                'label' => __('Info', 'flynt'),
+                'name' => 'infoTab',
+                'type' => 'tab',
+                'placement' => 'top',
+                'endpoint' => 0
+            ],
+            [
                 'label' => __('Client', 'flynt'),
                 'name' => 'client',
                 'type' => 'text',
@@ -27,6 +34,34 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'wrapper' => [
                     'width' => '100',
                 ]
+            ],
+            [
+                'label' => __('Media', 'flynt'),
+                'name' => 'mediaTab',
+                'type' => 'tab',
+                'placement' => 'top',
+                'endpoint' => 0
+            ],
+            [
+                'label' => __('Secondary Image', 'flynt'),
+                'name' => 'hoverImage',
+                'type' => 'image',
+                'return_format' => 'url',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'wrapper' => [
+                    'width' => '50',
+                ],
+            ],
+            [
+                'label' => __('Cover Video', 'flynt'),
+                'name' => 'coverVideo',
+                'type' => 'file',
+                'return_format' => 'url',
+                'mime_types' => 'mp4',
+                'wrapper' => [
+                    'width' => '50',
+                ],
             ],
         ],
         'location' => [
@@ -50,16 +85,9 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'flexible_content',
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
-                    Components\BlockImage\getACFLayout(),
-                    Components\BlockImageText\getACFLayout(),
-                    Components\BlockProjectInfo\getACFLayout(),
-                    Components\BlockSpacer\getACFLayout(),
-                    Components\BlockWysiwyg\getACFLayout(),
-                    Components\GridImageGallery\getACFLayout(),
-                    Components\GridMediaGallery\getACFLayout(),
-                    Components\HeroVideo\getACFLayout(),
+                    Components\GridMediaGalleryImage\getACFLayout(),
+                    Components\GridMediaGalleryVideo\getACFLayout(),
                     Components\ListColumn\getACFLayout(),
-                    Components\SliderImages\getACFLayout(),
                 ],
             ],
         ],

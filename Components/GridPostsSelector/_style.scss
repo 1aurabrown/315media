@@ -21,12 +21,36 @@
     }
 
     .grid-item {
-      img {
+      .featuredImage {
         display: block;
         height: 100%;
         max-width: 100%;
         object-fit: cover;
+        position: absolute;
+        transition: all 0.5s linear;
         width: 100%;
+        z-index: 9;
+
+        @media (max-width: $breakpoint-tablet-horizontal) {
+          position: relative;
+        }
+      }
+
+      .secondaryImage {
+        background-color: #f00;
+        display: block;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        opacity: 0;
+        position: absolute;
+        transition: all 0.5s linear;
+        width: 100%;
+        z-index: 8;
+
+        @media (max-width: $breakpoint-tablet-horizontal) {
+          display: none;
+        }
       }
 
       .content-link {
@@ -35,8 +59,37 @@
         text-align: center;
         text-decoration: none;
 
-        &:hover {
+        &:hover,
+        &:focus {
           cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='white'/></svg>"), auto;
+        
+          .overlay {
+            opacity: 0;
+          }
+
+          .featuredImage {
+            opacity: 0;
+
+            @media (max-width: $breakpoint-tablet-horizontal) {
+              opacity: 1;
+            }
+          }
+
+          .secondaryImage {
+            opacity: 1;
+
+            @media (max-width: $breakpoint-tablet-horizontal) {
+              display: none;
+            }
+          }
+
+          .content-inner {
+            opacity: 0;
+
+            @media (max-width: $breakpoint-tablet-horizontal) {
+              opacity: 1;
+            }
+          }
         }
       }
 
@@ -50,6 +103,16 @@
           width: 100%;
         }
 
+        .overlay {
+          background-color: $black;
+          height: 100%;
+          opacity: 0.3;
+          position: absolute;
+          transition: all 0.5s linear;
+          width: 100%;
+          z-index: 10;
+        }
+
         &-inner {
           align-items: flex-start;
           display: flex;
@@ -58,12 +121,15 @@
           left: 10px;
           position: absolute;
           top: 10px;
+          transition: all 0.5s linear;
+          z-index: 11;
         }
 
         .content-title {
           color: $white;
           font-family: 'IBMLightItalic', Helvetica, Arial, sans-serif;
           font-size: 24px;
+          font-style: italic;
           letter-spacing: 0.017em;
           line-height: 150%;
           margin-bottom: 0;

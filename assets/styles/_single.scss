@@ -1,0 +1,142 @@
+.single {
+  .media-gallery {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: $container-padding-mobile $container-padding-desktop;
+    width: 100%;
+
+    @media (max-width: $breakpoint-mobile-horizontal) {
+      display: block;
+      gap: 0;
+      padding: 50px $container-padding-mobile;
+    }
+
+    .gallery-item {
+      @media (max-width: $breakpoint-mobile-horizontal) {
+        margin-bottom: $container-padding-mobile;
+        width: 100%;
+      }
+
+      &--one-third {
+        width: calc((100vw - 180px) / 3);
+
+        @media (max-width: $breakpoint-mobile-horizontal) {
+          width: 100%;
+        }
+      }
+
+      &--two-third {
+        width: calc((100vw - 180px) / 1.5);
+
+        @media (max-width: $breakpoint-mobile-horizontal) {
+          width: 100%;
+        }
+      }
+
+      &--one-half {
+        width: calc((100vw - 180px) / 2);
+
+        @media (max-width: $breakpoint-mobile-horizontal) {
+          width: 100%;
+        }
+      }
+
+      &--three-third {
+        height: 100%;
+        width: calc(100vw - 140px);
+
+        @media (max-width: $breakpoint-mobile-horizontal) {
+          width: 100%;
+        }
+      }
+
+      img {
+        display: block;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      video {
+        display: block;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .gallery-item-height--0 {
+      height: calc((100vw - 180px) / 3);
+
+      @media (max-width: $breakpoint-mobile-horizontal) {
+        height: auto;
+        padding-bottom: 20px;
+      }
+    }
+
+    .gallery-item-height--1 {
+      height: 100%;
+
+      @media (max-width: $breakpoint-mobile-horizontal) {
+        height: auto;
+        padding-bottom: 20px;
+      }
+    }
+
+    .links {
+      width: 100%;
+    }
+  }
+
+  .mainContent {
+    flex: 1 0 auto;
+    margin-bottom: 20px;
+    
+    .post-main {
+      .meta {
+        .post-title {
+          font-family: 'GTCinetypeLightItalic', Helvetica, Arial, sans-serif;
+          font-size: 2.625rem;
+          font-style: italic;
+          line-height: 3.563rem;
+
+          @media (max-width: $breakpoint-mobile-horizontal) {
+            font-size: 1.75rem;
+            line-height: 2.363rem;
+          }
+        }
+
+        .post-subtitle {
+          font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
+          font-size: 2.625rem;
+          line-height: 3.563rem;
+
+          @media (max-width: $breakpoint-mobile-horizontal) {
+            font-size: 1.75rem;
+            line-height: 2.363rem;
+          }
+        }
+
+        .content {
+          font-family: 'IBMLight', Helvetica, Arial, sans-serif;
+          font-size: 1.5rem;
+          letter-spacing: 0.5px;
+          line-height: 2.25rem;
+          margin-top: 50px;
+          max-width: 75%;
+
+          @media (max-width: $breakpoint-mobile-horizontal) {
+            font-size: 1.25rem;
+            line-height: 1.875rem;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,27 @@
 .page-home {
+  @media (max-width: $breakpoint-mobile-horizontal) {
+    .flyntComponent--sizeFull {
+      height: 100vh;
+  
+      .container {
+        height: 100%;
+  
+        .figure {
+          height: 100%;
+  
+          img {
+            display: block;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            width: 100%;
+          }      
+        }
+      }
+    }
+  }
+
+
   .featured-projects {
     display: flex;
     flex-flow: row wrap;
@@ -9,22 +32,27 @@
     width: 100%;
 
     @media (max-width: $breakpoint-mobile-horizontal) {
-      display: block;
-      padding-top: $container-padding-mobile 50px;
+      display: flex;
+      gap: 0;
+      padding: 0 $container-padding-mobile;
+    }
+
+    .container {
+      height: 100%;
     }
 
     .grid-item {
       height: calc((100vw - 180px) / 3);
 
-      @media (max-width: $breakpoint-mobile-horizontal) {
-        height: auto;
-        padding-bottom: 20px;
+      @media (max-width: $breakpoint-tablet-horizontal) {
+        height: 100%;
+        margin-bottom: $container-padding-mobile;
       }
 
       &--one-third {
         width: calc((100vw - 180px) / 3);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-tablet-horizontal) {
           width: 100%;
         }
       }
@@ -32,7 +60,7 @@
       &--two-third {
         width: calc((100vw - 180px) / 1.5);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-tablet-horizontal) {
           width: 100%;
         }
       }
@@ -41,7 +69,7 @@
         height: 100%;
         width: calc(100vw - 140px);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-tablet-horizontal) {
           width: 100%;
         }
       }

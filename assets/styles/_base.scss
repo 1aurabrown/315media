@@ -4,11 +4,11 @@
 * Top level styles every element should inherit.
 */
 
-@include font-face('GTAmericaRegular', 'GT-America-Standard-Regular', '400', 'regular');
-@include font-face('GTCinetypeRegular', 'GT-Cinetype-Regular', '400', 'regular');
+@include font-face('GTAmericaRegular', 'GT-America-Standard-Regular', '400', 'normal');
+@include font-face('GTCinetypeRegular', 'GT-Cinetype-Regular', '400', 'normal');
 @include font-face('GTCinetypeLightItalic', 'GT-Cinetype-Light-Italic', '300', 'italic');
-@include font-face('IBMRegular', 'IBMPlexSans-Regular', '400', 'regular');
-@include font-face('IBMLight', 'IBMPlexSans-Light', '300', 'regular');
+@include font-face('IBMRegular', 'IBMPlexSans-Regular', '400', 'normal');
+@include font-face('IBMLight', 'IBMPlexSans-Light', '300', 'normal');
 @include font-face('IBMLightItalic', 'IBMPlexSans-LightItalic', '300', 'italic');
 
 
@@ -698,131 +698,6 @@ select {
 
 .boxShadow {
   box-shadow: 0 1px 26px 0 rgba(0, 0, 0, 0.06);
-}
-
-/* Custom styling for single post layouts */
-
-.single {
-  // .flyntComponent--navigation {
-  //   display: none;
-  // }
-
-  .mainContent {
-    flex: 1 0 auto;
-    margin-bottom: 20px;
-    
-    .post-main {
-      .meta {
-        .post-title {
-          font-family: 'GTCinetypeLightItalic', Helvetica, Arial, sans-serif;
-          font-size: 2.625rem;
-          line-height: 3.563rem;
-
-          @media (max-width: $breakpoint-mobile-horizontal) {
-            font-size: 1.75rem;
-            line-height: 2.363rem;
-          }
-        }
-
-        .post-subtitle {
-          font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
-          font-size: 2.625rem;
-          line-height: 3.563rem;
-
-          @media (max-width: $breakpoint-mobile-horizontal) {
-            font-size: 1.75rem;
-            line-height: 2.363rem;
-          }
-        }
-
-        .content {
-          font-family: 'IBMLight', Helvetica, Arial, sans-serif;
-          font-size: 1.5rem;
-          letter-spacing: 0.5px;
-          line-height: 2.25rem;
-          margin-top: 50px;
-          max-width: 75%;
-
-          @media (max-width: $breakpoint-mobile-horizontal) {
-            font-size: 1.25rem;
-            line-height: 1.875rem;
-            max-width: 100%;
-          }
-        }
-      }
-    }
-  }
-
-  .post-related {
-    border-top: 1px solid $black;
-
-    @media (max-width: $breakpoint-mobile-horizontal) {
-      .grid {
-        align-items: center;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        padding: $container-padding-desktop 0;
-
-        &-item {
-          width: 100%;
-
-          .content-image {
-            max-height: 200px;
-            min-height: 200px;
-          }
-        }
-      }
-    }
-
-    @media (max-width: $breakpoint-tablet-horizontal) {
-      .content-image {
-        max-height: 250px;
-        min-height: 250px;
-      }
-    }
-  }
-
-
-}
-
-.post {
-  &-main {
-    .componentSpacing {
-      margin: $component-spacing-mobile/2 0;
-
-      @media (min-width: $breakpoint-tablet) {
-        margin: $component-spacing-desktop/2 0;
-      }
-
-      @media (min-width: $breakpoint-desktop) {
-        margin: $component-spacing-desktop/2 0;
-      }
-
-      &[class*='theme'] {
-        margin: 0;
-        padding: $component-spacing-mobile/2 0;
-
-        @media (min-width: $breakpoint-tablet) {
-          padding: $component-spacing-desktop/2 0;
-        }
-
-        @media (min-width: $breakpoint-desktop) {
-          padding: $component-spacing-desktop/2 0;
-        }
-      }
-    }
-
-    >.componentSpacing {
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
 }
 
 /* Custom styling for specific pages layouts */

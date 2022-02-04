@@ -1,4 +1,6 @@
 [is='flynt-list-column'] {
+  padding: 50px 0;
+
   .content {
     padding: 0;
 
@@ -51,6 +53,7 @@
 
         em {
           font-family: 'IBMLightItalic', Helvetica, Arial, sans-serif;
+          font-style: italic;
           text-decoration: none;
         }
 
