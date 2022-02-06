@@ -41,6 +41,11 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background: $blue;
+  color: $white;
+}
+
 /**
 * 1.0 Typography
 *

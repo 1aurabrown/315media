@@ -45,6 +45,7 @@ function getACFLayout()
                 'choices' => [
                     'one-third' => '1/3',
                     'two-third' => '2/3',
+                    'one-half' => '1/2',
                     'three-third' => '3/3',
                 ],
                 'default_value' => '1/3',
