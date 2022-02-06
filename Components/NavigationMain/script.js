@@ -36,21 +36,22 @@ class NavigationMain extends window.HTMLElement {
     const $scroll = this.$window.scrollTop()
 
     if ($scroll > 0) {
-      this.$headerWrapper.fadeIn()
-      // this.$header.addClass('wrapper--fadeIn')
-      // this.$header.removeClass('wrapper--fadeOut')
+      // this.$headerWrapper.fadeIn()
+      this.$headerWrapper.addClass('wrapper--fadeIn')
+      this.$headerWrapper.removeClass('wrapper--fadeOut')
     } else {
-      this.$headerWrapper.fadeOut()
-      // this.$header.removeClass('wrapper--fadeIn')
-      // this.$header.addClass('wrapper--fadeOut')
+      // this.$headerWrapper.fadeOut()
+      this.$headerWrapper.removeClass('wrapper--fadeIn')
+      this.$headerWrapper.addClass('wrapper--fadeOut')
     }
   }
 
   colorLogo (e) {
-    // const $scroll = this.$window.scrollTop()
-    const $scroll = 100 * this.$window.scrollTop() / (this.$document.innerHeight() - this.$window.innerHeight())
+    const $scroll = this.$window.scrollTop()
+    // const $scroll = 100 * this.$window.scrollTop() / (this.$document.innerHeight() - this.$window.innerHeight())
+    const $bannerHeight = this.$window.innerHeight()
 
-    if ($scroll > 22.5) {
+    if ($scroll >= $bannerHeight) {
       this.$logo.addClass('logoHeader--blue')
       this.$headerWrapper.addClass('wrapper--backgroundWhite')
       this.$headerContainer.addClass('container--borderBlue')
