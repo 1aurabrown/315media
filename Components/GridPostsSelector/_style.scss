@@ -59,7 +59,7 @@
         width: 100%;
       }
 
-      .content-link {
+      .content-link--Project {
         height: 100%;
         position: relative;
         text-align: center;
@@ -95,6 +95,29 @@
             @media (max-width: $breakpoint-tablet-horizontal) {
               opacity: 1;
             }
+          }
+        }
+      }
+
+      .content-link--Video {
+        height: 100%;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.4s linear;
+
+        &:hover,
+        &:focus {
+          cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='white'/></svg>"), auto;
+      
+        }
+
+        .video {
+          transition: all 0.4s linear;
+
+          &-dark {
+            filter: brightness(70%);
+            transition: all 0.4s linear;
           }
         }
       }

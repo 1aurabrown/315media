@@ -1,5 +1,4 @@
 import $ from 'jquery'
-
 class GridPostsSelector extends window.HTMLElement {
   constructor (...args) {
     const self = super(...args)
@@ -16,7 +15,7 @@ class GridPostsSelector extends window.HTMLElement {
 
   resolveElements () {
     this.$video = $('video', this)
-    this.$coverVideo = $('.content-link--Video', this)
+    this.$itemVideo = $('.content-link--Video', this)
   }
 
   bindFunctions () {
@@ -25,19 +24,19 @@ class GridPostsSelector extends window.HTMLElement {
   }
 
   bindEvents () {
-    this.$coverVideo.on('mouseenter', this.playVideo)
-    this.$coverVideo.on('mouseleave', this.pauseVideo)
+    this.$itemVideo.on('mouseenter', this.playVideo)
+    this.$itemVideo.on('mouseleave', this.pauseVideo)
   }
 
   playVideo (e) {
-    this.$video.play()
-    console.log('play')
+    this.$video.removeClass('video-dark')
   }
 
   pauseVideo (e) {
-    this.$video.pause()
-    console.log('pause')
+    this.$video.addClass('video-dark')
   }
 }
 
-window.customElements.define('flynt-grid-posts-selector', GridPostsSelector, { extends: 'div' })
+window.customElements.define('flynt-grid-posts-selector', GridPostsSelector, {
+  extends: 'div'
+})

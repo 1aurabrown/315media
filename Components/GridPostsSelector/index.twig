@@ -1,5 +1,5 @@
 {% if items|length > 0 %}
-  <li class="flyntComponent grid-item--{{ projectWidth }}" id="projects" is="flynt-grid-posts-selector">
+  <div class="flyntComponent grid-item--{{ projectWidth }}" id="projects" is="flynt-grid-posts-selector">
     <div class="container">
       {% for item in items %}
         <div class="grid-item {{ post.post_type }}">
@@ -11,8 +11,7 @@
                 <img class="secondaryImage" src="{{ Image(post.hoverImage).src }}" />
               {% endif %}
               {% if post.coverVideo %}
-                <div class="overlay overlay-video"></div>
-                <video muted loop type="video/mp4" src="{{ post.meta('coverVideo') }}"></video>
+                <video muted loop preload="auto" class="video video-dark" onmouseover="this.play()" onmouseout="this.pause();" type="video/mp4" src="{{ post.meta('coverVideo') }}"></video>
               {% endif %}
               <div class="content-inner">
                 <h3 class="content-subtitle">{{ post.client }}</h3>
@@ -23,5 +22,5 @@
         </div>
       {% endfor %}
     </div>
-  </li>
+  </div>
 {% endif %}
