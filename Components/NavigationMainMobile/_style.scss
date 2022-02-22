@@ -3,7 +3,7 @@
 
   display: block;
 
-  @media (min-width: $breakpoint-tablet-horizontal) {
+  @media (min-width: $breakpoint-tablet-horizontal + 1) {
     // background-color: $white;
     display: none;
     left: 0;

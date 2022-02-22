@@ -1,8 +1,8 @@
 [is='flynt-block-footer-contact'] {
   border-top: 1px solid $black;
-
-  @media (max-width: $breakpoint-mobile-horizontal) {
-    padding: 50px $container-padding-mobile;
+  
+  @media (max-width: $breakpoint-tablet-horizontal) {
+    padding: $container-padding-desktop;
   }
 
   .content {

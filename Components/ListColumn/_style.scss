@@ -2,20 +2,42 @@
   padding: 50px 0;
 
   .content {
+    align-items: flex-end;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
     padding: 0;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-flow: column wrap;
+    }
 
     .list {
       @include reset-list-flex;
+      display: flex;
       flex-flow: row wrap;
+      justify-content: flex-start;
+      width: 80%;
+
+      @media (max-width: $breakpoint-tablet) {
+        align-items: flex-start;
+        width: 100%;
+      }
     }
 
     .item {
       margin-right: $container-padding-mobile;
-      width: 16.6%;
+      min-width: 20%;
+      width: auto;
 
-      @media (max-width: $breakpoint-tablet-horizontal) {
+      @media (max-width: $breakpoint-tablet) {
         margin-bottom: 50px;
-        width: calc(50% - 40px);
+        min-width: calc(33% - 40px);
+      }
+
+      @media (max-width: $breakpoint-mobile-horizontal) {
+        margin-bottom: 50px;
+        min-width: calc(50% - 40px);
       }
 
       // &:not(:last-child) {
@@ -65,6 +87,31 @@
             cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='black'/></svg>"), auto;
             text-decoration: none;
           }
+        }
+      }
+    }
+
+    .all-projects {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      width: 20%;
+
+      @media (max-width: $breakpoint-tablet) {
+        width: 100%;
+      }
+
+      a {
+        color: $blue;
+        font-family: 'IBMRegular', Helvetica, Arial, sans-serif;
+        font-size: 1.75rem;
+        line-height: 1;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='%230060FF'/></svg>"), auto;
+          text-decoration: none;
         }
       }
     }

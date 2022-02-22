@@ -18,7 +18,11 @@
   }
 
   &.flyntComponent--sizeFull {
-    height: 100vh;
+    
+
+    @media (min-width: $breakpoint-tablet-horizontal + 1) {
+      height: 100vh;
+    }
     
     .figure-caption {
       margin-left: 0.625rem;

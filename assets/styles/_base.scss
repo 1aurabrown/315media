@@ -597,10 +597,10 @@ select {
 }
 
 .componentPadding {
-  padding: $container-padding-desktop;
+  padding: $container-padding-mobile;
 
-  @media (max-width: $breakpoint-tablet) {
-    padding: $container-padding-mobile;
+  @media (min-width: $breakpoint-mobile-horizontal) {
+    padding: $container-padding-desktop;
   }
 }
 
