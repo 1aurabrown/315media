@@ -177,4 +177,9 @@
       }
     }
   }
+
+  .video-dark {
+    filter: brightness(70%);
+    transition: all 0.4s linear;
+  }
 }
