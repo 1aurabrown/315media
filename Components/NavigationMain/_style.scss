@@ -1,7 +1,13 @@
 [is='flynt-navigation-main'] {
   $navigation-height: 100px;
 
-  display: none;
+  // background-color: $white;
+  display: block;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 
   @media (min-width: $breakpoint-tablet-horizontal + 1) {
     // background-color: $white;
@@ -18,10 +24,16 @@
     height: $navigation-height;
     opacity: 0;
     transition: all 0.5s linear;
+    visibility: hidden;
+
+    @media (max-width: $breakpoint-mobile-horizontal) {
+      height: 75px;
+    }
 
     &--fadeIn {
       opacity: 1;
       transition: all 0.5s linear;
+      visibility: visible;
     }
 
     &--backgroundWhite {
@@ -47,6 +59,10 @@
       border-bottom: 1px solid $blue;
       transition: all 0.5s linear;
     }
+
+    @media (max-width: $breakpoint-tablet) {
+      width: calc(100vw - 40px);
+    }
   }
 
   .logo {
@@ -56,6 +72,23 @@
     height: 100%;
     justify-content: center;
     text-decoration: none;
+
+    &-desktop {
+      display: flex;
+
+      @media (max-width: $breakpoint-mobile-horizontal) {
+        display: none;
+      }
+    }
+
+    &-mobile {
+      display: none;
+
+      @media (max-width: $breakpoint-mobile-horizontal) {
+        display: flex;
+      }
+    }
+
 
     .logoHeader {
       fill: $white;
@@ -110,6 +143,12 @@
       &:focus {
         color: $blue;
         cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='%230060FF'/></svg>"), auto;      
+      }
+
+      @media (max-width: $breakpoint-mobile-horizontal) {
+        font-size: 1rem;
+        letter-spacing: 0.015em;
+        line-height: 1.5rem;
       }
     }
   }

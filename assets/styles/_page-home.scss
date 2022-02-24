@@ -31,7 +31,7 @@
     padding: $container-padding-mobile $container-padding-desktop;
     width: 100%;
 
-    @media (max-width: $breakpoint-mobile-horizontal) {
+    @media (max-width: $breakpoint-tablet) {
       display: flex;
       gap: 0;
       padding: 0 $container-padding-mobile;
@@ -44,7 +44,7 @@
     .grid-item {
       height: calc((100vw - 180px) / 3);
 
-      @media (max-width: $breakpoint-tablet-horizontal) {
+      @media (max-width: $breakpoint-tablet) {
         height: 100%;
         margin-bottom: $container-padding-mobile;
       }
@@ -52,7 +52,7 @@
       &--one-third {
         width: calc((100vw - 180px) / 3);
 
-        @media (max-width: $breakpoint-tablet-horizontal) {
+        @media (max-width: $breakpoint-tablet) {
           width: 100%;
         }
       }
@@ -60,7 +60,7 @@
       &--two-third {
         width: calc((100vw - 180px) / 1.5);
 
-        @media (max-width: $breakpoint-tablet-horizontal) {
+        @media (max-width: $breakpoint-tablet) {
           width: 100%;
         }
       }
@@ -69,7 +69,7 @@
         height: 100%;
         width: calc(100vw - 140px);
 
-        @media (max-width: $breakpoint-tablet-horizontal) {
+        @media (max-width: $breakpoint-tablet) {
           width: 100%;
         }
       }
