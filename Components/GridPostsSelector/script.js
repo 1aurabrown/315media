@@ -37,6 +37,4 @@ class GridPostsSelector extends window.HTMLElement {
   }
 }
 
-window.customElements.define('flynt-grid-posts-selector', GridPostsSelector, {
-  extends: 'div'
-})
+window.customElements.define('flynt-grid-posts-selector', GridPostsSelector, { extends: 'div' })
