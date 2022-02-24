@@ -75,6 +75,7 @@
 
           .featuredImage {
             opacity: 0;
+            visibility: hidden;
 
             @media (max-width: $breakpoint-tablet-horizontal) {
               opacity: 1;
@@ -83,6 +84,7 @@
 
           .secondaryImage {
             opacity: 1;
+            visibility: visible;
 
             @media (max-width: $breakpoint-tablet-horizontal) {
               display: none;
@@ -91,9 +93,11 @@
 
           .content-inner {
             opacity: 0;
+            visibility: hidden;
 
             @media (max-width: $breakpoint-tablet-horizontal) {
               opacity: 1;
+              visibility: visible;
             }
           }
         }
@@ -106,12 +110,26 @@
         text-decoration: none;
         transition: all 0.4s linear;
 
+        .video {
+          transition: all 0.4s linear;
+
+          &-dark {
+            filter: brightness(70%);
+            transition: all 0.4s linear;
+          }
+        }
+
         &:hover,
         &:focus {
           cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='white'/></svg>"), auto;
-      
-          .overlay {
-            opacity: 0;
+
+          .video {
+            transition: all 0.4s linear;
+  
+            &-dark {
+              filter: brightness(100%);
+              transition: all 0.4s linear;
+            }
           }
 
           .content-inner {
@@ -121,15 +139,6 @@
               opacity: 1;
             }
           }
-        }
-
-        .video {
-          transition: all 0.4s linear;
-
-          // &-dark {
-          //   filter: brightness(70%);
-          //   transition: all 0.4s linear;
-          // }
         }
       }
 
@@ -149,6 +158,7 @@
           opacity: 0.3;
           position: absolute;
           transition: all 0.4s linear;
+          visibility: visible;
           width: 100%;
           z-index: 10;
         }
