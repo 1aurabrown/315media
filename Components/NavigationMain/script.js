@@ -49,7 +49,7 @@ class NavigationMain extends window.HTMLElement {
   colorLogo (e) {
     const $scroll = this.$window.scrollTop()
     // const $scroll = 100 * this.$window.scrollTop() / (this.$document.innerHeight() - this.$window.innerHeight())
-    const $bannerHeight = this.$window.innerHeight()
+    const $bannerHeight = this.$window.innerHeight() - 100
 
     if ($scroll >= $bannerHeight) {
       this.$logo.addClass('logoHeader--blue')
