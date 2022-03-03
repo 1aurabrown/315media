@@ -1,7 +1,7 @@
 [is='flynt-navigation-footer-columns'] {
   @import 'Partials/menu';
   background-color: $blue;
-  padding: $container-padding-mobile;
+  padding: 50px 40px;
 
   @media (min-width: $breakpoint-tablet) {
     padding: $container-padding-desktop;
@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
 
-    @media (min-width: $breakpoint-tablet-horizontal) {
+    @media (min-width: $breakpoint-tablet) {
       align-items: flex-start;
       flex-direction: row;
       justify-content: space-between;
@@ -35,7 +35,7 @@
       flex-direction: column;
       width: 66.6%;
 
-      @media (max-width: $breakpoint-tablet-horizontal - 1) {
+      @media (max-width: $breakpoint-tablet - 1) {
         width: 100%;
       }
     }
@@ -56,10 +56,9 @@
   }
 
   .logo {
-    &:hover,
-    &:focus {
-      cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='white'/></svg>"), auto;
-    }
+    @apply cursor-white;
+
+
 
     &-image {
       display: block;
@@ -73,8 +72,9 @@
     }
 
     svg {
-      @media (max-width: $breakpoint-mobile-horizontal - 1) {
-        max-width: 265px;
+      max-width: 264px;
+      @media (min-width: $breakpoint-tablet-horizontal) {
+        max-width: 496px;
       }
     }
   }
@@ -84,44 +84,11 @@
     margin-top: 0;
     width: 33.3%;
 
-    @media (max-width: $breakpoint-tablet-horizontal - 1) {
+    @media (max-width: $breakpoint-tablet - 1) {
       margin: 50px 0;
       width: 100%;
     }
 
-    &-contact {
-      align-items: center;
-      box-sizing: content-box;
-      color: $white;
-      display: flex;
-      justify-content: flex-start;
-      padding-bottom: 20px;
-
-      svg {
-        margin-right: 12px;
-        width: 18px;
-      }
-
-      address {
-        font-style: inherit;
-        font-weight: inherit;
-      }
-
-      a {
-        text-decoration: none;
-        width: 70%;
-
-        &:hover,
-        &:focus {
-          cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='white'/></svg>"), auto;
-          text-decoration: underline;
-
-          svg {
-            color: $white;
-          }
-        }
-      }
-    }
   }
 
   .socialList {
@@ -152,14 +119,11 @@
       justify-content: flex-start;
       text-decoration: none;
 
-
       &:hover,
       &:focus {
         text-decoration: underline;
 
-        svg {
-          color: $white;
-        }
+
       }
     }
 
@@ -176,8 +140,9 @@
       color: $white;
       display: block;
       height: 100%;
-      max-width: 20px;
-      width: auto;
+      width: 24px;
+      max-height: 24px;
+      height: auto;
     }
   }
 }
