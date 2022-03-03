@@ -1,20 +1,21 @@
 [is='flynt-block-wysiwyg-quote'] {
-  padding: 120px $container-padding-desktop;
-
-  @media (max-width: $breakpoint-mobile-horizontal) {
-    padding: 50px $container-padding-mobile;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @media (min-width: $breakpoint-mobile-horizontal) {
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 
   .content {
     @include reset-content-margins;
-    font-family: 'IBMRegular', Helvetica, Arial, sans-serif;
+    font-family: $font-cinetype;
     font-size: 2.625rem;
     line-height: 3.544rem;
     margin: 0 auto;
     max-width: $content-max-width;
     text-align: center;
 
-    @media (max-width: $breakpoint-mobile-horizontal) {
+    @media (max-width: $breakpoint-mobile-horizontal - 1) {
       font-size: 1.25rem;
       letter-spacing: 1px;
       line-height: 1.688rem;

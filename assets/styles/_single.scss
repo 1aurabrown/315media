@@ -8,14 +8,14 @@
     padding: $container-padding-mobile $container-padding-desktop;
     width: 100%;
 
-    @media (max-width: $breakpoint-mobile-horizontal) {
+    @media (max-width: $breakpoint-mobile-horizontal - 1) {
       display: block;
       gap: 0;
       padding: 50px $container-padding-mobile;
     }
 
     .gallery-item {
-      @media (max-width: $breakpoint-mobile-horizontal) {
+      @media (max-width: $breakpoint-mobile-horizontal - 1) {
         margin-bottom: $container-padding-mobile;
         width: 100%;
       }
@@ -23,7 +23,7 @@
       &--one-third {
         width: calc((100vw - 180px) / 3);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-mobile-horizontal - 1) {
           width: 100%;
         }
       }
@@ -31,7 +31,7 @@
       &--two-third {
         width: calc((100vw - 180px) / 1.5);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-mobile-horizontal - 1) {
           width: 100%;
         }
       }
@@ -39,7 +39,7 @@
       &--one-half {
         width: calc((100vw - 180px) / 2);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-mobile-horizontal - 1) {
           width: 100%;
         }
       }
@@ -48,7 +48,7 @@
         height: 100%;
         width: calc(100vw - 140px);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-mobile-horizontal - 1) {
           width: 100%;
         }
       }
@@ -73,7 +73,7 @@
     .gallery-item-height--0 {
       height: calc((100vw - 180px) / 3);
 
-      @media (max-width: $breakpoint-mobile-horizontal) {
+      @media (max-width: $breakpoint-mobile-horizontal - 1) {
         height: auto;
         padding-bottom: 20px;
       }
@@ -82,7 +82,7 @@
     .gallery-item-height--1 {
       height: 100%;
 
-      @media (max-width: $breakpoint-mobile-horizontal) {
+      @media (max-width: $breakpoint-mobile-horizontal - 1) {
         height: auto;
         padding-bottom: 20px;
       }
@@ -98,44 +98,54 @@
     margin-bottom: 20px;
     
     .post-main {
+
       .meta {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        @media (max-width: $breakpoint-mobile-horizontal - 1) {
+          padding-top: 50px;
+          padding-bottom: 50px;
+        }
         .post-title {
-          font-family: 'GTCinetypeLightItalic', Helvetica, Arial, sans-serif;
+          font-family: $font-cinetype;
+          font-style: italic;
           font-size: 2.625rem;
           font-style: italic;
           line-height: 3.563rem;
 
-          @media (max-width: $breakpoint-mobile-horizontal) {
+          @media (max-width: $breakpoint-mobile-horizontal - 1) {
             font-size: 1.75rem;
             line-height: 2.363rem;
           }
         }
 
         .post-subtitle {
-          font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
+          font-family: $font-cinetype;
+          font-weight: bold;
           font-size: 2.625rem;
           line-height: 3.563rem;
 
-          @media (max-width: $breakpoint-mobile-horizontal) {
+          @media (max-width: $breakpoint-mobile-horizontal - 1) {
             font-size: 1.75rem;
             line-height: 2.363rem;
           }
         }
 
         .content {
-          font-family: 'IBMLight', Helvetica, Arial, sans-serif;
+          font-family: $font-ibm;
+          font-weight: 300;
           font-size: 1.5rem;
           letter-spacing: 0.5px;
           line-height: 2.25rem;
           margin-top: 50px;
           max-width: 75%;
 
-          @media (max-width: $breakpoint-mobile-horizontal) {
+          @media (max-width: $breakpoint-mobile-horizontal - 1) {
             font-size: 1.25rem;
             line-height: 1.875rem;
           }
 
-          @media (max-width: $breakpoint-tablet-horizontal) {
+          @media (max-width: $breakpoint-tablet-horizontal - 1) {
             max-width: 100%;
           }
         }
