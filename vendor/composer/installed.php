@@ -5,7 +5,7 @@
         'type' => 'wordpress-theme',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e5d14673ca51c42f30bbaa4263ca947f77bf42f0',
+        'reference' => '7e15aa3231d60237a49155365e9332d40b46e899',
         'name' => 'flyntwp/flynt',
         'dev' => true,
     ),
@@ -52,7 +52,7 @@
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e5d14673ca51c42f30bbaa4263ca947f77bf42f0',
+            'reference' => '7e15aa3231d60237a49155365e9332d40b46e899',
             'dev_requirement' => false,
         ),
         'roundcube/plugin-installer' => array(
