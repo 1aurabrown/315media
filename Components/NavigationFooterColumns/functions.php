@@ -39,7 +39,7 @@ function getACFLayout()
 {
     return [
         'name' => 'navigationFooterColumns',
-        'label' => 'Navigation: Footer Columns',
+        'label' => 'Footer',
         'sub_fields' => [
             [
                 'label' => '',
@@ -53,81 +53,6 @@ function getACFLayout()
 }
 
 Options::addTranslatable('NavigationFooterColumns', [
-    [
-        'label' => __('Copyrights', 'flynt'),
-        'name' => 'socialContentHtml',
-        'type' => 'wysiwyg',
-        'toolbar' => 'basic',
-        'tabs' => 'visual',
-        'media_upload' => 0,
-        'default_value' => '©&nbsp;[year] [sitetitle]'
-    ],
-    [
-        'label' => __('Address', 'flynt'),
-        'name' => 'address',
-        'type' => 'text',
-        'wrapper' => [
-            'width' => 33
-        ]
-    ],
-    [
-        'label' => __('Phone', 'flynt'),
-        'name' => 'phone',
-        'type' => 'text',
-        'wrapper' => [
-            'width' => 33
-        ]
-    ],
-    [
-        'label' => __('Email', 'flynt'),
-        'name' => 'email',
-        'type' => 'text',
-        'wrapper' => [
-            'width' => 33
-        ]
-    ],
-    [
-        'label' => __('Social Platform', 'flynt'),
-        'name' => 'social',
-        'type' => 'repeater',
-        'layout' => 'table',
-        'button_label' => __('Add Social Link', 'flynt'),
-        'sub_fields' => [
-            [
-                'label' => __('Platform', 'flynt'),
-                'name' => 'platform',
-                'type' => 'select',
-                'allow_null' => 0,
-                'multiple' => 0,
-                'ui' => 1,
-                'ajax' => 0,
-                'return_format' => 'array',
-                'choices' => [
-                    'mail' => 'Email',
-                    'vimeo' => 'Vimeo',
-                    'facebook' => 'Facebook',
-                    'instagram' => 'Instagram',
-                    'twitter' => 'Twitter',
-                    'youtube' => 'Youtube',
-                    'linkedin' => 'LinkedIn',
-                    'xing' => 'Xing'
-                ]
-            ],
-            [
-                'label' => __('Link', 'flynt'),
-                'name' => 'url',
-                'type' => 'url',
-                'required' => 1
-            ],
-        ]
-    ],
-    [
-        'label' => __('Content Examples', 'flynt'),
-        'name' => 'templateTab',
-        'type' => 'tab',
-        'placement' => 'top',
-        'endpoint' => 0,
-    ],
     [
         'label' => __('Content Examples', 'flynt'),
         'name' => 'groupContentExamples',
@@ -158,5 +83,61 @@ Options::addTranslatable('NavigationFooterColumns', [
             ]
         ]
     ],
-    Shortcodes\getShortcodeReference(),
+    [
+        'label' => __('Copyright', 'flynt'),
+        'name' => 'copyright',
+        'type' => 'wysiwyg',
+        'toolbar' => 'basic',
+        'tabs' => 'visual',
+        'media_upload' => 0,
+        'default_value' => '©&nbsp;[year] [sitetitle]'
+    ],
+    [
+        'label' => __('Social Platform', 'flynt'),
+        'name' => 'social',
+        'type' => 'repeater',
+        'layout' => 'table',
+        'button_label' => __('Add Social Link', 'flynt'),
+        'sub_fields' => [
+            [
+                'label' => __('Platform', 'flynt'),
+                'name' => 'platform',
+                'type' => 'select',
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 1,
+                'ajax' => 0,
+                'return_format' => 'array',
+                'choices' => [
+                    'email' => 'Email',
+                    'phone' => 'Phone',
+                    'address' => 'Address',
+                    'vimeo' => 'Vimeo',
+                    'facebook' => 'Facebook',
+                    'instagram' => 'Instagram',
+                    'twitter' => 'Twitter',
+                    'youtube' => 'Youtube'
+                ]
+            ],
+            [
+                'label' => __('Link URL', 'flynt'),
+                'name' => 'url',
+                'type' => 'text',
+                'required' => 0
+            ],
+            [
+                'label' => __('Link Text', 'flynt'),
+                'name' => 'text',
+                'type' => 'text',
+                'required' => 1
+            ],
+            [
+                'label' => __('Open In New Tab', 'flynt'),
+                'name' => 'newTab',
+                'type' => 'true_false',
+                'required' => 1,
+                'default' => 0
+            ],
+        ]
+    ]
 ]);

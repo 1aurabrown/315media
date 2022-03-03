@@ -4,20 +4,20 @@
 * Top level styles every element should inherit.
 */
 
-@include font-face('GTAmericaRegular', 'GT-America-Standard-Regular', '400', 'normal');
-@include font-face('GTCinetypeRegular', 'GT-Cinetype-Regular', '400', 'normal');
-@include font-face('GTCinetypeLightItalic', 'GT-Cinetype-Light-Italic', '300', 'italic');
-@include font-face('IBMRegular', 'IBMPlexSans-Regular', '400', 'normal');
-@include font-face('IBMLight', 'IBMPlexSans-Light', '300', 'normal');
-@include font-face('IBMLightItalic', 'IBMPlexSans-LightItalic', '300', 'italic');
+@include font-face('GTCinetype', 'GT-Cinetype-Regular', '700', 'normal');
+@include font-face('GTCinetype', 'GT-Cinetype-Light-Italic', '400', 'italic');
+@include font-face('IBMPlexSans', 'IBMPlexSans-Regular', '700', 'normal');
+@include font-face('IBMPlexSans', 'IBMPlexSans-Light', '400', 'normal');
+@include font-face('IBMPlexSans', 'IBMPlexSans-LightItalic', '400', 'italic');
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
 
 
 html {
   background-color: $color-background;
   box-sizing: border-box;
   color: $color-text;
-  font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
+  font-family: $font-ibm;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -53,11 +53,11 @@ body {
 */
 
 #{$heading-selectors} {
-  color: $color-headline;
-  font-weight: 700;
-  line-height: 1.45;
-  margin-bottom: 0.9rem;
-  margin-top: 0;
+  font-size: inherit;
+  text-align: left;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
 
   a,
   a:hover,
@@ -67,67 +67,10 @@ body {
   }
 }
 
-h1,
-.h1 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1;
-  margin-bottom: 1.15rem;
-  // padding-top: 2rem;
-
-  @media (min-width: $breakpoint-mobile-horizontal) {
-    font-size: 2.25rem;
-  }
-}
-
-h2,
-.h2 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1;
-  // padding-top: 1rem;
-
-  @media (min-width: $breakpoint-mobile-horizontal) {
-    font-size: 1.85rem;
-  }
-}
-
-h3,
-.h3 {
-  font-size: 1.125rem;
-  // padding-top: 1rem;
-
-  @media (min-width: $breakpoint-mobile-horizontal) {
-    font-size: 1.25rem;
-  }
-}
-
-h4,
-.h4 {
-  font-size: 1rem;
-  // padding-top: 0.5rem;
-
-  @media (min-width: $breakpoint-mobile-horizontal) {
-    font-size: 1.125rem;
-  }
-}
-
-h5,
-.h5 {
-  font-size: 1rem;
-  font-weight: 400;
-  // padding-top: 0.5rem;
-}
-
-h6,
-.h6 {
-  font-size: 1rem;
-  // padding-top: 0.5rem;
-}
 
 a {
-  color: $black;
-  text-decoration: underline;
+  color: inherit;
+  text-decoration: none;
   transition: color 0.2s ease-out;
 
   &:hover,
@@ -597,35 +540,34 @@ select {
 }
 
 .componentPadding {
-  padding: $container-padding-mobile;
+  padding-left: $container-padding-mobile;
+  padding-right: $container-padding-mobile;
 
   @media (min-width: $breakpoint-mobile-horizontal) {
-    padding: $container-padding-desktop;
+    padding-left: $container-padding-desktop;
+    padding-right: $container-padding-desktop;
   }
 }
 
 .componentSpacing {
-  margin: $component-spacing-mobile 0;
+  margin-top: $component-spacing-mobile;
+  margin-bottom: $component-spacing-mobile;
 
   @media (min-width: $breakpoint-tablet) {
-    margin: $component-spacing-desktop 0;
+    margin-top: $component-spacing-desktop 0;
+    margin-bottom: $component-spacing-desktop 0;
   }
 
-  @media (min-width: $breakpoint-desktop) {
-    margin: $component-spacing-desktop 0;
-  }
 
   &[class*='theme'] {
     margin: 0;
-    padding: $component-spacing-mobile 0;
-
+    padding-top: $component-spacing-mobile;
+    padding-bottom: $component-spacing-mobile;
     @media (min-width: $breakpoint-tablet) {
-      padding: $component-spacing-desktop 0;
+      padding-top: $component-spacing-mobile;
+      padding-bottom: $component-spacing-mobile;
     }
 
-    @media (min-width: $breakpoint-desktop) {
-      padding: $component-spacing-desktop 0;
-    }
   }
 }
 
@@ -728,7 +670,7 @@ select {
   .mainContent {
     margin-top: 100px;
 
-    @media (max-width: $breakpoint-mobile-horizontal) {
+    @media (max-width: $breakpoint-mobile-horizontal - 1) {
       margin-top: 50px;
     }
   }
@@ -746,147 +688,11 @@ select {
   }
 }
 
-/**
-* 3.0 Themes
-*
-* Color themes for backgrounds and content elements.
-*/
-
-.themeLight {
-  background-color: $color-background-light;
-}
-
-.themeDark {
-  background-color: $color-background-dark;
-
-  &,
-  #{$heading-selectors} {
-    color: $color-background;
-  }
-
-  .button {
-    &:hover,
-    &:focus {
-      background-color: $black;
-      border-color: $black;
-      color: $white;
-    }
-
-    &--ghost {
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        border-color: $black;
-        color: $black;
-      }
-    }
-
-    &--link {
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        color: $color-background;
-
-        &::before {
-          background-color: $color-background;
-        }
-      }
-
-      &::after {
-        $color-accent-rgb: red($color-accent), green($color-accent), blue($color-accent);
-        $color-background-rgb: red($color-background), green($color-background), blue($color-background);
-
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.586 5L.293 8.293a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4A1 1 0 1 0 .293 1.707L3.586 5z' fill='rgb(#{$color-accent-rgb})'/%3E%3Cpath d='M13.586 5l-3.293 3.293a1 1 0 0 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L13.586 5z' fill='rgb(#{$color-background-rgb})'/%3E%3C/svg%3E");
-      }
-    }
-  }
-
-  .pill {
-    background-color: $color-background-hero;
-  }
-}
-
-.themeHero {
-  background-color: $color-background-hero;
-
-  &,
-  #{$heading-selectors},
-  a,
-  .feather {
-    color: $color-background;
-  }
-
-  a:hover,
-  a:focus {
-    color: $color-background-dark;
-  }
-
-  .button {
-    background-color: $color-background-dark;
-    border-color: $color-background-dark;
-    color: $color-background;
-
-    &:hover,
-    &:focus {
-      background-color: $color-background;
-      border-color: $color-background;
-      color: $color-background-dark;
-    }
-
-    &--ghost {
-      background-color: transparent;
-      border-color: $color-background-dark;
-      color: $color-background-dark;
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        border-color: $color-background;
-        color: $color-background;
-      }
-    }
-
-    &--link {
-      background-color: transparent;
-      color: $color-background;
-
-      &::before {
-        background-color: $color-background;
-      }
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        color: $color-background-dark;
-
-        &::before {
-          background-color: $color-background-dark;
-        }
-      }
-
-      &::after {
-        $color-background-dark-rgb: red($color-background-dark), green($color-background-dark), blue($color-background-dark);
-        $color-background-rgb: red($color-background), green($color-background), blue($color-background);
-
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.586 5L.293 8.293a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4A1 1 0 1 0 .293 1.707L3.586 5z' fill='rgb(#{$color-background-rgb})'/%3E%3Cpath d='M13.586 5l-3.293 3.293a1 1 0 0 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L13.586 5z' fill='rgb(#{$color-background-dark-rgb})'/%3E%3C/svg%3E");
-      }
-    }
-  }
-
-  .pill {
-    &:hover,
-    &:focus {
-      color: $color-background;
-    }
-  }
-}
-
 .themeReset {
   background-color: $color-background;
   color: $color-text;
 
   #{$heading-selectors} {
-    color: $color-headline;
 
     a,
     a:hover,
@@ -906,59 +712,22 @@ select {
     color: darken($color-accent, 10%);
   }
 
-  .button {
-    background-color: $color-accent;
-    border-color: $color-accent;
-    color: $color-background;
-
-    &:hover,
-    &:focus {
-      background-color: $color-background-dark;
-      border-color: $color-background-dark;
-      color: $color-background;
-    }
-
-    &--ghost {
-      background-color: transparent;
-      border-color: $color-accent;
-      color: $color-accent;
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        border-color: $color-background-dark;
-        color: $color-background-dark;
-      }
-    }
-
-    &--link {
-      background-color: transparent;
-      color: $color-accent;
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        color: $color-background-dark;
-
-        &::before {
-          background-color: $color-background-dark;
-        }
-      }
-
-      &::before {
-        background-color: $color-accent;
-      }
-
-      &::after {
-        $color-accent-rgb: red($color-accent), green($color-accent), blue($color-accent);
-        $color-background-dark-rgb: red($color-background-dark), green($color-background-dark), blue($color-background-dark);
-
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.586 5L.293 8.293a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4A1 1 0 1 0 .293 1.707L3.586 5z' fill='rgb(#{$color-accent-rgb})'/%3E%3Cpath d='M13.586 5l-3.293 3.293a1 1 0 0 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L13.586 5z' fill='rgb(#{$color-background-dark-rgb})'/%3E%3C/svg%3E");
-      }
-    }
-  }
-
   .pill {
     color: $color-background;
+  }
+}
+
+.eyebrow-heading {
+  color: $blue;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .0625em;
+  line-height: 1.35;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+
+  @media (max-width: $breakpoint-mobile-horizontal - 1) {
+    font-size: 0.875rem;
+    line-height: 1.181rem;
   }
 }

@@ -12,6 +12,7 @@ class NavigationMain extends window.HTMLElement {
     this.resolveElements()
     this.bindFunctions()
     this.bindEvents()
+    this.onScroll()
   }
 
   resolveElements () {
@@ -23,35 +24,37 @@ class NavigationMain extends window.HTMLElement {
   }
 
   bindFunctions () {
-    this.showLogo = this.showLogo.bind(this)
+    this.onScroll = this.onScroll.bind(this)
+    this.showHeader = this.showHeader.bind(this)
     this.colorLogo = this.colorLogo.bind(this)
   }
 
   bindEvents () {
-    this.$window.on('scroll', this.showLogo)
-    this.$window.on('scroll', this.colorLogo)
+    this.$window.on('scroll', this.onScroll)
   }
 
-  showLogo (e) {
-    const $scroll = this.$window.scrollTop()
+  onScroll(e) {
+    this.showHeader(e)
+    this.colorLogo(e)
+  }
 
-    if ($scroll > 0) {
-      // this.$headerWrapper.fadeIn()
+  showHeader (e) {
+    const scroll = this.$window.scrollTop()
+    if (scroll > 0) {
       this.$headerWrapper.addClass('wrapper--fadeIn')
       this.$headerWrapper.removeClass('wrapper--fadeOut')
     } else {
-      // this.$headerWrapper.fadeOut()
       this.$headerWrapper.removeClass('wrapper--fadeIn')
       this.$headerWrapper.addClass('wrapper--fadeOut')
     }
   }
 
   colorLogo (e) {
-    const $scroll = this.$window.scrollTop()
-    // const $scroll = 100 * this.$window.scrollTop() / (this.$document.innerHeight() - this.$window.innerHeight())
-    const $bannerHeight = this.$window.innerHeight()
+    const scroll = this.$window.scrollTop()
+    const $headerHeight = this.$headerContainer.innerHeight();
+    const $bannerHeight = $('.js-hero-banner', this.$document).innerHeight()
 
-    if ($scroll >= $bannerHeight) {
+    if (scroll >= ($bannerHeight - $headerHeight)) {
       this.$logo.addClass('logoHeader--blue')
       this.$headerWrapper.addClass('wrapper--backgroundWhite')
       this.$headerContainer.addClass('container--borderBlue')

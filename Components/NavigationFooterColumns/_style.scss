@@ -7,6 +7,12 @@
     padding: $container-padding-desktop;
   }
 
+  font-family: $font-ibm;
+  font-size: 1rem;
+  color: $white;
+  line-height: 1.5;
+  letter-spacing: .015em;
+
   + [is='flynt-navigation-footer'] .container {
     padding-top: 0;
   }
@@ -29,12 +35,13 @@
       flex-direction: column;
       width: 66.6%;
 
-      @media (max-width: $breakpoint-tablet-horizontal) {
+      @media (max-width: $breakpoint-tablet-horizontal - 1) {
         width: 100%;
       }
     }
 
     &-menu {
+      font-size: 0.875rem;
       align-items: flex-start;
       color: $white;
       display: flex;
@@ -42,11 +49,8 @@
       justify-content: flex-start;
       width: 100%;
 
-      p {
-        font-family: 'IBMRegular', Helvetica, Arial, sans-serif;
-        font-size: 0.875rem;
-        letter-spacing: 0;
-        line-height: 1.313rem;
+      a {
+        @include cursor-white;
       }
     }
   }
@@ -69,7 +73,7 @@
     }
 
     svg {
-      @media (max-width: $breakpoint-mobile-horizontal) {
+      @media (max-width: $breakpoint-mobile-horizontal - 1) {
         max-width: 265px;
       }
     }
@@ -80,7 +84,7 @@
     margin-top: 0;
     width: 33.3%;
 
-    @media (max-width: $breakpoint-tablet-horizontal) {
+    @media (max-width: $breakpoint-tablet-horizontal - 1) {
       margin: 50px 0;
       width: 100%;
     }
@@ -90,7 +94,6 @@
       box-sizing: content-box;
       color: $white;
       display: flex;
-      flex-flow: row wrap;
       justify-content: flex-start;
       padding-bottom: 20px;
 
@@ -100,37 +103,18 @@
       }
 
       address {
-        font-family: 'IBMRegular', Helvetica, Arial, sans-serif;
-        font-size: 1rem;
-        font-style: normal;
-        // letter-spacing: 0.15em;
-        line-height: 1.5rem;
-        width: 70%;
-      }
-
-      .phone {
-        align-items: center;
-        box-sizing: content-box;
-        color: $white;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        padding-bottom: 20px;
+        font-style: inherit;
+        font-weight: inherit;
       }
 
       a {
-        color: $white;
-        font-family: 'IBMRegular', Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        // letter-spacing: 0.15em;
-        line-height: 1.5;
         text-decoration: none;
         width: 70%;
 
         &:hover,
         &:focus {
           cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='white'/></svg>"), auto;
-          text-decoration: none;
+          text-decoration: underline;
 
           svg {
             color: $white;
@@ -157,22 +141,21 @@
     }
 
     &-link {
+      @include cursor-white
+    }
+
+    &-text {
       align-items: center;
       box-sizing: content-box;
       color: $white;
       display: flex;
-      flex-flow: row wrap;
-      font-family: 'IBMRegular', Helvetica, Arial, sans-serif;
-      font-size: 16px;
       justify-content: flex-start;
-      // letter-spacing: 0.15em;
-      line-height: 1.5;
       text-decoration: none;
+
 
       &:hover,
       &:focus {
-        cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='white'/></svg>"), auto;
-        text-decoration: none;
+        text-decoration: underline;
 
         svg {
           color: $white;

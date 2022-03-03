@@ -21,7 +21,9 @@
     
 
     @media (min-width: $breakpoint-tablet-horizontal + 1) {
-      height: 100vh;
+      figure, img, video {
+        height: 100vh;
+      }
     }
     
     .figure-caption {

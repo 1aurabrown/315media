@@ -1,6 +1,7 @@
 [is='flynt-block-wysiwyg'] {
   .preContent {
-    font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
+    font-family: $font-cinetype;
+    font-weight: bold;
     font-size: 1.75rem;
     line-height: 2.626rem;
     margin: 0 auto 50px;
@@ -9,7 +10,7 @@
 
   .content {
     @include reset-content-margins;
-    font-family: 'IBMLight', Helvetica, Arial, sans-serif;
+    font-family: $font-ibm;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.5rem;
