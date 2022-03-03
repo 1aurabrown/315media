@@ -12,15 +12,18 @@ class NavigationMain extends window.HTMLElement {
     this.resolveElements()
     this.bindFunctions()
     this.bindEvents()
-    this.onScroll()
+    if (this.$banner) {
+      this.onScroll()
+    } else {
+      this.$headerWrapper.addClass('wrapper--visible')
+    }
   }
 
   resolveElements () {
     this.$window = $(window)
     this.$document = $(document)
+    this.$banner = $('.js-hero-banner', this.$document)
     this.$headerWrapper = $('.wrapper', this)
-    this.$headerContainer = $('.container', this)
-    this.$logo = $('.logoHeader', this)
   }
 
   bindFunctions () {
@@ -34,34 +37,28 @@ class NavigationMain extends window.HTMLElement {
   }
 
   onScroll(e) {
-    this.showHeader(e)
     this.colorLogo(e)
+    this.showHeader(e)
   }
 
   showHeader (e) {
     const scroll = this.$window.scrollTop()
     if (scroll > 0) {
-      this.$headerWrapper.addClass('wrapper--fadeIn')
-      this.$headerWrapper.removeClass('wrapper--fadeOut')
+      this.$headerWrapper.addClass('wrapper--visible')
     } else {
-      this.$headerWrapper.removeClass('wrapper--fadeIn')
-      this.$headerWrapper.addClass('wrapper--fadeOut')
+      this.$headerWrapper.removeClass('wrapper--visible')
     }
   }
 
   colorLogo (e) {
     const scroll = this.$window.scrollTop()
-    const $headerHeight = this.$headerContainer.innerHeight();
-    const $bannerHeight = $('.js-hero-banner', this.$document).innerHeight()
+    const $headerHeight = this.$headerWrapper.innerHeight();
+    const $bannerHeight = this.$banner.innerHeight()
 
     if (scroll >= ($bannerHeight - $headerHeight)) {
-      this.$logo.addClass('logoHeader--blue')
-      this.$headerWrapper.addClass('wrapper--backgroundWhite')
-      this.$headerContainer.addClass('container--borderBlue')
+      this.$headerWrapper.removeClass('wrapper--transparent')
     } else {
-      this.$logo.removeClass('logoHeader--blue')
-      this.$headerWrapper.removeClass('wrapper--backgroundWhite')
-      this.$headerContainer.removeClass('container--borderBlue')
+      this.$headerWrapper.addClass('wrapper--transparent')
     }
   }
 }

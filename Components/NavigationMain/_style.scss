@@ -1,6 +1,8 @@
 [is='flynt-navigation-main'] {
-  $navigation-height: 100px;
-  $nav-transition: color .2s ease-in-out, opacity .2s ease-in-out;
+  $navigation-height-desktop: 100px;
+  $navigation-height-mobile: 75px;
+  $nav-duration: .2s;
+  $nav-ease: ease-in-out;
 
   // background-color: $white;
   display: block;
@@ -10,144 +12,108 @@
   width: 100%;
   z-index: 1000;
 
-  @media (min-width: $breakpoint-tablet) {
-    display: block;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
   .wrapper {
-    height: $navigation-height;
+    height: $navigation-height-mobile;
     opacity: 0;
-    transition: $nav-transition;
-    visibility: hidden;
+    transition-property: opacity;
+    transition-duration: $nav-duration;
+    transition-timing-function: $nav-ease;
 
-    @media (max-width: $breakpoint-tablet - 1) {
-      height: 75px;
-    }
+    padding: 0 $container-padding-mobile;
 
-    &--fadeIn {
-      opacity: 1;
-      transition: $nav-transition;
-      visibility: visible;
-    }
+    // Initial display
+    background-color: $white;
+    color: $blue;
 
-    &--backgroundWhite {
-      background-color: $white;
 
-      .menu-link {
-        color: $blue;
+
+    // Transparent
+    &--transparent {
+      background-color: transparent;
+      color: $white;
+      .container {
+        border-color: transparent;
       }
+    }
+
+    // Hidden
+    &--visible {
+      opacity: 1;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      padding: 0 $container-padding-desktop;
+      height: $navigation-height-desktop;
     }
   }
 
   .container {
+    border-bottom: 1px solid;
+    border-color: $blue;
     align-items: center;
     display: flex;
     height: 100%;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 0;
-    transition: $nav-transition;
-    width: calc(100vw - 140px);
-
-    &--borderBlue {
-      border-bottom: 1px solid $blue;
-      transition: $nav-transition;
-    }
-
-    @media (max-width: $breakpoint-tablet - 1) {
-      width: calc(100vw - 40px);
-    }
   }
 
   .logo {
-    align-items: center;
-    display: flex;
-    flex-flow: column wrap;
-    height: 100%;
-    justify-content: center;
-    text-decoration: none;
-
+    flex-shrink: 1;
     &-desktop {
-      display: flex;
+      display: none;
 
-      @media (max-width: $breakpoint-tablet - 1) {
-        display: none;
+      @media (min-width: $breakpoint-tablet) {
+        display: block;
       }
     }
 
     &-mobile {
-      display: none;
+      display: block;
 
-      @media (max-width: $breakpoint-tablet - 1) {
-        display: flex;
+      @media (min-width: $breakpoint-tablet) {
+        display: none;
       }
     }
 
 
     .logoHeader {
-      fill: $white;
-
-      &:hover,
-      &:focus {
-        cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='white'/></svg>"), auto;
-      }
-
-      &--blue {
-        fill: $blue;
-
-        &:hover,
-        &:focus {
-          cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='%230060FF'/></svg>"), auto;      
-        }
-      }
+      display: block;
+      fill: currentColor;
+      @include cursor-blue;
+      max-width: 100%;
     }
 
-    h1 {
-      margin-bottom: 0;
-    }
-
-    &-image {
-      height: 100%;
-      width: auto;
-    }
   }
 
   .menu {
     @include reset-list;
     align-items: center;
     display: flex;
-    margin-right: -18px;
-    padding-left: 26px;
 
-    // &-item--current {
-    //   .menu-link {
-    //     color: $white;
-    //   }
-    // }
+
 
     &-link {
-      color: $white;
-      display: inline-block;
-      font-size: 1.8rem;
-      padding: 0 18px;
-      text-decoration: none;
-      transition: color 0.2s ease-out;
+      margin-left: 20px;
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.015em;
+      line-height: 1.5rem;
+      @include cursor-blue;
 
-      &:hover,
-      &:focus {
-        cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='%230060FF'/></svg>"), auto;      
+      &:hover {
+        text-decoration: underline;
       }
 
-      @media (max-width: $breakpoint-tablet - 1) {
-        font-size: 1rem;
-        letter-spacing: 0.015em;
-        line-height: 1.5rem;
+      @media (min-width: $breakpoint-tablet) {
+        margin-left: 50px;
+        font-size: 1.8rem;
       }
+    }
+  }
+
+  .wrapper--transparent {
+   .menu-link, .logoHeader {
+     @include cursor-white;
     }
   }
 }
