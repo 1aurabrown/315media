@@ -11,9 +11,9 @@ class NavigationMain extends window.HTMLElement {
     this.$ = $(this)
     this.resolveElements()
     this.bindFunctions()
-    this.bindEvents()
-    if (this.$banner) {
+    if (this.$banner.length > 0) {
       this.onScroll()
+      this.bindEvents()
     } else {
       this.$headerWrapper.addClass('wrapper--visible')
     }

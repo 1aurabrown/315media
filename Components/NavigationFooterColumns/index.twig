@@ -25,7 +25,7 @@
             {% for socials in social %}
               <li class="socialList-item">
                 {% if socials.url %}
-                  <a class="socialList-link socialList-text" href="{{ socials.url }}" aria-label="{{ socials.linkText }}">
+                  <a {% if socials.newTab == true %}target='_blank'{% endif %} class="socialList-link socialList-text" href="{{ socials.url }}" aria-label="{{ socials.linkText }}">
                     {{- socials.icon -}}{{ socials.text }}
                   </a>
                 {%  else %}

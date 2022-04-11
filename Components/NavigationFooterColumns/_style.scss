@@ -72,6 +72,7 @@
     }
 
     svg {
+      display: block;
       max-width: 264px;
       @media (min-width: $breakpoint-tablet-horizontal) {
         max-width: 496px;
@@ -109,6 +110,10 @@
 
     &-link {
       @include cursor-white
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
     }
 
     &-text {
@@ -119,12 +124,6 @@
       justify-content: flex-start;
       text-decoration: none;
 
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-
-
-      }
     }
 
     &-item {
