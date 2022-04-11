@@ -15,7 +15,7 @@
       padding: 0;
       width: 100%;
 
-      @media (max-width: $breakpoint-mobile-horizontal - 1 ) {
+      @media (max-width: $breakpoint-mobile-horizontal - 1) {
         display: block;
       }
     }
@@ -60,14 +60,13 @@
       }
 
       .content-link--Project {
+        @include cursor-white;
         height: 100%;
         position: relative;
         text-decoration: none;
-        @include cursor-white;
 
         &:hover,
         &:focus {
-        
           .overlay {
             opacity: 0;
           }
@@ -103,6 +102,7 @@
       }
 
       .content-link--Video {
+        @include cursor-white;
         height: 100%;
         position: relative;
         text-decoration: none;
@@ -117,11 +117,9 @@
           }
         }
 
-        @include cursor-white;
 
         &:hover,
         &:focus {
-
           .video {
             transition: all 0.4s linear;
   
@@ -178,8 +176,8 @@
             left: 20px;
             top: 20px;
           }
-
         }
+
         .content-client {
           font-weight: 400;
         }
@@ -192,9 +190,4 @@
       }
     }
   }
-
-  // .container .grid-item .content-link--Video .video-dark {
-  //   filter: brightness(70%);
-  //   transition: all 0.4s linear 0s;
-  // }
 }

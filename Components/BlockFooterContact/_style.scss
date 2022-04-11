@@ -1,12 +1,12 @@
 [is='flynt-block-footer-contact'] {
   border-top: 1px solid $black;
   
-  padding-top: 50px;
   padding-bottom: 50px;
+  padding-top: 50px;
 
   @media (min-width: $breakpoint-tablet-horizontal) {
-    padding-top: $container-padding-desktop;
     padding-bottom: $container-padding-desktop;
+    padding-top: $container-padding-desktop;
   }
 
   .content {
@@ -27,9 +27,9 @@
     }
 
     a {
+      @include cursor-blue;
       color: $blue;
       text-decoration: none;
-      @include cursor-blue;
 
       &:hover,
       &:focus {

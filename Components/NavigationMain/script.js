@@ -36,7 +36,7 @@ class NavigationMain extends window.HTMLElement {
     this.$window.on('scroll', this.onScroll)
   }
 
-  onScroll(e) {
+  onScroll (e) {
     this.colorLogo(e)
     this.showHeader(e)
   }
@@ -52,10 +52,10 @@ class NavigationMain extends window.HTMLElement {
 
   colorLogo (e) {
     const scroll = this.$window.scrollTop()
-    const $headerHeight = this.$headerWrapper.innerHeight();
-    const $bannerHeight = this.$banner.innerHeight()
+    const headerHeight = this.$headerWrapper.innerHeight()
+    const bannerHeight = this.$banner.innerHeight()
 
-    if (scroll >= ($bannerHeight - $headerHeight)) {
+    if (scroll >= (bannerHeight - headerHeight)) {
       this.$headerWrapper.removeClass('wrapper--transparent')
     } else {
       this.$headerWrapper.addClass('wrapper--transparent')

@@ -18,12 +18,22 @@
   }
 
   &.flyntComponent--sizeFull {
-    
 
     @media (min-width: $breakpoint-tablet-horizontal + 1) {
-      figure, img, video {
+      figure,
+      img,
+      video {
         height: 100vh;
       }
+
+      .container {
+        height: 100%;
+      }
+
+      img {
+        object-fit: cover;
+      }
+
     }
     
     .figure-caption {

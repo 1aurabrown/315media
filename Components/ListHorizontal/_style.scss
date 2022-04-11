@@ -6,10 +6,6 @@
     padding: 50px 0;
   }
   
-  .preContent {
-
-  }
-
   .list {
     @include reset-list-flex;
     flex-flow: row wrap;

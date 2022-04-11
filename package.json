@@ -5,6 +5,9 @@
   "repository": "git@github.com:marcotiberio/315media.git",
   "author": "Marco Tiberio",
   "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0 <13.0.0"
+  },
   "scripts": {
     "checkVersion": "check-node-version --package -p",
     "clean": "rimraf ./dist",
@@ -13,7 +16,7 @@
     "build": "run-s --silent checkVersion clean lint build:production build:rev",
     "build:production": "cross-env NODE_ENV=production webpack --progress --display=minimal",
     "build:rev": "gulp rev",
-    "lint": "run-p --silent lint:*",
+    "lint": "run-p lint:*",
     "lint:scripts": "cross-env eslint '**/*.js'",
     "lint:styles": "cross-env stylelint '**/*.scss'",
     "lint:php": "cross-env ./vendor/bin/phpcs",
@@ -109,15 +112,13 @@
       "scss/at-rule-no-unknown": true,
       "selector-class-pattern": null,
       "max-nesting-depth": null,
-      "selector-max-compound-selectors": 5
+      "selector-max-compound-selectors": 5,
+      "order/properties-alphabetical-order": null
     },
     "ignoreFiles": [
       "dist/**",
       "vendor/**"
     ]
-  },
-  "engines": {
-    "node": ">=10.14.0"
   },
   "standard-version": {
     "scripts": {

@@ -75,4 +75,12 @@
       }
     }
   }
+
+  .list-horizontal {
+    padding: $container-padding-desktop;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: $container-padding-desktop $container-padding-mobile;
+    }
+  }
 }

@@ -11,7 +11,7 @@
   font-size: 1rem;
   color: $white;
   line-height: 1.5;
-  letter-spacing: .015em;
+  letter-spacing: 0.015em;
 
   + [is='flynt-navigation-footer'] .container {
     padding-top: 0;
@@ -109,7 +109,8 @@
     }
 
     &-link {
-      @include cursor-white
+      @include cursor-white;
+
       &:hover,
       &:focus {
         text-decoration: underline;

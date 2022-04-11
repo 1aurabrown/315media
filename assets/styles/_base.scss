@@ -693,7 +693,6 @@ select {
   color: $color-text;
 
   #{$heading-selectors} {
-
     a,
     a:hover,
     a:focus {
@@ -721,7 +720,7 @@ select {
   color: $blue;
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: .0625em;
+  letter-spacing: 0.0625em;
   line-height: 1.35;
   margin-bottom: 20px;
   text-transform: uppercase;

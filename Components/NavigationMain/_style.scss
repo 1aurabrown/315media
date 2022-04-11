@@ -1,7 +1,7 @@
 [is='flynt-navigation-main'] {
   $navigation-height-desktop: 100px;
   $navigation-height-mobile: 75px;
-  $nav-duration: .2s;
+  $nav-duration: 0.2s;
   $nav-ease: ease-in-out;
 
   // background-color: $white;
@@ -31,6 +31,7 @@
     &--transparent {
       background-color: transparent;
       color: $white;
+
       .container {
         border-color: transparent;
       }
@@ -59,6 +60,7 @@
 
   .logo {
     flex-shrink: 1;
+
     &-desktop {
       display: none;
 
@@ -77,9 +79,9 @@
 
 
     .logoHeader {
+      @include cursor-blue;
       display: block;
       fill: currentColor;
-      @include cursor-blue;
       max-width: 100%;
     }
 
@@ -93,12 +95,12 @@
 
 
     &-link {
+      @include cursor-blue;
       margin-left: 20px;
       display: block;
       font-size: 1rem;
       letter-spacing: 0.015em;
       line-height: 1.5rem;
-      @include cursor-blue;
 
       &:hover {
         text-decoration: underline;
@@ -112,8 +114,9 @@
   }
 
   .wrapper--transparent {
-   .menu-link, .logoHeader {
-     @include cursor-white;
+    .menu-link,
+    .logoHeader {
+      @include cursor-white;
     }
   }
 }
