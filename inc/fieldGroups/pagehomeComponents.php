@@ -6,16 +6,20 @@ use Flynt\Components;
 add_action('Flynt/afterRegisterComponents', function () {
     ACFComposer::registerFieldGroup([
         'name' => 'pagehomeComponents',
-        'title' => 'Featured Projects',
+        'title' => 'Homepage Content',
         'style' => 'seamless',
         'fields' => [
             [
                 'name' => 'pagehomeComponents',
-                'label' => __('Featured Projects', 'flynt'),
+                'label' => __('Homepage Modules', 'flynt'),
                 'type' => 'flexible_content',
-                'button_label' => __('Add Project', 'flynt'),
+                'button_label' => __('Add Module', 'flynt'),
                 'layouts' => [
+                    Components\BlockImage\getACFLayout(),
+                    Components\BlockWysiwyg\getACFLayout(),
                     Components\GridPostsSelector\getACFLayout(),
+                    Components\BlockWysiwygQuote\getACFLayout(),
+                    Components\HeroVideoHome\getACFLayout(),
                     Components\ListHorizontal\getACFLayout(),
                 ]
             ]
