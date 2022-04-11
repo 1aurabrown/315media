@@ -15,14 +15,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'flexible_content',
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
-                    Components\BlockImage\getACFLayout(),
-                    Components\BlockVideoOembed\getACFLayout(),
                     Components\BlockWysiwyg\getACFLayout(),
-                    Components\BlockWysiwygQuote\getACFLayout(),
-                    Components\GridPostsSelector\getACFLayout(),
-                    Components\HeroVideoHome\getACFLayout(),
-                    Components\ListColumn\getACFLayout(),
-                    Components\ListHorizontal\getACFLayout(),
                 ]
             ]
         ],

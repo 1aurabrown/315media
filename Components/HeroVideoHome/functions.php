@@ -30,15 +30,8 @@ function getACFLayout()
 {
     return [
         'name' => 'HeroVideoHome',
-        'label' => 'Hero: Video Home',
+        'label' => 'Homepage Hero: Video',
         'sub_fields' => [
-            [
-                'label' => __('Video', 'flynt'),
-                'name' => 'videoTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0
-            ],
             [
                 'label' => __('Poster Image', 'flynt'),
                 'name' => 'posterImage',

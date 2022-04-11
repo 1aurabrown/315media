@@ -19,9 +19,10 @@
     margin: 0 auto;
     text-align: center;
 
-    @media (max-width: $breakpoint-mobile-horizontal - 1) {
+    @media (max-width: $breakpoint-tablet - 1) {
       font-family: $font-ibm;
       font-size: 1.875rem;
+      font-weight: normal;
       letter-spacing: 0;
       line-height: 2.813rem;
     }
