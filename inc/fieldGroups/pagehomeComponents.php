@@ -16,7 +16,6 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'button_label' => __('Add Module', 'flynt'),
                 'layouts' => [
                     Components\BlockImage\getACFLayout(),
-                    Components\BlockWysiwyg\getACFLayout(),
                     Components\GridPostsSelector\getACFLayout(),
                     Components\BlockWysiwygQuote\getACFLayout(),
                     Components\HeroVideoHome\getACFLayout(),
