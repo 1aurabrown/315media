@@ -4,27 +4,28 @@
     <div class="grid">
 
       {% for projectBlock in projectsBlocks %}
-        <div class="project grid-item--{{ projectBlock.projectWidth }} grid-item {% if projectBlock.post.thumbnail %}{%if projectBlock.post.hoverImage or projectBlock.post.meta('coverVideo')%} project--hoverable {% endif %}{% endif %} ">
-          <div class="project__media-wrapper">
-
-            {% if projectBlock.post.thumbnail %}
-              <img class="project__featured-image" src="{{ projectBlock.post.thumbnail.src }}" />
-            {%  endif %}
-
+        <div class="project grid-item--{{ projectBlock.projectWidth }} grid-item {% if projectBlock.post.image and projectBlock.post.hoverImage %} project--hoverable {% endif %} ">
+            <a href="{{ projectBlock.post.link }}" class="project__media-wrapper" title="{{ projectBlock.post.title }}">
             {% if projectBlock.post.meta('coverVideo') %}
-              <video muted loop preload="auto" class="project__hover-media" onmouseover="this.play()" onmouseout="this.pause();" type="video/mp4" src="{{ projectBlock.post.meta('coverVideo') }}"></video>
-            {% elseif projectBlock.post.hoverImage %}
-              <img class="project__hover-media" src="{{ Image(projectBlock.post.hoverImage).src }}" />
+              <video class="project__featured-media" muted loop preload="auto" onmouseover="this.play()" onmouseout="this.pause();" type="video/mp4" src="{{ projectBlock.post.meta('coverVideo') }}"></video>
+
+            {% else %}
+              {%  if projectBlock.post.image %}
+                <img class="project__featured-media" src="{{ Image(projectBlock.post.image).src }}" />
+              {% elseif projectBlock.post.hoverImage %}
+                <img class="project__hover-media" src="{{ Image(projectBlock.post.hoverImage).src }}" />
+              {%  endif %}
+              {% if projectBlock.post.image and projectBlock.post.hoverImage %}
+                <img class="project__hover-media" src="{{ Image(projectBlock.post.hoverImage).src }}" />
+              {% endif %}
             {% endif %}
-          </div>
+          </a>
 
           <div class="project__content">
             <span class="project__client">{{ projectBlock.post.client }}</span>
             <h3 class="project__title">{{ projectBlock.post.title }}</h3>
           </div>
 
-          <a href="{{ projectBlock.post.link }}" class="project__link" title="{{ projectBlock.post.title }}">
-          </a>
         </div>
 
       {% endfor %}

@@ -23,6 +23,7 @@ function getACFLayout()
                         'label' => __('Project', 'flynt'),
                         'name' => 'post',
                         'type' => 'post_object',
+                        'required' => 1,
                         'wrapper' => [
                             'width' => '50',
                         ],
@@ -31,6 +32,7 @@ function getACFLayout()
                         'label' => __('Block Width', 'flynt'),
                         'name' => 'projectWidth',
                         'type' => 'select',
+                        'required' => 1,
                         'choices' => [
                             'one-third' => '1/3',
                             'two-third' => '2/3',

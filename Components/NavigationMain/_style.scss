@@ -1,7 +1,6 @@
 [is='flynt-navigation-main'] {
   $navigation-height-desktop: 100px;
   $navigation-height-mobile: 75px;
-  $nav-duration: 0.2s;
   $nav-ease: ease-in-out;
 
   // background-color: $white;
@@ -16,8 +15,11 @@
     height: $navigation-height-mobile;
     opacity: 0;
     transition-property: opacity;
-    transition-duration: $nav-duration;
+    transition-duration: $transition-duration-long;
     transition-timing-function: $nav-ease;
+    a, button {
+      transition-duration: $transition-duration-long;
+    }
 
     padding: 0 $container-padding-mobile;
 

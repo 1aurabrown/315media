@@ -1,3 +1,4 @@
+
 <div class="flyntComponent flyntComponent--hero-video js-hero-banner" is="flynt-hero-video">
   <div class="video">
     <figure class="figure">
@@ -9,7 +10,7 @@
         alt="{{ posterImage.alt|e }}">
     </figure>
     <div class="video-player">
-      {{ videoEmbedLink }}
+      {{ video }}
     </div>
     <div class="video-overlay video-overlay--{{ contentAlignment }}">
       <div class="content">{{ contentHtml|e('wp_kses_post') }}</div>

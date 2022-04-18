@@ -19,7 +19,16 @@ add_filter('Flynt/addComponentData?name=HeroVideoHome', function ($data) {
             'autohide' => 'true',
             'allowfullscreen' => 'false',
             'frameborder' => 'false',
-            'modestbranding' => 'true',
+
+            'playsinline' => 1,
+            'controls'    => 0,
+            'hd'  => 1,
+            'autoplay' => 1,
+            'background' => 1,
+            'loop' => 1,
+            'byline' => 0,
+            'title' => 0,
+            'muted' => 1
         ]
     );
 
@@ -38,8 +47,7 @@ function getACFLayout()
                 'type' => 'image',
                 'preview_size' => 'medium',
                 'mime_types' => 'jpg,jpeg,png',
-                'instructions' => __('Recommended Size: Min-Width 1920px; Min-Height: 1080px; Image-Format: JPG, PNG. Aspect Ratio 2/1.', 'flynt'),
-                'required' => 1,
+                'instructions' => __('Recommended Size: Min-Width 1920px; Image-Format: JPG, PNG.', 'flynt'),
                 'wrapper' => [
                     'width' => 50
                 ],
@@ -48,7 +56,6 @@ function getACFLayout()
                 'label' => __('Video', 'flynt'),
                 'name' => 'oembed',
                 'type' => 'oembed',
-                'required' => 1,
                 'wrapper' => [
                     'width' => 50
                 ],

@@ -1,22 +1,41 @@
-[is='flynt-grid-media-gallery-image'] {
-  .gallery-item {
-    height: calc((100vw - 180px) / 3);
+[is='flynt-project-media-gallery'] {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+  margin-left: -$gap;
+  margin-top: -$gap;
 
+  .grid-item {
+    flex-shrink: 0;
+    flex-grow: 0;
+    object-fit: cover;
+    min-height: 100%;
+    padding-left: $gap;
+    padding-top: $gap;
     @media (max-width: $breakpoint-mobile-horizontal - 1) {
-      height: 100%;
       padding-bottom: 20px;
     }
 
-    &--one-third {
-      width: calc((100vw - 180px) / 3);
+    &, &--one-third {
+      width: 33.3333%;
 
       @media (max-width: $breakpoint-mobile-horizontal - 1) {
         width: 100%;
       }
     }
 
+    &--one-half {
+      width: 50%;
+      @media (max-width: $breakpoint-mobile-horizontal - 1) {
+        width: 100%;
+      }
+    }
+
     &--two-third {
-      width: calc((100vw - 180px) / 1.5);
+      width: 66.6666%;
 
       @media (max-width: $breakpoint-mobile-horizontal - 1) {
         width: 100%;
@@ -24,12 +43,7 @@
     }
 
     &--three-third {
-      height: 100%;
-      width: calc(100vw - 140px);
-
-      @media (max-width: $breakpoint-mobile-horizontal - 1) {
-        width: 100%;
-      }
+      width: 100%;
     }
 
     img {

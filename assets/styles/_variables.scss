@@ -28,6 +28,9 @@ $color-background-light: $white;
 $color-background-dark: $black;
 $color-background-hero: $color-brand;
 
+$transition-duration-long: 0.5s;
+$transition-duration: 0.2s;
+
 $heading-selectors: 'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6';
 $input-selectors: '[type="tel"], [type="url"], [type="text"], [type="date"], [type="email"], [type="search"], [type="number"], [type="password"], textarea, select';
 

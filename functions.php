@@ -32,3 +32,27 @@ add_action('after_setup_theme', function () {
      */
     load_theme_textdomain('flynt', get_template_directory() . '/languages');
 });
+
+add_action( 'do_meta_boxes', function() {
+
+  remove_meta_box('tagsdiv-post_tag', 'post', 'normal');
+  remove_meta_box('categorydiv', 'post', 'normal');
+  remove_meta_box('postimagediv', 'post', 'side');
+  remove_meta_box('authordiv', 'post', 'normal');
+  remove_meta_box('postexcerpt', 'post', 'normal');
+  remove_meta_box('trackbacksdiv', 'post', 'normal');
+  remove_meta_box('commentstatusdiv', 'post', 'normal');
+  remove_meta_box('postcustom', 'post', 'normal');
+  remove_meta_box('commentstatusdiv', 'post', 'normal');
+  remove_meta_box('commentsdiv', 'post', 'normal');
+  remove_meta_box('revisionsdiv', 'post', 'normal');
+  remove_meta_box('authordiv', 'post', 'normal');
+  remove_meta_box('slugdiv', 'post', 'normal');
+});
+
+add_action( 'admin_menu', function() {
+
+  remove_meta_box('tagsdiv-post_tag', 'post', 'normal');
+  remove_meta_box('categorydiv', 'post', 'normal');
+});
+
