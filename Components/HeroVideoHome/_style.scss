@@ -1,8 +1,15 @@
 [is='flynt-hero-video-home'] {
-  height: 100vh;
-  overflow: hidden;
+  @media (orientation: landscape) {
+    height: 100vh;
+    overflow: hidden;
+    .video {
+      height: 100%;
+      &-player {
+        height: 100%;
+      }
+    }
+  }
   .video {
-    height: 100%;
     margin: 0 auto;
     position: relative;
 
@@ -23,7 +30,6 @@
     }
   
     &-player {
-      height: 100%;
       width: 100%;
       position: absolute;
       top: 0  ;

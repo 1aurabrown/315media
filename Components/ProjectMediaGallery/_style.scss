@@ -4,9 +4,9 @@
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: stretch;
+    margin-left: -$gap;
+    margin-top: -$gap;
   }
-  margin-left: -$gap;
-  margin-top: -$gap;
 
   .grid-item {
     flex-shrink: 0;

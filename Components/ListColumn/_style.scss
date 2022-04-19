@@ -1,9 +1,5 @@
 [is='flynt-list-column'] {
-  padding: $component-spacing-desktop 0;
 
-  @media (max-width: $breakpoint-tablet - 1) {
-    padding: $component-spacing-mobile 0;
-  }
 
   .content {
     align-items: flex-end;

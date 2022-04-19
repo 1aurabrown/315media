@@ -1,7 +1,7 @@
 [is='flynt-block-wysiwyg-quote'] {
-  margin-top: 50px;
-  margin-bottom: 50px;
+
   .content {
+    margin: 0 auto;
     @include reset-content-margins;
     font-family: $font-ibm;
     max-width: $content-max-width;

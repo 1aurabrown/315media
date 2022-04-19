@@ -9,17 +9,11 @@ add_filter('Flynt/addComponentData?name=HeroVideoHome', function ($data) {
     $data['video'] = Oembed::setSrcAsDataAttribute(
         $data['oembed'],
         [
-            'autoplay' => 'true',
-            'background' => 'true',
-            'mute' => 'true',
-            'loop' => 'true',
-            'playsinline' => 'true',
-            'controls' => 'false',
-            'showinfo' => 'false',
-            'autohide' => 'true',
-            'allowfullscreen' => 'false',
-            'frameborder' => 'false',
-
+            'autoplay' => 1,
+            'showinfo' => 0,
+            'autohide' => 1,
+            'allowfullscreen' => 0,
+            'frameborder' => 0,
             'playsinline' => 1,
             'controls'    => 0,
             'hd'  => 1,

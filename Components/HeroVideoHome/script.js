@@ -24,11 +24,15 @@ class HeroVideoHome extends window.HTMLDivElement {
     var scaleH = windowWidth / videoWidth;
 
     var scale = (Math.max(scaleV, scaleH));
+    if (windowHeight < windowWidth) {
     console.log(scale)
       this.$iframe.css({
         "-webkit-transform" : "scale("+ scale+")",
         "transform" : "scale("+ scale+")"
       });
+    } else {
+      this.$iframe.removeAttr('style')
+    }
   }
 
   resolveElements () {
