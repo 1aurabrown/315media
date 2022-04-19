@@ -7,23 +7,23 @@
         {{ renderComponent(component) }}
       {% endfor %}
     </header>
+
     <section class="post-main">
-      <div class="container container_full meta componentPadding">
+      <div class="container meta componentPadding componentSpacing">
         <div class="header">
           <div class="post-subtitle">{{ post.client }}</div>
           <div class="post-title">{{ post.title }}</div>
         </div>
-        <div class="content">
+        <div class="post-description">
           {% if post.description|e('wp_kses_post') %}
             {{ post.description|e('wp_kses_post') }}
           {% endif %}
         </div>
       </div>
-      <ul class="media-gallery componentPadding">
-      {% for component in post.meta('postComponents') %}
-        {{ renderComponent(component) }}
-      {% endfor %}
-      </ul>
+
     </section>
+    {% for component in post.meta('postComponents') %}
+      {{ renderComponent(component) }}
+    {% endfor %}
   </article>
 {% endblock %}

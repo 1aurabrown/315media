@@ -56,3 +56,29 @@ add_action( 'admin_menu', function() {
   remove_meta_box('categorydiv', 'post', 'normal');
 });
 
+/*
+ * Override default vimeo oembed behavior
+ */
+add_action('init', function() {
+
+        // Unregister default Vimeo embed
+        $format = '#https?://(.+\.)?vimeo\.com/.*#i';
+        wp_oembed_remove_provider($format);
+
+        // set vimeo oembed args
+        // see full list here: developer.vimeo.com/apis/oembed
+        $args = array(
+            'title'     => false,
+            'portrait'  => false,
+            'byline'    => false,
+            'api'       => true,
+            'player_id' => uniqid('vimeo-'),
+            'color' => '0060ff'
+        );
+
+        // set regex and oembed url
+        $provider = 'http://vimeo.com/api/oembed.{format}?' . http_build_query($args);
+
+        // override the default vimeo configuration
+        return wp_oembed_add_provider($format, $provider, true);
+});

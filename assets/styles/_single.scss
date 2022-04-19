@@ -1,94 +1,4 @@
 .single {
-  .media-gallery {
-    display: flex;
-    flex-flow: row wrap;
-    gap: $container-padding-mobile;
-    list-style: none;
-    margin: 0;
-    width: 100%;
-
-    @media (min-width: $breakpoint-tablet) {
-      display: block;
-      gap: 40px;
-    }
-
-    .gallery-item {
-      @media (max-width: $breakpoint-tablet - 1) {
-        width: 100%;
-      }
-
-      &--one-third {
-        width: calc((100vw - 180px) / 3);
-
-        @media (max-width: $breakpoint-tablet - 1) {
-          width: 100%;
-        }
-      }
-
-      &--two-third {
-        width: calc((100vw - 180px) / 1.5);
-
-        @media (max-width: $breakpoint-tablet - 1) {
-          width: 100%;
-        }
-      }
-
-      &--one-half {
-        width: calc((100vw - 180px) / 2);
-
-        @media (max-width: $breakpoint-tablet - 1) {
-          width: 100%;
-        }
-      }
-
-      &--three-third {
-        height: 100%;
-        width: calc(100vw - 140px);
-
-        @media (max-width: $breakpoint-tablet - 1) {
-          width: 100%;
-        }
-      }
-
-      img {
-        display: block;
-        height: 100%;
-        max-width: 100%;
-        object-fit: cover;
-        width: 100%;
-      }
-
-      video {
-        display: block;
-        height: 100%;
-        max-width: 100%;
-        object-fit: cover;
-        width: 100%;
-      }
-    }
-
-    .gallery-item-height--0 {
-      height: calc((100vw - 180px) / 3);
-
-      @media (max-width: $breakpoint-tablet - 1) {
-        height: auto;
-        padding-bottom: 20px;
-      }
-    }
-
-    .gallery-item-height--1 {
-      height: 100%;
-
-      @media (max-width: $breakpoint-tablet - 1) {
-        height: auto;
-        padding-bottom: 20px;
-      }
-    }
-
-    .links {
-      width: 100%;
-    }
-  }
 
   .mainContent {
     flex: 1 0 auto;
@@ -96,12 +6,6 @@
     
     .post-main {
       .meta {
-        padding-top: 120px;
-        padding-bottom: 120px;
-        @media (max-width: $breakpoint-tablet - 1) {
-          padding-top: 50px;
-          padding-bottom: 50px;
-        }
 
         .post-title {
           font-family: $font-cinetype;
@@ -127,7 +31,7 @@
           }
         }
 
-        .content {
+        .post-description {
           font-family: $font-ibm;
           font-weight: 300;
           font-size: 1.5rem;

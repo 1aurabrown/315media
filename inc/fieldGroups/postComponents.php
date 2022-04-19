@@ -5,8 +5,6 @@ use Flynt\Components;
 use Flynt\FieldVariables;
 use Flynt\Utils\Oembed;
 
-
-
 add_action('Flynt/afterRegisterComponents', function () {
     ACFComposer::registerFieldGroup([
         'name' => 'projectMeta',

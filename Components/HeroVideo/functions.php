@@ -11,31 +11,8 @@ add_filter('Flynt/addComponentData?name=HeroVideo', function ($data) {
         [
         ]
     );
-
     return $data;
 });
-
-
-add_filter( 'oembed_fetch_url', function( $provider, $url, $args) {
-    // unset args that WP is already taking care
-    $newargs = array_merge($args,
-    [
-        'responsive' => 1,
-        'controls' => 1,
-        'byline'=> 0,
-        'portrait' => 0,
-        'autoplay' => 0,
-        'title' => 0,
-        'discover' => 0,
-        'color' => '0060ff'
-    ]);
-
-
-    // build the query url
-    $parameters = urlencode( http_build_query(  $newargs ) );
-
-    return $provider . '&'. $parameters;
-}, 10, 3);
 
 function getACFLayout()
 {
