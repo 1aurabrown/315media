@@ -10,7 +10,7 @@ use Timber;
 
 add_action('init', function () {
     register_nav_menus([
-        'navigation_footer_columns' => __('Navigation Footer Columns', 'flynt'),
+        'navigation_footer_columns' => __('Footer Navigation', 'flynt'),
     ]);
 });
 
