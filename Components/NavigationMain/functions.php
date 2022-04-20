@@ -7,7 +7,7 @@ use Timber\Menu;
 
 add_action('init', function () {
     register_nav_menus([
-        'navigation_main' => __('Navigation Main', 'flynt')
+        'navigation_main' => __('Header Navigation', 'flynt')
     ]);
 });
 
