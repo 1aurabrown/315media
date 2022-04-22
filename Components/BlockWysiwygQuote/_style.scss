@@ -1,14 +1,13 @@
 [is='flynt-block-wysiwyg-quote'] {
-
   .content {
-    margin: 0 auto;
     @include reset-content-margins;
     font-family: $font-ibm;
-    max-width: $content-max-width;
-    text-align: center;
     font-size: 1.25rem;
     letter-spacing: 1px;
     line-height: 1.688rem;
+    margin: 0 auto;
+    max-width: $content-max-width;
+    text-align: center;
 
     @media (min-width: $breakpoint-tablet) {
       font-family: $font-cinetype;

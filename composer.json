@@ -33,10 +33,5 @@
     "psr-4": {
       "Flynt\\": "lib/"
     }
-  },
-  "config": {
-    "allow-plugins": {
-      "composer/installers": true
-    }
   }
 }

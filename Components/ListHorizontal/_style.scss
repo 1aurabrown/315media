@@ -1,14 +1,10 @@
 [is='flynt-list-horizontal'] {
-  margin-top: $component-spacing-mobile;
   margin-bottom: $component-spacing-mobile;
+  margin-top: $component-spacing-mobile;
 
   @media (min-width: $breakpoint-tablet) {
-    margin-top: $component-spacing-desktop;
     margin-bottom: $component-spacing-desktop;
-  }
-  
-  .preContent {
-
+    margin-top: $component-spacing-desktop;
   }
 
   .list {
@@ -16,10 +12,10 @@
     flex-flow: row wrap;
 
     .item {
+      font-family: $font-cinetype;
       font-size: 2.625rem;
       line-height: 3.544rem;
       margin-right: 10px;
-      font-family: $font-cinetype;
 
       @media (max-width: $breakpoint-tablet - 1) {
         font-size: 1.5rem;

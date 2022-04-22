@@ -33,15 +33,15 @@ add_action('after_setup_theme', function () {
     load_theme_textdomain('flynt', get_template_directory() . '/languages');
 });
 
-add_action( 'do_meta_boxes', function() {
-  remove_meta_box('commentstatusdiv', 'post', 'normal');
-  remove_meta_box('commentsdiv', 'post', 'normal');
+add_action('do_meta_boxes', function () {
+    remove_meta_box('commentstatusdiv', 'post', 'normal');
+    remove_meta_box('commentsdiv', 'post', 'normal');
 });
 
 /*
  * Override default vimeo oembed behavior
  */
-add_action('init', function() {
+add_action('init', function () {
 
         // Unregister default Vimeo embed
         $format = '#https?://(.+\.)?vimeo\.com/.*#i';

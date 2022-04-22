@@ -1,7 +1,7 @@
 [is='flynt-navigation-main'] {
   $navigation-height-desktop: 100px;
   $navigation-height-mobile: 75px;
-  $nav-duration: .2s;
+  $nav-duration: 0.2s;
   $nav-ease: ease-in-out;
 
   // background-color: $white;
@@ -13,17 +13,17 @@
   z-index: 1000;
 
   .wrapper {
-    height: $navigation-height-mobile;
-    opacity: 0;
-    transition-property: opacity;
-    transition-duration: $nav-duration;
-    transition-timing-function: $nav-ease;
-
-    padding: 0 $container-padding-mobile;
 
     // Initial display
     background-color: $white;
     color: $blue;
+    height: $navigation-height-mobile;
+    opacity: 0;
+
+    padding: 0 $container-padding-mobile;
+    transition-duration: $nav-duration;
+    transition-property: opacity;
+    transition-timing-function: $nav-ease;
 
     &:hover {
       opacity: 1;
@@ -34,6 +34,7 @@
     &--transparent {
       background-color: transparent;
       color: $white;
+
       .container {
         border-color: transparent;
       }
@@ -45,15 +46,15 @@
     }
 
     @media (min-width: $breakpoint-tablet) {
-      padding: 0 $container-padding-desktop;
       height: $navigation-height-desktop;
+      padding: 0 $container-padding-desktop;
     }
   }
 
   .container {
+    align-items: center;
     border-bottom: 1px solid;
     border-color: $blue;
-    align-items: center;
     display: flex;
     height: 100%;
     justify-content: space-between;
@@ -62,6 +63,7 @@
 
   .logo {
     flex-shrink: 1;
+
     &-desktop {
       display: none;
 
@@ -80,9 +82,9 @@
 
 
     .logoHeader {
+      @include cursor-blue;
       display: block;
       fill: currentColor;
-      @include cursor-blue;
       max-width: 100%;
     }
 
@@ -96,27 +98,28 @@
 
 
     &-link {
-      margin-left: 20px;
+      @include cursor-blue;
       display: block;
       font-size: 1rem;
       letter-spacing: 0.015em;
       line-height: 1.5rem;
-      @include cursor-blue;
+      margin-left: 20px;
 
       &:hover {
         text-decoration: underline;
       }
 
       @media (min-width: $breakpoint-tablet) {
-        margin-left: 50px;
         font-size: 1.8rem;
+        margin-left: 50px;
       }
     }
   }
 
   .wrapper--transparent {
-   .menu-link, .logoHeader {
-     @include cursor-white;
+    .menu-link,
+    .logoHeader {
+      @include cursor-white;
     }
   }
 }

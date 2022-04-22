@@ -12,24 +12,24 @@ class HeroVideoHome extends window.HTMLDivElement {
     this.resolveElements()
     this.bindFunctions()
     this.bindEvents()
-    this.videoSize();
+    this.videoSize()
   }
 
-  videoSize() {
-    var windowHeight = $(window).height();
-    var windowWidth = $(window).width();
-    var videoHeight = this.$iframe.outerHeight();
-    var videoWidth = this.$iframe.outerWidth();
-    var scaleV = windowHeight / videoHeight;
-    var scaleH = windowWidth / videoWidth;
+  videoSize () {
+    var windowHeight = $(window).height()
+    var windowWidth = $(window).width()
+    var videoHeight = this.$iframe.outerHeight()
+    var videoWidth = this.$iframe.outerWidth()
+    var scaleV = windowHeight / videoHeight
+    var scaleH = windowWidth / videoWidth
 
-    var scale = (Math.max(scaleV, scaleH));
+    var scale = (Math.max(scaleV, scaleH))
     if (windowHeight < windowWidth) {
-    console.log(scale)
+      console.log(scale)
       this.$iframe.css({
-        "-webkit-transform" : "scale("+ scale+")",
-        "transform" : "scale("+ scale+")"
-      });
+        '-webkit-transform': 'scale(' + scale + ')',
+        transform: 'scale(' + scale + ')'
+      })
     } else {
       this.$iframe.removeAttr('style')
     }
@@ -54,17 +54,17 @@ class HeroVideoHome extends window.HTMLDivElement {
   }
 
   loadVideo () {
-    if (!this.$iframe) return;
+    if (!this.$iframe) return
     this.$iframe.on('load', this.videoIsLoaded.bind(this))
     this.$iframe.attr('src', this.$iframe.data('src'))
     // this.$videoPlayer.addClass('video-player--isLoading')
   }
 
   videoIsLoaded () {
-    if (!this.$videoPlayer) return;
+    if (!this.$videoPlayer) return
     this.$videoPlayer.removeClass('video-player--isLoading')
     this.$videoPlayer.addClass('video-player--isLoaded')
-    if (!this.$posterImage) return;
+    if (!this.$posterImage) return
     this.$posterImage.addClass('figure-image--isHidden')
   }
 }

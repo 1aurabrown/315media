@@ -1,19 +1,19 @@
 [is='flynt-block-footer-contact'] {
   border-top: 1px solid $black;
+  padding-bottom: 50px;
   
   padding-top: 50px;
-  padding-bottom: 50px;
 
   @media (min-width: $breakpoint-tablet-horizontal) {
-    padding-top: $container-padding-desktop;
     padding-bottom: $container-padding-desktop;
+    padding-top: $container-padding-desktop;
   }
 
   .content {
     @include reset-content-margins;
-    font-weight: bold;
     font-family: $font-cinetype;
     font-size: 2.813rem;
+    font-weight: bold;
     letter-spacing: 1px;
     line-height: 3.656rem;
     margin: 0 auto;
@@ -28,9 +28,9 @@
     }
 
     a {
+      @include cursor-blue;
       color: $blue;
       text-decoration: none;
-      @include cursor-blue;
 
       &:hover,
       &:focus {

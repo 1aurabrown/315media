@@ -1,17 +1,17 @@
 [is='flynt-navigation-footer-columns'] {
   @import 'Partials/menu';
   background-color: $blue;
+  color: $white;
+
+  font-family: $font-ibm;
+  font-size: 1rem;
+  letter-spacing: 0.015em;
+  line-height: 1.5;
   padding: 50px 40px;
 
   @media (min-width: $breakpoint-tablet) {
     padding: $container-padding-desktop;
   }
-
-  font-family: $font-ibm;
-  font-size: 1rem;
-  color: $white;
-  line-height: 1.5;
-  letter-spacing: .015em;
 
   + [is='flynt-navigation-footer'] .container {
     padding-top: 0;
@@ -41,11 +41,11 @@
     }
 
     &-menu {
-      font-size: 0.875rem;
       align-items: flex-start;
       color: $white;
       display: flex;
       flex-wrap: wrap;
+      font-size: 0.875rem;
       justify-content: flex-start;
       width: 100%;
 
@@ -110,8 +110,8 @@
 
     &-link {
       @include cursor-white
-      &:hover,
-      &:focus {
+        &:hover,
+        &:focus {
         text-decoration: underline;
       }
     }
@@ -139,9 +139,9 @@
       color: $white;
       display: block;
       height: 100%;
-      width: 24px;
-      max-height: 24px;
       height: auto;
+      max-height: 24px;
+      width: 24px;
     }
   }
 }

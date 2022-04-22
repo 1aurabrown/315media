@@ -54,10 +54,10 @@ body {
 
 #{$heading-selectors} {
   font-size: inherit;
-  text-align: left;
   font-weight: inherit;
   line-height: inherit;
   margin: 0;
+  text-align: left;
 
   a,
   a:hover,
@@ -550,22 +550,22 @@ select {
 }
 
 .componentSpacing {
-  margin-top: $component-spacing-mobile;
   margin-bottom: $component-spacing-mobile;
+  margin-top: $component-spacing-mobile;
 
   @media (min-width: $breakpoint-tablet) {
-    margin-top: $component-spacing-desktop;
     margin-bottom: $component-spacing-desktop;
+    margin-top: $component-spacing-desktop;
   }
 
 
   &[class*='theme'] {
     margin: 0;
-    padding-top: $component-spacing-mobile;
     padding-bottom: $component-spacing-mobile;
+    padding-top: $component-spacing-mobile;
     @media (min-width: $breakpoint-tablet) {
-      padding-top: $component-spacing-mobile;
       padding-bottom: $component-spacing-mobile;
+      padding-top: $component-spacing-mobile;
     }
 
   }
@@ -693,7 +693,6 @@ select {
   color: $color-text;
 
   #{$heading-selectors} {
-
     a,
     a:hover,
     a:focus {
@@ -721,7 +720,7 @@ select {
   color: $blue;
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: .0625em;
+  letter-spacing: 0.0625em;
   line-height: 1.35;
   margin-bottom: 20px;
   text-transform: uppercase;
