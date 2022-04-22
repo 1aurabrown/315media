@@ -10,6 +10,14 @@
   width: 100%;
   z-index: 1000;
 
+  .page-privacy-policy & {
+    position: sticky;
+
+    .wrapper {
+      opacity: 1;
+    }
+  }
+
   .js-header-offset-element {
     position: absolute;
     height: $navigation-height-mobile + $component-spacing-mobile / 2;
