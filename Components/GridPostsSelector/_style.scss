@@ -18,7 +18,7 @@
   }
 
   .grid-item {
-    height: calc((100vw - 2 * $container-padding-mobile) * 0.5625);
+    height: $one-third-width;
     position: relative;
 
 
