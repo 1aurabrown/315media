@@ -20,16 +20,12 @@ class HeroVideoHome extends window.HTMLDivElement {
     var windowWidth = $(window).width()
     var videoHeight = this.$iframe.outerHeight()
     var videoWidth = this.$iframe.outerWidth()
-    var scaleV = windowHeight / videoHeight
-    var scaleH = windowWidth / videoWidth
 
     var aspectRatio = 100 * videoHeight / videoWidth
     this.$iframe.css({ top: 0, left: 0, position: 'absolute', width: '100%', height: '100%' })
     this.$videoPlayer.css({ 'padding-bottom': aspectRatio + '%' })
 
-    var scale = (Math.max(scaleV, scaleH))
     if (windowHeight < windowWidth) {
-      console.log(scale)
       this.$videoWrapper.css({
         width: `calc(100vh * ${videoWidth / videoHeight})`
       })

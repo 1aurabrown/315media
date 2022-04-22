@@ -17,9 +17,46 @@
     margin: 0 auto;
     max-width: 600px;
 
-    > :last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
+    p {
+      margin: 1em 0;
     }
+
+    h2 {
+      margin: 2em 0 1.25em;
+      font-size: 1.5rem;
+      font-weight: normal;
+      line-height: 1.35;
+    }
+
+    h3 {
+      margin: 2em 0 1.25em;
+      font-size: 1.25rem;
+      font-weight: normal;
+      line-height: 1.35;
+    }
+
+
+    h4 {
+      margin: 2em 0 1.25em;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    h5 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.0625em;
+      line-height: 1.35;
+      margin: 2em 0 1.25em;
+      text-transform: uppercase;
+    }
+
+    h6 {
+      margin: 2em 0 1.25em;
+      line-height: 1.35;
+      font-weight: normal;
+    }
+
   }
 }
