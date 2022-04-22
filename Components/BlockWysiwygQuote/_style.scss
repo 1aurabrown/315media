@@ -1,13 +1,12 @@
 [is='flynt-block-wysiwyg-quote'] {
-
   .content {
-    margin: 0 auto;
     @include reset-content-margins;
     @include font-ibm;
-    max-width: $content-max-width;
-    text-align: center;
     font-size: 1.25rem;
     line-height: 1.35;
+    margin: 0 auto;
+    max-width: $content-max-width;
+    text-align: center;
 
     @media (min-width: $breakpoint-tablet) {
       @include font-cinetype;;

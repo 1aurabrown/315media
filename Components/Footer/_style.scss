@@ -1,17 +1,12 @@
 [is='flynt-navigation-footer-columns'] {
-  @import 'Partials/menu';
-  background-color: $blue;
-  padding: 50px 40px;
-
-  @media (min-width: $breakpoint-tablet) {
-    padding: $container-padding-desktop;
-  }
 
   @include font-ibm;
-  font-size: 1rem;
+  background-color: $blue;
   color: $white;
-  line-height: 1.5;
+  font-size: 1rem;
   letter-spacing: 0.015em;
+  line-height: 1.5;
+  padding: 50px 40px;
 
   + [is='flynt-navigation-footer'] .container {
     padding-top: 0;
@@ -21,12 +16,6 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-
-    @media (min-width: $breakpoint-tablet) {
-      align-items: flex-start;
-      flex-direction: row;
-      justify-content: space-between;
-    }
 
     &-info {
       align-items: flex-start;
@@ -41,11 +30,11 @@
     }
 
     &-menu {
-      font-size: 0.875rem;
       align-items: flex-start;
       color: $white;
       display: flex;
       flex-wrap: wrap;
+      font-size: 0.875rem;
       justify-content: flex-start;
       width: 100%;
 
@@ -53,13 +42,15 @@
         @include cursor-white;
       }
     }
+
+    @media (min-width: $breakpoint-tablet) {
+      align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   .logo {
-    @apply cursor-white;
-
-
-
     &-image {
       display: block;
       margin: 0;
@@ -78,6 +69,7 @@
         max-width: 496px;
       }
     }
+    @apply cursor-white;
   }
 
   .social {
@@ -140,9 +132,14 @@
       color: $white;
       display: block;
       height: 100%;
-      width: 24px;
-      max-height: 24px;
       height: auto;
+      max-height: 24px;
+      width: 24px;
     }
+  }
+  @import 'Partials/menu';
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: $container-padding-desktop;
   }
 }

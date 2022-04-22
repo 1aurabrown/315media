@@ -1,8 +1,8 @@
 [is='flynt-block-wysiwyg'] {
   .preContent {
-    @include font-cinetype;;
-    font-weight: bold;
+    @include font-cinetype;
     font-size: 1.75rem;
+    font-weight: bold;
     line-height: 1.35;
     margin: 0 auto 50px;
     max-width: 600px;
