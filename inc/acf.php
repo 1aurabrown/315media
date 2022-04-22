@@ -29,6 +29,7 @@ add_filter('acf/fields/google_map/api', function ($api) {
     return $api;
 });
 
+/*
 Options::addGlobal('Acf', [
     [
         'name' => 'googleMapsTab',
@@ -45,3 +46,4 @@ Options::addGlobal('Acf', [
         'placeholder' => ''
     ]
 ]);
+*/

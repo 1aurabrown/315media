@@ -1,17 +1,9 @@
 {% extends 'templates/_document.twig' %}
 
 {% block content %}
-  {% for component in post.meta('pagehomeintroComponents') %}
-    {{ renderComponent(component) }}
-  {% endfor %}
-  <ul class="featured-projects">
   {% for component in post.meta('pagehomeComponents') %}
-    {{ renderComponent(component) }}
+    <section>
+      {{ renderComponent(component) }}
+    </section>
   {% endfor %}
-  </ul>
-  <section class="footer">
-  {% for component in post.meta('pagehomeoutroComponents') %}
-    {{ renderComponent(component) }}
-  {% endfor %}
-  </section>
 {% endblock %}

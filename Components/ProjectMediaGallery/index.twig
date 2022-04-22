@@ -1,0 +1,19 @@
+
+<div class="flyntComponent componentPadding componentSpacing " id="projects" is="flynt-project-media-gallery">
+  <div class="container">
+
+    <div class="grid">
+
+      {% for media in mediaBlocks %}
+          {% if media.video %}
+            <video class="media__video media grid-item--{{ media.width }} grid-item" muted loop autoplay preload="auto" type="video/mp4" src="{{ media.video }}"></video>
+
+          {% elseif media.image %}
+              <img class="media__image media grid-item--{{ media.width }} grid-item" src="{{ Image(media.image).src }}" />
+          {% endif %}
+
+      {% endfor %}
+
+    </div>
+  </div>
+</div>

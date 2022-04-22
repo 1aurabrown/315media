@@ -11,54 +11,54 @@ class NavigationMain extends window.HTMLElement {
     this.$ = $(this)
     this.resolveElements()
     this.bindFunctions()
-    this.bindEvents()
+    if (this.$banner.length > 0) {
+      this.onScroll()
+      this.bindEvents()
+    } else {
+      this.$headerWrapper.addClass('wrapper--visible')
+    }
   }
 
   resolveElements () {
     this.$window = $(window)
     this.$document = $(document)
+    this.$banner = $('.js-hero-banner', this.$document)
     this.$headerWrapper = $('.wrapper', this)
-    this.$headerContainer = $('.container', this)
-    this.$logo = $('.logoHeader', this)
   }
 
   bindFunctions () {
-    this.showLogo = this.showLogo.bind(this)
+    this.onScroll = this.onScroll.bind(this)
+    this.showHeader = this.showHeader.bind(this)
     this.colorLogo = this.colorLogo.bind(this)
   }
 
   bindEvents () {
-    this.$window.on('scroll', this.showLogo)
-    this.$window.on('scroll', this.colorLogo)
+    this.$window.on('scroll', this.onScroll)
   }
 
-  showLogo (e) {
-    const $scroll = this.$window.scrollTop()
+  onScroll (e) {
+    this.colorLogo(e)
+    this.showHeader(e)
+  }
 
-    if ($scroll > 0) {
-      // this.$headerWrapper.fadeIn()
-      this.$headerWrapper.addClass('wrapper--fadeIn')
-      this.$headerWrapper.removeClass('wrapper--fadeOut')
+  showHeader (e) {
+    const scroll = this.$window.scrollTop()
+    if (scroll > 0) {
+      this.$headerWrapper.addClass('wrapper--visible')
     } else {
-      // this.$headerWrapper.fadeOut()
-      this.$headerWrapper.removeClass('wrapper--fadeIn')
-      this.$headerWrapper.addClass('wrapper--fadeOut')
+      this.$headerWrapper.removeClass('wrapper--visible')
     }
   }
 
   colorLogo (e) {
-    const $scroll = this.$window.scrollTop()
-    // const $scroll = 100 * this.$window.scrollTop() / (this.$document.innerHeight() - this.$window.innerHeight())
-    const $bannerHeight = this.$window.innerHeight() - 100
+    const scroll = this.$window.scrollTop()
+    const headerHeight = this.$headerWrapper.innerHeight()
+    const bannerHeight = this.$banner.innerHeight()
 
-    if ($scroll >= $bannerHeight) {
-      this.$logo.addClass('logoHeader--blue')
-      this.$headerWrapper.addClass('wrapper--backgroundWhite')
-      this.$headerContainer.addClass('container--borderBlue')
+    if (scroll >= (bannerHeight - headerHeight)) {
+      this.$headerWrapper.removeClass('wrapper--transparent')
     } else {
-      this.$logo.removeClass('logoHeader--blue')
-      this.$headerWrapper.removeClass('wrapper--backgroundWhite')
-      this.$headerContainer.removeClass('container--borderBlue')
+      this.$headerWrapper.addClass('wrapper--transparent')
     }
   }
 }

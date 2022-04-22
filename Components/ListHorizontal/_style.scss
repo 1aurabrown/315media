@@ -1,47 +1,31 @@
 [is='flynt-list-horizontal'] {
-  padding: 120px 0;
-  width: 100%;
+  margin-top: $component-spacing-mobile;
+  margin-bottom: $component-spacing-mobile;
 
-  @media (max-width: $breakpoint-mobile-horizontal) {
-    padding: 50px 0;
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: $component-spacing-desktop;
+    margin-bottom: $component-spacing-desktop;
   }
   
-  .preContent {
-    color: $blue;
-    font-family: 'IBMRegular', Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 3px;
-    line-height: 21.6px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-
-    @media (max-width: $breakpoint-mobile-horizontal) {
-      font-size: 0.875rem;
-      line-height: 1.181rem;
-    }
-  }
-
   .list {
     @include reset-list-flex;
     flex-flow: row wrap;
 
     .item {
       font-size: 2.625rem;
-      line-height: 3.544rem;
+      line-height: 1.35;
       margin-right: 10px;
+      @include font-cinetype;;
 
-      @media (max-width: $breakpoint-mobile-horizontal) {
+      @media (max-width: $breakpoint-tablet - 1) {
         font-size: 1.5rem;
-        line-height: 2.025rem;
       }
 
       &:nth-child(odd) {
-        font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
+        font-weight: bold;
       }
 
       &:nth-child(even) {
-        font-family: 'GTCinetypeLightItalic', Helvetica, Arial, sans-serif;
         font-style: italic;
       }
 

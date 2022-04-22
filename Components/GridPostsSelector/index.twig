@@ -1,26 +1,35 @@
-{% if items|length > 0 %}
-  <div class="flyntComponent grid-item--{{ projectWidth }}" id="projects" is="flynt-grid-posts-selector">
-    <div class="container">
-      {% for item in items %}
-        <div class="grid-item {{ post.post_type }}">
-          <div class="content">
-            <a href="{{ post.link }}" class="content-link content-link--{{ post.category }}" title="{{ post.title }}">
-              {% if post.thumbnail %}
-                <div class="overlay"></div>
-                <img class="featuredImage" src="{{ post.thumbnail.src }}" />
-                <img class="secondaryImage" src="{{ Image(post.hoverImage).src }}" />
+<div class="flyntComponent componentPadding componentSpacing " id="projects" is="flynt-grid-posts-selector">
+  <div class="container">
+
+    <div class="grid">
+
+      {% for projectBlock in projectsBlocks %}
+        <div class="project grid-item--{{ projectBlock.projectWidth }} grid-item {% if projectBlock.post.image and projectBlock.post.hoverImage %} project--hoverable {% endif %} ">
+            <a href="{{ projectBlock.post.link }}" class="project__media-wrapper" title="{{ projectBlock.post.title }}">
+            {% if projectBlock.post.meta('coverVideo') %}
+              <video class="project__featured-media" muted loop preload="auto" onmouseover="this.play()" onmouseout="this.pause();" type="video/mp4" src="{{ projectBlock.post.meta('coverVideo') }}"></video>
+
+            {% else %}
+              {%  if projectBlock.post.image %}
+                <img class="project__featured-media" src="{{ Image(projectBlock.post.image).src }}" />
+              {% elseif projectBlock.post.hoverImage %}
+                <img class="project__hover-media" src="{{ Image(projectBlock.post.hoverImage).src }}" />
+              {%  endif %}
+              {% if projectBlock.post.image and projectBlock.post.hoverImage %}
+                <img class="project__hover-media" src="{{ Image(projectBlock.post.hoverImage).src }}" />
               {% endif %}
-              {% if post.coverVideo %}
-                <video muted loop preload="auto" class="video video-dark" onmouseover="this.play()" onmouseout="this.pause();" type="video/mp4" src="{{ post.meta('coverVideo') }}"></video>
-              {% endif %}
-              <div class="content-inner">
-                <h3 class="content-subtitle">{{ post.client }}</h3>
-                <h3 class="content-title">{{ post.title }}</h3>
-              </div>
-            </a>
+            {% endif %}
+          </a>
+
+          <div class="project__content">
+            <span class="project__client">{{ projectBlock.post.client }}</span>
+            <h3 class="project__title">{{ projectBlock.post.title }}</h3>
           </div>
+
         </div>
+
       {% endfor %}
+
     </div>
   </div>
-{% endif %}
+</div>

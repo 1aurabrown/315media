@@ -2,28 +2,25 @@
   .media-gallery {
     display: flex;
     flex-flow: row wrap;
-    gap: 40px;
+    gap: $container-padding-mobile;
     list-style: none;
     margin: 0;
-    padding: $container-padding-mobile $container-padding-desktop;
     width: 100%;
 
-    @media (max-width: $breakpoint-mobile-horizontal) {
+    @media (min-width: $breakpoint-tablet) {
       display: block;
-      gap: 0;
-      padding: 50px $container-padding-mobile;
+      gap: 40px;
     }
 
     .gallery-item {
-      @media (max-width: $breakpoint-mobile-horizontal) {
-        margin-bottom: $container-padding-mobile;
+      @media (max-width: $breakpoint-tablet - 1) {
         width: 100%;
       }
 
       &--one-third {
         width: calc((100vw - 180px) / 3);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-tablet - 1) {
           width: 100%;
         }
       }
@@ -31,7 +28,7 @@
       &--two-third {
         width: calc((100vw - 180px) / 1.5);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-tablet - 1) {
           width: 100%;
         }
       }
@@ -39,7 +36,7 @@
       &--one-half {
         width: calc((100vw - 180px) / 2);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-tablet - 1) {
           width: 100%;
         }
       }
@@ -48,7 +45,7 @@
         height: 100%;
         width: calc(100vw - 140px);
 
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-tablet - 1) {
           width: 100%;
         }
       }
@@ -73,7 +70,7 @@
     .gallery-item-height--0 {
       height: calc((100vw - 180px) / 3);
 
-      @media (max-width: $breakpoint-mobile-horizontal) {
+      @media (max-width: $breakpoint-tablet - 1) {
         height: auto;
         padding-bottom: 20px;
       }
@@ -82,7 +79,7 @@
     .gallery-item-height--1 {
       height: 100%;
 
-      @media (max-width: $breakpoint-mobile-horizontal) {
+      @media (max-width: $breakpoint-tablet - 1) {
         height: auto;
         padding-bottom: 20px;
       }
@@ -95,49 +92,39 @@
 
   .mainContent {
     flex: 1 0 auto;
-    margin-bottom: 20px;
     
     .post-main {
       .meta {
-        .post-title {
-          font-family: 'GTCinetypeLightItalic', Helvetica, Arial, sans-serif;
+        .header {
+          @include font-cinetype;;
           font-size: 2.625rem;
-          font-style: italic;
-          line-height: 3.563rem;
-
-          @media (max-width: $breakpoint-mobile-horizontal) {
+          line-height: 1.35;
+          @media (max-width: $breakpoint-tablet - 1) {
             font-size: 1.75rem;
-            line-height: 2.363rem;
           }
+        }
+
+        .post-title {
+          font-style: italic;
         }
 
         .post-subtitle {
-          font-family: 'GTCinetypeRegular', Helvetica, Arial, sans-serif;
-          font-size: 2.625rem;
-          line-height: 3.563rem;
-
-          @media (max-width: $breakpoint-mobile-horizontal) {
-            font-size: 1.75rem;
-            line-height: 2.363rem;
-          }
+          font-weight: bold;
         }
 
-        .content {
-          font-family: 'IBMLight', Helvetica, Arial, sans-serif;
-          font-size: 1.5rem;
-          letter-spacing: 0.5px;
-          line-height: 2.25rem;
-          margin-top: 50px;
-          max-width: 75%;
+        .post-description {
+          font-size: 1.25rem;
+          font-weight: 300;
+          margin-top: 30px;
+          line-height: 1.5;
 
-          @media (max-width: $breakpoint-mobile-horizontal) {
-            font-size: 1.25rem;
-            line-height: 1.875rem;
+          @media (min-width: $breakpoint-tablet) {
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+            margin-top: 50px;
+            max-width: 75%;
           }
 
-          @media (max-width: $breakpoint-tablet-horizontal) {
-            max-width: 100%;
-          }
         }
       }
     }

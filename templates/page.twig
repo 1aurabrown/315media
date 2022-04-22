@@ -1,5 +1,7 @@
 {% extends 'templates/_document.twig' %}
 
+{% set bodyClass = 'solid-header' %}
+
 {% block content %}
   {% for component in post.meta('pageComponents') %}
     {{ renderComponent(component) }}

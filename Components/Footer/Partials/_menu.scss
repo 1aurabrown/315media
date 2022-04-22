@@ -1,0 +1,26 @@
+.list {
+  @include reset-list;
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 20px;
+
+  &-item {
+    @include reset-content-margins;
+
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      max-width: 240px;
+    }
+  }
+
+
+  &-titleLink,
+  &-link {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

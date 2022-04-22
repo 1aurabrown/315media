@@ -9,21 +9,51 @@ add_action('Flynt/afterRegisterComponents', function () {
     ACFComposer::registerFieldGroup([
         'name' => 'projectMeta',
         'title' => 'Project Info',
-        'style' => '',
-        'menu_order' => 1,
-        'position' => 'acf_after_title',
+        'position' => 'normal',
         'fields' => [
             [
-                'label' => __('Info', 'flynt'),
-                'name' => 'infoTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0
+                'label' => __('Thumbnail Image', 'flynt'),
+                'name' => 'image',
+                'type' => 'image',
+                'return_format' => 'url',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'wrapper' => [
+                    'width' => '33',
+                ],
+                'instructions' => 'Displayed in the projects grid on the homepage. Thumbnail Video takes precedence over Image.',
+
+            ],
+            [
+                'label' => __('Thumbnail Hover Image', 'flynt'),
+                'name' => 'hoverImage',
+                'type' => 'image',
+                'return_format' => 'url',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'wrapper' => [
+                    'width' => '33',
+                ],
+                'instructions' => 'Displayed on hover in the projects grid on the homepage. Thumbnail Video takes precedence over Image.',
+            ],
+            [
+                'label' => __('Thumbnail Video', 'flynt'),
+                'name' => 'coverVideo',
+                'type' => 'file',
+                'return_format' => 'url',
+                'mime_types' => 'mp4',
+                'instructions' => 'A short video clip displayed in the projects grid on the homepage. Thumbnail Video takes precedence over Image.',
+                'wrapper' => [
+                    'width' => '33',
+                ],
             ],
             [
                 'label' => __('Client', 'flynt'),
                 'name' => 'client',
                 'type' => 'text',
+                'wrapper' => [
+                    'width' => '100',
+                ],
             ],
             [
                 'label' => __('Description', 'flynt'),
@@ -35,32 +65,30 @@ add_action('Flynt/afterRegisterComponents', function () {
                     'width' => '100',
                 ]
             ],
+
+        ],
+        'location' => [
             [
-                'label' => __('Media', 'flynt'),
-                'name' => 'mediaTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0
-            ],
-            [
-                'label' => __('Secondary Image', 'flynt'),
-                'name' => 'hoverImage',
-                'type' => 'image',
-                'return_format' => 'url',
-                'preview_size' => 'medium',
-                'library' => 'all',
-                'wrapper' => [
-                    'width' => '50',
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'post',
                 ],
             ],
+        ],
+    ]);
+    ACFComposer::registerFieldGroup([
+        'name' => 'postBannerComponents',
+        'title' => 'Project Page Hero',
+        'fields' => [
             [
-                'label' => __('Cover Video', 'flynt'),
-                'name' => 'coverVideo',
-                'type' => 'file',
-                'return_format' => 'url',
-                'mime_types' => 'mp4',
-                'wrapper' => [
-                    'width' => '50',
+                'name' => 'postBannerComponents',
+                'label' => __('Hero', 'flynt'),
+                'type' => 'flexible_content',
+                'button_label' => __('Add Component', 'flynt'),
+                'layouts' => [
+                    Components\HeroVideo\getACFLayout(),
+                    Components\HeroVideoHome\getACFLayout(),
                 ],
             ],
         ],
@@ -76,17 +104,15 @@ add_action('Flynt/afterRegisterComponents', function () {
     ]);
     ACFComposer::registerFieldGroup([
         'name' => 'postComponents',
-        'title' => 'Post Components',
-        'style' => 'seamless',
+        'title' => 'Project Page Main Components',
         'fields' => [
             [
                 'name' => 'postComponents',
-                'label' => __('Post Components', 'flynt'),
+                'label' => __('Components', 'flynt'),
                 'type' => 'flexible_content',
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
-                    Components\GridMediaGalleryImage\getACFLayout(),
-                    Components\GridMediaGalleryVideo\getACFLayout(),
+                    Components\ProjectMediaGallery\getACFLayout(),
                     Components\ListColumn\getACFLayout(),
                 ],
             ],
