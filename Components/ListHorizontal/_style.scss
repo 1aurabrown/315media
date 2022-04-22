@@ -1,10 +1,10 @@
 [is='flynt-list-horizontal'] {
-  margin-top: $component-spacing-mobile;
   margin-bottom: $component-spacing-mobile;
+  margin-top: $component-spacing-mobile;
 
   @media (min-width: $breakpoint-tablet) {
-    margin-top: $component-spacing-desktop;
     margin-bottom: $component-spacing-desktop;
+    margin-top: $component-spacing-desktop;
   }
   
   .list {
@@ -12,14 +12,10 @@
     flex-flow: row wrap;
 
     .item {
+      @include font-cinetype;
       font-size: 2.625rem;
       line-height: 1.35;
       margin-right: 10px;
-      @include font-cinetype;;
-
-      @media (max-width: $breakpoint-tablet - 1) {
-        font-size: 1.5rem;
-      }
 
       &:nth-child(odd) {
         font-weight: bold;
@@ -37,6 +33,10 @@
           cursor: url("data:image/svg+xml;utf8, <svg width='18' height='21' viewBox='0 0 18 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.32 10.6904L0 0.69043V20.6904L17.32 10.6904Z' fill='black'/></svg>"), auto;
           text-decoration: none;
         }
+      };
+
+      @media        (max-width: $breakpoint-tablet - 1) {
+        font-size: 1.5rem;
       }
     }
   }
