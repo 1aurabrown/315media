@@ -3,17 +3,15 @@
   .content {
     margin: 0 auto;
     @include reset-content-margins;
-    font-family: $font-ibm;
+    @include font-ibm;
     max-width: $content-max-width;
     text-align: center;
     font-size: 1.25rem;
-    letter-spacing: 1px;
-    line-height: 1.688rem;
+    line-height: 1.35;
 
     @media (min-width: $breakpoint-tablet) {
-      font-family: $font-cinetype;
+      @include font-cinetype;;
       font-size: 2.625rem;
-      line-height: 3.544rem;
     }
   }
 }

@@ -13,13 +13,12 @@
 
     .item {
       font-size: 2.625rem;
-      line-height: 3.544rem;
+      line-height: 1.35;
       margin-right: 10px;
-      font-family: $font-cinetype;
+      @include font-cinetype;;
 
       @media (max-width: $breakpoint-tablet - 1) {
         font-size: 1.5rem;
-        line-height: 2.025rem;
       }
 
       &:nth-child(odd) {

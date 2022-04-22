@@ -11,17 +11,6 @@
             {{ item.title|e }}
           {% endif %}
         </p>
-        {% if item.children %}
-          <ul class="childList">
-            {% for child in item.children %}
-              <li class="childList-item h5">
-                <a class="list-link" href="{{ child.url|e('esc_url') }}" {{ child.target == '_blank' ? 'target="_blank" rel="nofollow noreferrer noopener"' }}>
-                  {{ child.title|e }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
       </li>
     {% endfor %}
   </ul>

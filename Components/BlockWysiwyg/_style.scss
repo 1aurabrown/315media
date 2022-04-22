@@ -1,19 +1,19 @@
 [is='flynt-block-wysiwyg'] {
   .preContent {
-    font-family: $font-cinetype;
+    @include font-cinetype;;
     font-weight: bold;
     font-size: 1.75rem;
-    line-height: 2.626rem;
+    line-height: 1.35;
     margin: 0 auto 50px;
     max-width: 600px;
   }
 
   .content {
     @include reset-content-margins;
-    font-family: $font-ibm;
+    @include font-ibm;
     font-size: 1rem;
     font-weight: 300;
-    line-height: 1.5rem;
+    line-height: 1.5;
     margin: 0 auto;
     max-width: 600px;
 

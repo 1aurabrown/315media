@@ -41,13 +41,12 @@
       }
 
       p {
-        font-family: $font-ibm;
+        @include font-ibm;
         font-size: 1.25rem;
-        line-height: 1.625rem;
+        line-height: 1.35;
 
         @media (max-width: $breakpoint-mobile-horizontal - 1) {
           font-size: 1rem;
-          line-height: 1.35rem;
         }
 
         em {
@@ -69,11 +68,14 @@
     }
 
     .all-projects {
-      font-family: $font-cinetype;
+      @include font-cinetype;;
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-end;
       width: 20%;
+      color: $blue;
+      font-size: 1.75rem;
+      line-height: 1.35;
 
       @media (max-width: $breakpoint-tablet - 1) {
         width: 100%;
@@ -82,9 +84,6 @@
       a {
         @include cursor-blue;
         white-space: nowrap;
-        color: $blue;
-        font-size: 1.75rem;
-        line-height: 1;
         text-decoration: none;
 
         &:hover {

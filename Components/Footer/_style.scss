@@ -7,7 +7,7 @@
     padding: $container-padding-desktop;
   }
 
-  font-family: $font-ibm;
+  @include font-ibm;
   font-size: 1rem;
   color: $white;
   line-height: 1.5;
