@@ -12,17 +12,17 @@ add_action('Flynt/afterRegisterComponents', function () {
         'position' => 'normal',
         'fields' => [
             [
-                'label' => __('Main Image', 'flynt'),
+                'label' => __('Thumbnail Image', 'flynt'),
                 'name' => 'image',
                 'type' => 'image',
                 'return_format' => 'url',
                 'preview_size' => 'medium',
                 'library' => 'all',
-                'instructions' => 'Used as main thumbnail image and hero image.',
-                'required' => 1,
                 'wrapper' => [
                     'width' => '33',
                 ],
+                'instructions' => 'Displayed in the projects grid on the homepage. Thumbnail Video takes precedence over Image.',
+
             ],
             [
                 'label' => __('Thumbnail Hover Image', 'flynt'),
@@ -34,6 +34,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'wrapper' => [
                     'width' => '33',
                 ],
+                'instructions' => 'Displayed on hover in the projects grid on the homepage. Thumbnail Video takes precedence over Image.',
             ],
             [
                 'label' => __('Thumbnail Video', 'flynt'),
@@ -41,7 +42,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'file',
                 'return_format' => 'url',
                 'mime_types' => 'mp4',
-                'instructions' => 'A short video clip displayed in the projects grid on the homepage. Thumbnail Video takes precedence over Hover Image.',
+                'instructions' => 'A short video clip displayed in the projects grid on the homepage. Thumbnail Video takes precedence over Image.',
                 'wrapper' => [
                     'width' => '33',
                 ],
