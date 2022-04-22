@@ -8,30 +8,34 @@ class HeroVideoHome extends window.HTMLDivElement {
   }
 
   init () {
-    this.$ = $(this)
+    this.$el = $(this)
     this.resolveElements()
     this.bindFunctions()
     this.bindEvents()
-    this.videoSize()
+    this.videoSize();
   }
 
-  videoSize () {
-    var windowHeight = $(window).height()
-    var windowWidth = $(window).width()
-    var videoHeight = this.$iframe.outerHeight()
-    var videoWidth = this.$iframe.outerWidth()
-    var scaleV = windowHeight / videoHeight
-    var scaleH = windowWidth / videoWidth
+  videoSize() {
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var videoHeight = this.$iframe.outerHeight();
+    var videoWidth = this.$iframe.outerWidth();
+    var scaleV = windowHeight / videoHeight;
+    var scaleH = windowWidth / videoWidth;
 
-    var scale = (Math.max(scaleV, scaleH))
+    var aspectRatio = 100 * videoHeight / videoWidth;
+    this.$iframe.css({ top: 0, left: 0, position: 'absolute', width: '100%', height: '100%'})
+    this.$videoPlayer.css({'padding-bottom': aspectRatio + '%'})
+
+
+    var scale = (Math.max(scaleV, scaleH));
     if (windowHeight < windowWidth) {
-      console.log(scale)
-      this.$iframe.css({
-        '-webkit-transform': 'scale(' + scale + ')',
-        transform: 'scale(' + scale + ')'
-      })
+    console.log(scale)
+      this.$videoWrapper.css({
+        "width" : `calc(100vh * ${videoWidth / videoHeight})`
+      });
     } else {
-      this.$iframe.removeAttr('style')
+      this.$videoWrapper.removeAttr('style')
     }
   }
 
@@ -39,6 +43,7 @@ class HeroVideoHome extends window.HTMLDivElement {
     this.$posterImage = $('.figure-image', this)
     this.$videoPlayer = $('.video-player', this)
     this.$iframe = $('iframe', this)
+    this.$videoWrapper = $('.video', this)
     this.$window = $(window)
   }
 
@@ -54,17 +59,17 @@ class HeroVideoHome extends window.HTMLDivElement {
   }
 
   loadVideo () {
-    if (!this.$iframe) return
+    if (!this.$iframe) return;
     this.$iframe.on('load', this.videoIsLoaded.bind(this))
     this.$iframe.attr('src', this.$iframe.data('src'))
     // this.$videoPlayer.addClass('video-player--isLoading')
   }
 
   videoIsLoaded () {
-    if (!this.$videoPlayer) return
-    this.$videoPlayer.removeClass('video-player--isLoading')
-    this.$videoPlayer.addClass('video-player--isLoaded')
-    if (!this.$posterImage) return
+    if (!this.$videoPlayer) return;
+    this.$el.removeClass('isLoading')
+    this.$el.addClass('isLoaded')
+    if (!this.$posterImage) return;
     this.$posterImage.addClass('figure-image--isHidden')
   }
 }

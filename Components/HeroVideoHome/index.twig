@@ -1,18 +1,18 @@
-<div class="flyntComponent flyntComponent--hero-video js-hero-banner" is="flynt-hero-video-home">
+<div class="flyntComponent flyntComponent--hero-video js-hero-banner {% if video %} has-video {% endif %}" is="flynt-hero-video-home">
+  <figure class="figure">
+    <img class="figure-image lazyload"
+      src="{{ posterImage.src|resizeDynamic(1280, 720) }}"
+      srcset="{{ placeholderImage(1280, 720) }}"
+      data-srcset="{{ function('wp_get_attachment_image_srcset', posterImage.id) }}"
+      data-sizes="auto"
+      alt="{{ posterImage.alt|e }}">
+  </figure>
   <div class="video">
-    <figure class="figure">
-      <img class="figure-image lazyload"
-        src="{{ posterImage.src|resizeDynamic(1280, 720) }}"
-        srcset="{{ placeholderImage(1280, 720) }}"
-        data-srcset="{{ function('wp_get_attachment_image_srcset', posterImage.id) }}"
-        data-sizes="auto"
-        alt="{{ posterImage.alt|e }}">
-    </figure>
     <div class="video-player">
       {{ video }}
     </div>
-    <div class="video-overlay">
-      <div class="content">{{ contentHtml|e('wp_kses_post') }}</div>
-    </div>
+  </div>
+  <div class="video-overlay">
+    <div class="content">{{ contentHtml|e('wp_kses_post') }}</div>
   </div>
 </div>

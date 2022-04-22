@@ -1,58 +1,55 @@
 [is='flynt-project-media-gallery'] {
+
+
   .grid {
-    align-items: stretch;
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    gap: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: stretch;
-    margin-left: -$gap;
-    margin-top: -$gap;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-tablet) {
+      gap: $gap;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
   }
 
   .grid-item {
-    flex-grow: 0;
-    flex-shrink: 0;
-    min-height: 100%;
+    display: block;
+    position: relative;
+    width: 100%;
     object-fit: cover;
-    padding-left: $gap;
-    padding-top: $gap;
-    @media (max-width: $breakpoint-mobile-horizontal - 1) {
-      padding-bottom: 20px;
-    }
 
-    &,
-    &--one-third {
-      width: 33.3333%;
-
-      @media (max-width: $breakpoint-mobile-horizontal - 1) {
-        width: 100%;
-      }
-    }
-
-    &--one-half {
-      width: 50%;
-      @media (max-width: $breakpoint-mobile-horizontal - 1) {
-        width: 100%;
-      }
-    }
-
-    &--two-third {
-      width: 66.6666%;
-
-      @media (max-width: $breakpoint-mobile-horizontal - 1) {
-        width: 100%;
-      }
-    }
-
-    &--three-third {
+    @media (min-width: $breakpoint-tablet) {
+      height: auto;
       width: 100%;
-    }
-
-    img {
-      display: block;
       height: 100%;
-      max-width: 100%;
-      object-fit: cover;
-      width: 100%;
+      &--one-third {
+        grid-column-end: span 2;
+      }
+
+      &--two-third {
+
+        grid-column-end: span 4;
+      }
+
+      &--one-half {
+        grid-column-end: span 3;
+      }
+
+      &--three-third {
+        grid-column-end: span 6;
+        height: auto;
+      }
+
+      video, img {
+        display: block;
+        object-fit: cover;
+      }
     }
+
   }
+
 }

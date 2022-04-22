@@ -1,98 +1,85 @@
 [is='flynt-hero-video-home'] {
+  background: black;
   @media (orientation: landscape) {
     height: 100vh;
     overflow: hidden;
+  }
+  .figure {
+    width: 100%;
+    display: block;
 
-    .video {
+    &-image {
+      width: 100%;
       height: 100%;
-
-      &-player {
-        height: 100%;
-      }
+      object-fit: cover;
     }
   }
 
+  @media (orientation: landscape) {
+    .figure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &.has-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .figure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+    }
+  }
   .video {
+    width: 100%;
     margin: 0 auto;
     position: relative;
+    flex-shrink: 0;
+    visibility: hidden;
+  }
+
+  &.isLoaded{
+    .video {
+      visibility: visible;
+    }
 
     .figure {
-      display: block;
-      height: 100%;
-      width: 100%;
-    
-      &-image {
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-
-        &--isHidden {
-          visibility: hidden;
-        }
-      }
-    
+      visibility: hidden
     }
-  
-    &-player {
-      align-items: center;
-      bottom: 0;
-      display: flex;
+
+  }
+
+  .video-overlay {
+    pointer-events: none;
+    color: inherit;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    left: 0;
+    padding: var(--padding_large);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    &--alignTop {
+      justify-content: flex-start;
+    }
+
+    &--alignCenter {
       justify-content: center;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 100%;
-
-      &--isLoading {
-        background: rgba(0, 0, 0, 0.5);
-        transition: background 1s linear;
-      
-        .figure {
-          opacity: 1;
-        }
-      }
-
-      &--isLoaded {
-        background: rgba(0, 0, 0, 1);
-        transition: background 1s linear;
-    
-        .figure {
-          opacity: 0;
-          transition: opacity 1s linear;
-        }
-      
-        iframe {
-          opacity: 1;
-          transition: opacity 1s linear;
-        }
-      }
-  
     }
 
-    &-overlay {
-      color: inherit;
-      display: flex;
-      flex-flow: column;
-      height: 100%;
-      left: 0;
-      padding: var(--padding_large);
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 1;
-
-      &--alignTop {
-        justify-content: flex-start;
-      }
-
-      &--alignCenter {
-        justify-content: center;
-      }
-  
-      &--alignBottom {
-        justify-content: flex-end;
-      }
+    &--alignBottom {
+      justify-content: flex-end;
     }
   }
 }

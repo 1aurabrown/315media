@@ -1,4 +1,6 @@
 [is='flynt-list-column'] {
+
+
   .content {
     align-items: flex-end;
     display: flex;
@@ -67,9 +69,9 @@
     }
 
     .all-projects {
+      font-family: $font-cinetype;
       display: flex;
       flex-flow: row wrap;
-      font-family: $font-cinetype;
       justify-content: flex-end;
       width: 20%;
 
@@ -79,11 +81,11 @@
 
       a {
         @include cursor-blue;
+        white-space: nowrap;
         color: $blue;
         font-size: 1.75rem;
         line-height: 1;
         text-decoration: none;
-        white-space: nowrap;
 
         &:hover {
           text-decoration: underline;

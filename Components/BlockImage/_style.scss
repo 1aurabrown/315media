@@ -25,6 +25,15 @@
       video {
         height: 100vh;
       }
+
+      .container {
+        height: 100%;
+      }
+
+      img {
+        object-fit: cover;
+      }
+
     }
     
     .figure-caption {

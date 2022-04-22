@@ -1,9 +1,22 @@
 [is='flynt-navigation-main'] {
   $navigation-height-desktop: 100px;
   $navigation-height-mobile: 75px;
-  $nav-duration: 0.2s;
   $nav-ease: ease-in-out;
 
+  #js-header-offset-element {
+    cursor-events: none;
+    visibility: hidden;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $navigation-height-mobile + $component-spacing-mobile / 2;
+
+    @media (min-width: $breakpoint-tablet) {
+      height: $navigation-height-desktop + $component-spacing-desktop / 2;
+    }
+
+  }
   // background-color: $white;
   display: block;
   left: 0;
@@ -13,17 +26,20 @@
   z-index: 1000;
 
   .wrapper {
+    height: $navigation-height-mobile;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: $transition-duration-long;
+    transition-timing-function: $nav-ease;
+    a, button {
+      transition-duration: $transition-duration-long;
+    }
+
+    padding: 0 $container-padding-mobile;
 
     // Initial display
     background-color: $white;
     color: $blue;
-    height: $navigation-height-mobile;
-    opacity: 0;
-
-    padding: 0 $container-padding-mobile;
-    transition-duration: $nav-duration;
-    transition-property: opacity;
-    transition-timing-function: $nav-ease;
 
     &:hover {
       opacity: 1;
@@ -46,15 +62,15 @@
     }
 
     @media (min-width: $breakpoint-tablet) {
-      height: $navigation-height-desktop;
       padding: 0 $container-padding-desktop;
+      height: $navigation-height-desktop;
     }
   }
 
   .container {
-    align-items: center;
     border-bottom: 1px solid;
     border-color: $blue;
+    align-items: center;
     display: flex;
     height: 100%;
     justify-content: space-between;
@@ -99,19 +115,19 @@
 
     &-link {
       @include cursor-blue;
+      margin-left: 20px;
       display: block;
       font-size: 1rem;
       letter-spacing: 0.015em;
       line-height: 1.5rem;
-      margin-left: 20px;
 
       &:hover {
         text-decoration: underline;
       }
 
       @media (min-width: $breakpoint-tablet) {
-        font-size: 1.8rem;
         margin-left: 50px;
+        font-size: 1.8rem;
       }
     }
   }
